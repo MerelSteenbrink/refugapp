@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   end
 
   namespace :dashboard do
-    root to: "dashboard#index"
+    root to: "home#index"
 
     resources :posts, only: [:index, :destroy]
 
@@ -31,3 +31,4 @@ Rails.application.routes.draw do
   end
 
 end
+

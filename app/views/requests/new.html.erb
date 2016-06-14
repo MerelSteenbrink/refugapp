@@ -1,0 +1,5 @@
+<div class="wrapper">
+  <%= form_for [@post, @request] do |f| %>
+    <%= f.text_area :message ,:class => 'message' %>
+    <%= f.submit :class => 'btn btn-success' %>
+</div>

@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+
+# Post.destroy_all can be added to delete all instances of Post
+
+p1 = Post.create(subject: "apples", content: "apples and such")
+p2 = Post.create(subject: "oranges", content: "oranges and such")

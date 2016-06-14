@@ -9,3 +9,4 @@ class User < ActiveRecord::Base
   has_many :sent_requests, class_name: 'Request', foreign_key: :messenger_id
 
 end
+# fix

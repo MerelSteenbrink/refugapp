@@ -5,3 +5,5 @@ class Post < ActiveRecord::Base
 
 end
 # test
+
+# I think this looks good! 

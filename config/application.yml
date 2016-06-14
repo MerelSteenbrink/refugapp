@@ -11,4 +11,4 @@
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
 development:
   FB_ID: "869909673142700"
-  FB_secret: "17058f66504e8d63a06cfc494ea81b46"
+  FB_SECRET: "17058f66504e8d63a06cfc494ea81b46"

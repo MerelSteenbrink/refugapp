@@ -1,5 +1,23 @@
 <h3>Hello <%= @user.email %></h3>
+<hr>
+<div class="your_posts">
+  <h2>DIT ZIJN JE POSTS</h2>
+  <% @posts.each do |post| %>
+   <b> <%= post.subject %> </b> <br>
+    <%= post.content %> <hr>
+  <% end %> <br>
+  <%= link_to "See all your posts", dashboard_posts_path  %> <br>
+</div>
+<hr>
 
-<%= link_to "your posts", dashboard_posts_path  %> <br>
-<%= link_to "your received requests", dashboard_received_requests_path %> <br>
+<div class="received_requests">
+  <h2>DIT ZIJN JE POSTS</h2>
+  <% @posts.each do |post| %>
+   <b> <%= post.subject %> </b> <br>
+    <%= post.content %> <hr>
+  <% end %> <br>
+ <%= link_to "your received requests", dashboard_received_requests_path %> <br>
+</div>
+
+
 <%= link_to "your sent requests", dashboard_sent_requests_path %>

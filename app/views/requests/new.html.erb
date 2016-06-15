@@ -1,7 +1,7 @@
 <div class="wrapper">
 <h1>New request</h1>
   <%= form_for [@post, @request] do |f| %>
-    <%= f.text_area :message ,:class => 'message' %>
-    <%= f.submit :class => 'btn btn-success' %>
+    <p><%= f.text_area :message ,:class => 'message' %></p>
+    <p><%= f.submit :class => 'btn btn-success' %></p>
     <% end %>
 </div>

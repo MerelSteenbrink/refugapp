@@ -1,0 +1,39 @@
+<div class="dashboard-banner">
+    <!-- WELCOME USER -->
+    <h3 class="text-center">Hello <%= @user.email %></h3>
+    <p class="text-center">Here are your posts</p>
+  </div>
+
+<div class="your_posts">
+        <% @posts.reverse.each do |post| %>
+        <div class="dashboard-card post-card">
+          <div class="subject"> <%= post.subject %></div>
+          <%= post.content %> <br>
+            <% requests = @received_requests.where(post: post) %>
+            <br>
+            <div class="subject"> reactions to: <%= post.subject %> </div>
+            <% requests.reverse.each do |request| %>
+            <div class="dashboard-card post-request-card">
+            <%= request.message %>
+             <div class="sender-request">- <%= request.messenger.email %></div> <br>
+
+            <!-- Add accept or decline button -->
+            <% if request.status == "pending" %>
+              <%= link_to "accept", accept_dashboard_received_request_path(request), method: :patch , class: "btn btn-success" %>
+              <%= link_to "decline", refuse_dashboard_received_request_path(request), method: :patch, class: "btn btn-danger" %>
+            <% elsif request.status == "accepted" %>
+              <div class="label label-success">You are now a match with <%= request.messenger.email %></div>
+            <% elsif request.status == "declined" %>
+              <div class="label label-danger">You declined this request</div>
+            <% else %>
+              <div class="wrong">Something went wrong</div>
+            <% end %>
+            </div>
+            <% end %> <br><br>
+            <div class="created-at">created at <%= post.created_at.strftime("%c") %></div><br>
+          </div>
+
+        <% end %> <br>
+        <%= link_to "See all your posts", dashboard_posts_path  %> <br>
+      </div>
+    </div>

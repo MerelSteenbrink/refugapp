@@ -1,5 +1,7 @@
+<!-- WELCOME USER -->
 <h3>Hello <%= @user.email %></h3>
 <hr>
+<!-- SHOW ALL YOUR POSTS AND THE REQUESTS MADE ON IT -->
 <div class="your_posts">
   <h2>DIT ZIJN JE POSTS</h2>
   <% @posts.each do |post| %>
@@ -16,21 +18,44 @@
 </div>
 <hr>
 
+<!-- SHOW ALL RECEIVED REQUESTS -->
 <div class="received_requests">
   <h2>DIT ZIJN JE RECEIVED REQUESTS</h2>
   <% @received_requests.each do |request| %>
    <b> <%= request.post.subject %> </b> <br>
-    <%= request.message %> <hr>
+    <%= request.message %> <br>
+ <!-- Add accept or decline button -->
+      <% if request.status == "pending" %>
+          <div class="btn btn-success">accept</div>
+        <div class="btn btn-danger">decline</div>
+      <% elsif request.status == "accepted" %>
+          <div class="btn btn-success">You are now a match with request.messenger.email!</div>
+      <% elsif request.status == "declined" %>
+          <div class="btn btn-decline">You declined this request</div>
+      <% else %>
+          <div class="wrong">Something went wrong</div>
+      <% end %>
   <% end %> <br>
  <%= link_to "See more received requests", dashboard_received_requests_path %> <br>
 </div>
 
+<!-- SHOW ALL SENT REQUESTS -->
 <div class="sent_requests">
   <h2>DIT ZIJN JE SENT REQUESTS</h2>
   <% @sent_requests.each do |request| %>
    <b> <%= request.post.subject %> </b> <br>
-    <%= request.message %> <hr>
-  <% end %> <br>
+    <%= request.message %> <br>
+    <!-- Show status of request -->
+    <% if request.status == "pending" %>
+    <div class="btn btn-warning"><%= request.post.author.email %> didn't respond yet!</div>
+      <% elsif request.status == "accepted" %>
+          <div class="btn btn-success">You are a match with <%= request.post.author.email %> </div>
+      <% elsif request.status == "declined" %>
+          <div class="btn btn-decline"><%= request.post.author.email %> declined your request</div>
+      <% else %>
+          <div class="wrong">Something went wrong</div>
+      <% end %> <br>
+  <% end %> <hr>
  <%= link_to "See more sent requests", dashboard_sent_requests_path %> <br>
 </div>
 

@@ -11,13 +11,20 @@
 <hr>
 
 <div class="received_requests">
-  <h2>DIT ZIJN JE POSTS</h2>
-  <% @posts.each do |post| %>
-   <b> <%= post.subject %> </b> <br>
-    <%= post.content %> <hr>
+  <h2>DIT ZIJN JE RECEIVED REQUESTS</h2>
+  <% @received_requests.each do |request| %>
+   <b> <%= request.post.subject %> </b> <br>
+    <%= request.message %> <hr>
   <% end %> <br>
- <%= link_to "your received requests", dashboard_received_requests_path %> <br>
+ <%= link_to "See more received requests", dashboard_received_requests_path %> <br>
 </div>
 
+<div class="sent_requests">
+  <h2>DIT ZIJN JE SENT REQUESTS</h2>
+  <% @sent_requests.each do |request| %>
+   <b> <%= request.post.subject %> </b> <br>
+    <%= request.message %> <hr>
+  <% end %> <br>
+ <%= link_to "See more sent requests", dashboard_sent_requests_path %> <br>
+</div>
 
-<%= link_to "your sent requests", dashboard_sent_requests_path %>

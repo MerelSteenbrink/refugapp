@@ -8,11 +8,11 @@
       <!-- SHOW ALL RECEIVED REQUESTS -->
       <div class="received_requests">
         <h2>Your received requests</h2>
-        <% @received_requests.each do |request| %>
+        <% @received_requests.reverse.each do |request| %>
         <div class="dashboard-card left-card">
           <div class="subject"> reaction to: <%= link_to request.post.subject, post_path(request.post)  %> </div>
           <%= request.message %> <br>
-          <div class="sender-request">- <%= request.messenger.email %></div> <br>
+          <div class="sender-request">- <%= request.messenger.email %></div>
 
             <!-- Add accept or decline button -->
             <% if request.status == "pending" %>
@@ -24,7 +24,8 @@
               <div class="label label-danger">You declined this request</div>
             <% else %>
               <div class="wrong">Something went wrong</div>
-            <% end %>
+            <% end %> <br> <br>
+            <div class="created-at">created at <%= request.created_at.strftime("%c") %></div> <br>
             </div>
         <% end %> <br>
       <%= link_to "See more received requests", dashboard_received_requests_path %>
@@ -34,7 +35,7 @@
       <!-- SHOW ALL SENT REQUESTS -->
     <div class="sent_requests">
       <h2>Your sent requests</h2>
-        <% @sent_requests.each do |request| %>
+        <% @sent_requests.reverse.each do |request| %>
         <div class="dashboard-card left-card">
           <div class="subject">reaction to: <%=link_to request.post.subject, post_path(request.post) %></div>
           <%= request.message %> <br> <br>
@@ -48,7 +49,8 @@
               <div class="label label-danger"><%= request.post.author.email %> declined your request</div>
             <% else %>
               <div class="wrong">Something went wrong</div>
-            <% end %> <br>
+            <% end %> <br> <br>
+            <div class="created-at"> updated at <%= request.updated_at.strftime("%c") %></div> <br>
             </div>
         <% end %> <br>
       <%= link_to "See more sent requests", dashboard_sent_requests_path %> <br>
@@ -61,14 +63,14 @@
       <!-- SHOW ALL YOUR POSTS AND THE REQUESTS MADE ON IT -->
       <div class="your_posts">
         <h2 class="text-center">Your posts</h2>
-        <% @posts.each do |post| %>
+        <% @posts.reverse.each do |post| %>
         <div class="dashboard-card right-card">
           <div class="subject"> <%= post.subject %></div>
           <%= post.content %> <br>
             <% requests = @received_requests.where(post: post) %>
             <br>
             <div class="subject"> reactions to: <%= post.subject %> </div>
-            <% requests.each do |request| %>
+            <% requests.reverse.each do |request| %>
             <div class="request-card">
             <%= request.message %>
              <div class="sender-request">- <%= request.messenger.email %></div> <br>
@@ -85,7 +87,8 @@
               <div class="wrong">Something went wrong</div>
             <% end %>
             </div>
-            <% end %>
+            <% end %> <br><br>
+            <div class="created-at">created at <%= post.created_at.strftime("%c") %></div><br>
           </div>
         <% end %> <br>
         <%= link_to "See all your posts", dashboard_posts_path  %> <br>

@@ -6,6 +6,9 @@
 <div class="form-inputs">
   <%= f.input :username, autofocus: true  %>
   <%= f.input :postal_code, autofocus: true  %>
+  <p>I am a:
+    <%= f.select :kind, options_for_select(["refugee", "dutchie"]) %>
+  </p>
   <%= f.input :email, autofocus: true %>
   <%= f.input :password, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
   <%= f.input :password_confirmation %>

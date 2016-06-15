@@ -1,11 +1,14 @@
-JE RECEIVED REQUESTS
-
+<div class="dashboard-banner">
+    <!-- WELCOME USER -->
+    <h3 class="text-center">Hello <%= @user.email %></h3>
+    <p class="text-center">Here are your received requests</p>
+  </div>
 
 <div class="received_requests">
-  <h2>DIT ZIJN JE RECEIVED REQUESTS</h2>
   <% @received_requests.each do |request| %>
+  <div class="dashboard-card left-card">
    <b> <%= request.post.subject %> </b> <br>
-    <%= request.message %> <br>
+    <%= request.message %> <br> <br>
  <!-- Add accept or decline button -->
       <% if request.status == "pending" %>
           <div class="btn btn-success">accept</div>
@@ -17,6 +20,8 @@ JE RECEIVED REQUESTS
       <% else %>
           <div class="wrong">Something went wrong</div>
       <% end %>
+      </div>
   <% end %> <br>
+
  <%= link_to "Back to dashboard", dashboard_root_path %> <br>
 </div>

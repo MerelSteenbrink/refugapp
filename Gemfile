@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+source 'https://rails-assets.org'
 ruby '2.3.0'
 
 gem 'rails', '4.2.6'
@@ -19,6 +20,8 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 
 gem "geocoder"
+gem "gmaps4rails"
+gem "rails-assets-underscore"
 
 group :development, :test do
   gem 'binding_of_caller'

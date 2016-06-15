@@ -1,6 +1,8 @@
-class Posts::RequestsController < ApplicationController
+class RequestsController < ApplicationController
+
   before_action :find_post, only: [:new, :create]
-  before_action :request_params
+
+
   def new
     @request = Request.new
   end

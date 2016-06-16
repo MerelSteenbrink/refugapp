@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   #== Attributes ========================================
 
   #== Extensions ========================================
+  mount_uploader :photo, PhotoUploader
 
   #== Relationships ======================================
 

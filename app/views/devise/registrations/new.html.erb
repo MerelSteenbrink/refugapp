@@ -16,6 +16,8 @@
   <%= f.input :email %>
   <%= f.input :password, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
   <%= f.input :password_confirmation %>
+  <%= f.input :photo  %>
+  <%= f.input :photo_cache, as: :hidden  %>
 </div>
 
 <div class="form-actions">

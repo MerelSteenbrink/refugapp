@@ -1,4 +1,8 @@
 source 'https://rubygems.org'
+source 'https://rails-assets.org' do
+  gem "rails-assets-underscore"
+end
+
 ruby '2.3.0'
 
 gem 'rails', '4.2.6'
@@ -18,6 +22,10 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
 
+gem "coffee-rails"
+gem "geocoder"
+gem "gmaps4rails"
+
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'
@@ -25,8 +33,8 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'spring'
-  
-  
+
+
 end
 
 group :production do

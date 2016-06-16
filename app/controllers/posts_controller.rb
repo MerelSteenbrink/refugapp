@@ -3,6 +3,14 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+
+    @markers = Gmaps4rails.build_markers(@posts) do |post, marker|
+      marker.lat post.latitude
+      marker.lng post.longitude
+
+      # If we want to have clickable markers that show a little text box we need something like:
+      # marker.infowindow render_to_string(:partial => "/posts/map_box", locals: {post: post})
+    end
   end
 
   def show
@@ -26,6 +34,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:subject, :content)
+    params.require(:post).permit(:subject, :content, :city, :postal_code)
   end
 end

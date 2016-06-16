@@ -1,11 +1,35 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise  :database_authenticatable, :registerable, 
+
+  #== Constants =========================================
+
+  devise  :database_authenticatable, :registerable,
           :recoverable, :rememberable, :trackable, :validatable,
           :omniauthable, omniauth_providers: [:facebook]
 
-  def self.find_for_facebook_oauth(auth)
+  #== Attributes ========================================
+
+  #== Extensions ========================================
+
+  #== Relationships ======================================
+
+  has_many :posts, foreign_key: :author_id
+  has_many :received_requests, class_name: 'Request', through: :posts
+  has_many :sent_requests, class_name: 'Request', foreign_key: :messenger_id
+
+  #== Validations =========================================
+
+  validates :username, uniqueness: true, if: :username
+  validates :kind, :inclusion => {in: ["dutchie", "refugee"]}, if: :kind
+
+  #== Scopes ==============================================
+
+  #== Callbacks ===========================================
+
+  #== Class methods =======================================
+
+    def self.find_for_facebook_oauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.provider = auth.provider
       user.uid = auth.uid
@@ -19,9 +43,6 @@ class User < ActiveRecord::Base
     end
   end
 
-  has_many :posts, foreign_key: :author_id
-  has_many :received_requests, class_name: 'Request', through: :posts
-  has_many :sent_requests, class_name: 'Request', foreign_key: :messenger_id
+  #== Instance methods ========================================
 
 end
-# fix

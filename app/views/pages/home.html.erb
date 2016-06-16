@@ -3,19 +3,41 @@
     <h1>RefuGapp</h1>
     <p>Fill the gap between Locals and refugees by sharing skills.</p>
 
-    <%= link_to "CONNECT", new_user_session_path, class:"btn btn-warning btn-lg"%>
+    <%= link_to "CONNECT", new_user_registration_path, class:"btn btn-warning btn-lg"%>
   </div>
 </div>
 
 <div class="banner about">
   <div class="banner-content">
     <h1>ABOUT</h1>
-
-    <p>Are you a Local? Get to now the new comers in your city by exchanging skills! Discover how refugees can help you,m sen da request and.. connect!
-    Or: a skill you want to share? Make a post and someone will find you!</p>
+    <p> We all are blessed with a lot of skills. Why not connect with the people around us by exchanging them? With RefuGapp we are filling the gap between locals and newcomers by providing a platform where you can offer your offer and find skill and connect with new people! </p>
+    <p>Are you a Local? Get to now the newcomers in your city by exchanging skills! Discover how refugees can help you,m sen da request and.. connect! Or: a skill you want to share? Make a post and someone will find you!</p>
     <p>Are you a newcomer? Get to know the locals by offering your skills! Make a post and help a local with the things you are good at.
-    Or: in need of some help? Look what the locals are offering and send a request!</p>
-
+      Or: in need of some help? Look what the locals are offering and send a request!</p>
+    </div>
   </div>
-</div>
 
+  <div class="banner posts" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), ;">
+    <div class="banner-content">
+      <h1>POSTS</h1>
+      <div class="card-wrapper">
+        <div class="container">
+          <div class="row">
+            <% @posts.first(6).each do |post| %>
+            <div class="col-xs-12 col-sm-6">
+              <div class= "card">
+                <div class="card-title"><h2><%= post.subject %></h2> </div>
+                <div class="card-description">
+                  <%= link_to "", post_path(post), class: 'card-link'  %>
+                  <p><%= post.content %></p> </div>
+                </div>
+              </div>
+
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <%= link_to "SEE ALL POSTS", posts_path(), class:"btn btn-danger btn-lg" %>
+      </div>
+
+    </div>

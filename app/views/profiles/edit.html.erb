@@ -8,6 +8,13 @@
         <%= f.input :username %>
         <%= f.input :first_name  %>
         <%= f.input :last_name  %>
+        <% if @user.kind == nil  %>
+        <p>I am a:
+          <div class="radio-buttons">
+            <%= f.collection_radio_buttons :kind, [['dutchie', 'dutchie'] ,['refugee', 'refugee']],:first, :last %>
+          </div>
+        </p>
+        <% end  %>
         <%= f.input :email  %>
         <%= f.input :postal_code  %>
         <%= f.submit %>

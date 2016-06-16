@@ -8,7 +8,6 @@
   text-align: center;
   height: 100vh;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
-  background-size: cover !important;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,7 +15,8 @@
  */}
 
 .homie {
-   background-image: url('https://images.unsplash.com/photo-1465711403138-162e171bb7e4?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=7b50b5b89ba56fd4db79d9377c7dda38')
+   background-image: url('https://images.unsplash.com/photo-1465711403138-162e171bb7e4?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=7b50b5b89ba56fd4db79d9377c7dda38');
+  background-size: cover !important;
 
 }
 
@@ -38,5 +38,6 @@
 }
 
 .posts {
-  background-image: url('https://images.unsplash.com/photo-1438183972690-6d4658e3290e?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=1317ea2f1e55d032e93afea068cb13ce')
+  background-image: url('https://images.unsplash.com/photo-1438183972690-6d4658e3290e?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=1317ea2f1e55d032e93afea068cb13ce');
+  background-size: cover !important;
 }

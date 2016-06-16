@@ -1,0 +1,19 @@
+<div class="wrapper">
+  <div class="profile">
+    <h3>Edit your profile </h3>
+    <div class="profile-info">
+      <div>
+
+        <%= simple_form_for @user, url: profile_path(@user) do |f| %>
+        <%= f.input :username %>
+        <%= f.input :first_name  %>
+        <%= f.input :last_name  %>
+        <%= f.input :email  %>
+        <%= f.input :postal_code  %>
+        <%= f.submit %>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>

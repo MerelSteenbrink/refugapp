@@ -13,6 +13,7 @@
       <%= f.collection_radio_buttons :kind, [['dutchie', 'dutchie'] ,['refugee', 'refugee']],:first, :last %>
     </div>
   </p>
+  <%= f.input :description  %>
   <%= f.input :email %>
   <%= f.input :password, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
   <%= f.input :password_confirmation %>

@@ -14,9 +14,9 @@ class User < ActiveRecord::Base
 
   #== Relationships ======================================
 
-  has_many :posts, foreign_key: :author_id
-  has_many :received_requests, class_name: 'Request', through: :posts
-  has_many :sent_requests, class_name: 'Request', foreign_key: :messenger_id
+  has_many :posts, foreign_key: :author_id, dependent: :destroy
+  has_many :received_requests, class_name: 'Request', through: :posts, dependent: :destroy
+  has_many :sent_requests, class_name: 'Request', foreign_key: :messenger_id, dependent: :destroy
 
   #== Validations =========================================
 

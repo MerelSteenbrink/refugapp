@@ -5,8 +5,8 @@ class User < ActiveRecord::Base
   #== Constants =========================================
 
   devise  :database_authenticatable, :registerable,
-          :recoverable, :rememberable, :trackable, :validatable,
-          :omniauthable, omniauth_providers: [:facebook]
+  :recoverable, :rememberable, :trackable, :validatable,
+  :omniauthable, omniauth_providers: [:facebook]
 
   #== Attributes ========================================
 
@@ -30,7 +30,7 @@ class User < ActiveRecord::Base
 
   #== Class methods =======================================
 
-    def self.find_for_facebook_oauth(auth)
+  def self.find_for_facebook_oauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.provider = auth.provider
       user.uid = auth.uid
@@ -45,5 +45,13 @@ class User < ActiveRecord::Base
   end
 
   #== Instance methods ========================================
-
+  def full_picture
+    if self.photo.file != nil  
+      self.photo_url, height: 300, width: 400, crop: :fill  
+    elsif self.picture  
+      self.picture
+    else 
+      ""     
+    end
+  end
 end

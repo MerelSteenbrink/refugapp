@@ -1,25 +1,13 @@
-<div class="dashboard-banner">
-    <!-- WELCOME USER -->
-    <h3 class="text-center">Hello <%= @user.email %></h3>
-    <p class="text-center">Here are your sent requests</p>
-  </div>
+<%= render "dashboard/welcome" %>
 <div class="sent_requests">
+
   <% @sent_requests.reverse.each do |request| %>
-  <div class="dashboard-card left-card">
-    <div class="subject">reaction to: <%=link_to request.post.subject, post_path(request.post) %></div>
-          <%= request.message %> <br> <br>
-           <!-- Show status of request -->
-            <% if request.status == "pending" %>
-             <div class="label label-warning"><%= request.post.author.email %> didn't respond yet!</div>
-            <% elsif request.status == "accepted" %>
-              <div class="label label-success">You are a match with <%= request.post.author.email %> </div>
-            <% elsif request.status == "declined" %>
-              <div class="label label-danger"><%= request.post.author.email %> declined your request</div>
-            <% else %>
-              <div class="wrong">Something went wrong</div>
-            <% end %> <br> <br>
-            <div class="created-at"> updated at <%= request.updated_at.strftime("%c") %></div> <br>
-    </div>
-  <% end %> <br>
- <%= link_to "Back to dashboard", dashboard_root_path %> <br>
+    <!-- Render sent request -->
+    <%= render "dashboard/sent_request", request: request  %>
+  <% end %>
+
+  <br>
+
+  <%= link_to "Back to dashboard", dashboard_root_path %> <br>
+
 </div>

@@ -19,24 +19,28 @@
 
   <div class="banner posts" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), ;">
     <div class="banner-content">
-      <h1>POSTS</h1>
+        <h1>POSTS</h1>
       <div class="card-wrapper">
         <div class="container">
           <div class="row">
-            <% @posts.first(6).each do |post| %>
+            <% @posties.first(6).each do |post| %>
             <div class="col-xs-12 col-sm-6">
               <div class= "card">
-                <div class="card-title"><h2><%= post.subject %></h2> </div>
+                <div class="card-title"><h2><%= link_to post.subject, post_path(post) %></h2> </div>
+                <p><%= post.updated_at.strftime("%d-%m-%Y %H:%M:%S") %></p>
+                <p><%= User.find(post.author_id).username %></p>
                 <div class="card-description">
-                  <%= link_to "", post_path(post), class: 'card-link'  %>
-                  <p><%= post.content %></p> </div>
+                  <p><%= post.content %></p>
+                  <p><%= link_to "Write a request to this Post", new_post_request_path(post), class: "make btn btn-success" %></p>
+
                 </div>
               </div>
-
-              <% end %>
             </div>
+
+            <% end %>
           </div>
         </div>
+      </div>
         <%= link_to "SEE ALL POSTS", posts_path(), class:"btn btn-danger btn-lg" %>
       </div>
 

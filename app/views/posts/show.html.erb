@@ -1,15 +1,27 @@
-<h1><%= @post.subject %></h1>
-<p><%= @post.content %></p>
+<div class="wrapper">
+  <div class= "card text-center">
+    <div class="card-title">
+      <h1><%= @post.subject %></h1>
+    </div>
 
-<p><%= link_to 'Back to overview', posts_path %></p>
+    <p><%= @post.updated_at.strftime("%d-%m-%Y %H:%M:%S") %></p>
+    <h3><%= @author.username %></h3>
+    <div class="card-description">
+      <p><%= @post.content %></p>
+      <p><%= link_to "Write a request to this Post", new_post_request_path(@post), class: "make btn btn-success" %></p>
+      <p><%= link_to 'Back to overview', posts_path %></p>
+      <div id="post_map" style="width: 300px; height: 300px";></div>
+
+    </div>
 
 
-<p><%= link_to "Write a request to this Post", new_post_request_path(@post) %></p>
+
+    <p><%= link_to "Write a request to this Post", new_post_request_path(@post) %></p>
 
 
-<div id="post_map" style="width: 300px; height: 300px";></div>
+  </div>
 
-
+</div>
 <!-- This is the code for the map -->
 <% content_for(:after_js) do %>
 <script type="text/javascript">
@@ -29,6 +41,7 @@
   })
 </script>
 <% end %>
+
 
 
 

@@ -9,8 +9,8 @@
   background: rgba(195, 195, 195, 0.3 );
   color: $green;
   position: relative;
-  height: 150px;
-  width: 500px;
+  height: 330px;
+  width: 530px;
   margin: 10px;
   padding: 15px;
 }
@@ -25,11 +25,18 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  z-index:2;
+  z-index: -1;
   background: black;
   opacity: 0;
 }
 
-.card-link:hover{
-  opacity: 0.1;
+
+.card-title:hover{
+  opacity: 0.5;
+}
+
+.text-center{
+  text-align: center;
+  margin: auto;
+  margin-top: 100px;
 }

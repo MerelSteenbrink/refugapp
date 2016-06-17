@@ -1,0 +1,15 @@
+<div style="width: 200px">
+
+  <h4><%= link_to post.subject, post_path(post) %></h4>
+  <h5>-<%= post.author.username %> </h5>
+  <h6><%=h truncate(post.content, :length => 120) %></h6>
+
+  <% if post.content.length > 120 %>
+  <h6 class="read_more_button"> <%= link_to "Read more", post_path(post) %></h6>
+  <% end  %>
+  <i> <%= time_ago_in_words(post.created_at) %> ago</i>
+
+
+</div>
+
+

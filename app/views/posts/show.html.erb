@@ -1,7 +1,35 @@
 <h1><%= @post.subject %></h1>
 <p><%= @post.content %></p>
 
-  <p><%= link_to 'Back to overview', posts_path %></p>
+<p><%= link_to 'Back to overview', posts_path %></p>
 
 
 <p><%= link_to "Write a request to this Post", new_post_request_path(@post) %></p>
+
+
+<div id="post_map" style="width: 300px; height: 300px";></div>
+
+
+<!-- This is the code for the map -->
+<% content_for(:after_js) do %>
+<script type="text/javascript">
+  $(document).on('ready', function() {
+    var myLatLng = {lat: <%= @post.latitude %>, lng: <%= @post.longitude %>};
+
+    var map = new google.maps.Map(document.getElementById('post_map'), {
+      zoom: 15,
+      center: myLatLng
+    });
+
+    var marker = new google.maps.Marker({
+      position: myLatLng,
+      map: map,
+      title: 'Hello World!'
+    });
+  })
+</script>
+<% end %>
+
+
+
+

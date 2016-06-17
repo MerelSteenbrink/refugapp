@@ -8,8 +8,8 @@ class PostsController < ApplicationController
       marker.lat post.latitude
       marker.lng post.longitude
 
-      # If we want to have clickable markers that show a little text box we need something like:
-      # marker.infowindow render_to_string(:partial => "/posts/map_box", locals: {post: post})
+      # For clickable markers that show a little text box
+      marker.infowindow render_to_string(:partial => "/posts/map_box", locals: {post: post})
     end
   end
 

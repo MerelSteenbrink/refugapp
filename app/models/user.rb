@@ -46,12 +46,23 @@ class User < ActiveRecord::Base
 
   #== Instance methods ========================================
   def full_picture
-    if self.photo.file != nil  
+    if self.photo.file != nil
       self.photo_url
-    elsif self.picture  
+    elsif self.picture
       self.picture
-    else 
-      ""     
+    else
+      ""
     end
+  end
+
+  def title
+    if self.username != "" || nil
+      self.username
+    elsif self.first_name != "" || nil
+      self.first_name
+    else
+      "Anonymous"
+    end
+
   end
 end

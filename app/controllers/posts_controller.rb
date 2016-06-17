@@ -3,6 +3,9 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    @posties = @posts.sort_by{ |post| post[:updated_at] }.reverse
+
+
 
     @markers = Gmaps4rails.build_markers(@posts) do |post, marker|
       marker.lat post.latitude

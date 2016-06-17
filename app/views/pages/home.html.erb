@@ -30,7 +30,9 @@
                 <p><%= User.find(post.author_id).username %></p>
                 <div class="card-description">
                   <%= link_to "", post_path(post), class: 'card-link'  %>
-                  <p><%= post.content %></p> </div>
+                  <p><%= post.content %></p>
+
+                  </div>
                 </div>
               </div>
 

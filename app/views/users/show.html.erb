@@ -2,8 +2,9 @@
 <div class="wrapper">
 <div class="text-center">
 <h2>Het profiel van <%= @user.title %></h2>
-<%= cl_image_tag @user.full_picture  %> <br>
-<%= @user.description %> <br>
+<% if @user.full_picture %> <%= cl_image_tag @user.full_picture  %> <% end %>  <br>
+<% if @user.description %> <%= @user.description %> <% end %> <br>
+<% if @user.city %> I live in <%= @user.city %> <br> <% end %>
 <%= @user.kind %>
 </div>
 <br><br>

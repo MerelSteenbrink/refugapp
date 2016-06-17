@@ -15,8 +15,9 @@
           </div>
         </p>
         <% end  %>
-        <%= f.input :description  %>
         <%= f.input :email  %>
+        <%= f.input :description  %>
+        <%= f.input :city %>
         <%= cl_image_tag @user.full_picture  %>
         <%= f.input :photo  %>
         <%= f.input :photo_cache, as: :hidden  %>

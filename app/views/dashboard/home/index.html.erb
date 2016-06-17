@@ -1,99 +1,53 @@
 <div class="dashboard-wrapper">
-  <div class="dashboard-banner">
-    <!-- WELCOME USER -->
-    <h3 class="text-center">Hello <%= @user.email %></h3>
-  </div>
+
+  <%= render "dashboard/welcome" %>
+
   <div class="dashboard-container">
+    <!-- SHOW ALL RECEIVED REQUESTS -->
     <div class="dashboard-left">
-      <!-- SHOW ALL RECEIVED REQUESTS -->
       <div class="received_requests">
         <h2>Your received requests</h2>
-        <% @received_requests.reverse.each do |request| %>
-        <div class="dashboard-card left-card">
-          <div class="subject"> reaction to: <%= link_to request.post.subject, post_path(request.post)  %> </div>
-          <%= request.message %> <br>
-          <div class="sender-request">- <%= request.messenger.email %></div>
-
-            <!-- Add accept or decline button -->
-            <% if request.status == "pending" %>
-              <%= link_to "accept", accept_dashboard_received_request_path(request), method: :patch , class: "btn btn-success" %>
-              <%= link_to "decline", refuse_dashboard_received_request_path(request), method: :patch, class: "btn btn-danger" %>
-            <% elsif request.status == "accepted" %>
-              <div class="label label-success">You are now a match with <%= request.messenger.email %></div>
-            <% elsif request.status == "declined" %>
-              <div class="label label-danger">You declined this request</div>
-            <% else %>
-              <div class="wrong">Something went wrong</div>
-            <% end %> <br> <br>
-            <div class="created-at">created at <%= request.created_at.strftime("%c") %></div> <br>
-            </div>
+        <% @received_requests.reverse.take(3).each do |request| %>
+            <!-- Render received request -->
+            <%= render "dashboard/received_request", request: request  %>
         <% end %> <br>
-      <%= link_to "See more received requests", dashboard_received_requests_path %>
+        <% if @received_requests.length > 3 %>
+          <%= link_to "See more received requests", dashboard_received_requests_path %>
+        <% end %>
       <br>
     </div>
 
       <!-- SHOW ALL SENT REQUESTS -->
     <div class="sent_requests">
       <h2>Your sent requests</h2>
-        <% @sent_requests.reverse.each do |request| %>
-        <div class="dashboard-card left-card">
-          <div class="subject">reaction to: <%=link_to request.post.subject, post_path(request.post) %></div>
-          <%= request.message %> <br> <br>
-
-            <!-- Show status of request -->
-            <% if request.status == "pending" %>
-             <div class="label label-warning"><%= request.post.author.email %> didn't respond yet!</div>
-            <% elsif request.status == "accepted" %>
-              <div class="label label-success">You are a match with <%= request.post.author.email %> </div>
-            <% elsif request.status == "declined" %>
-              <div class="label label-danger"><%= request.post.author.email %> declined your request</div>
-            <% else %>
-              <div class="wrong">Something went wrong</div>
-            <% end %> <br> <br>
-            <div class="created-at"> updated at <%= request.updated_at.strftime("%c") %></div> <br>
-            </div>
+        <% @sent_requests.reverse.take(3).each do |request| %>
+        <!-- Render sent request -->
+           <%= render "dashboard/sent_request", request: request  %>
         <% end %> <br>
-      <%= link_to "See more sent requests", dashboard_sent_requests_path %> <br>
+        <% if @sent_requests.length > 3 %>
+          <%= link_to "See more sent requests", dashboard_sent_requests_path %>
+        <% end %>
+       <br>
     </div>
-
-
-
     </div>
+    <!-- end of left dashboard -->
+
+         <!-- SHOW ALL YOUR POSTS AND THE REQUESTS MADE ON IT -->
     <div class="dashboard-right">
-      <!-- SHOW ALL YOUR POSTS AND THE REQUESTS MADE ON IT -->
       <div class="your_posts">
         <h2 class="text-center">Your posts</h2>
-        <% @posts.reverse.each do |post| %>
-        <div class="dashboard-card right-card">
-          <div class="subject"> <%= post.subject %></div>
-          <%= post.content %> <br>
-            <% requests = @received_requests.where(post: post) %>
-            <br>
-            <div class="subject"> reactions to: <%= post.subject %> </div>
-            <% requests.reverse.each do |request| %>
-            <div class="request-card">
-            <%= request.message %>
-             <div class="sender-request">- <%= request.messenger.email %></div> <br>
-
-            <!-- Add accept or decline button -->
-            <% if request.status == "pending" %>
-              <%= link_to "accept", accept_dashboard_received_request_path(request), method: :patch , class: "btn btn-success" %>
-              <%= link_to "decline", refuse_dashboard_received_request_path(request), method: :patch, class: "btn btn-danger" %>
-            <% elsif request.status == "accepted" %>
-              <div class="label label-success">You are now a match with <%= request.messenger.email %></div>
-            <% elsif request.status == "declined" %>
-              <div class="label label-danger">You declined this request</div>
-            <% else %>
-              <div class="wrong">Something went wrong</div>
-            <% end %>
-            </div>
-            <% end %> <br><br>
-            <div class="created-at">created at <%= post.created_at.strftime("%c") %></div><br>
-          </div>
+        <% @posts.reverse.take(3).each do |post| %>
+        <!-- render post -->
+        <%= render "dashboard/post", post: post %>
         <% end %> <br>
-        <%= link_to "See all your posts", dashboard_posts_path  %> <br>
+        <% if @posts.length > 3 %>
+          <%= link_to "See all your posts", dashboard_posts_path  %>
+        <% end %>
+         <br>
       </div>
     </div>
+    <!-- end of right dashboard -->
+
   </div>
 </div>
 

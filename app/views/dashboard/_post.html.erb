@@ -1,0 +1,26 @@
+<div class="dashboard-card right-card">
+          <div class="subject"> <%= post.subject %></div>
+          <%= post.content %> <br>
+            <% requests = @received_requests.where(post: post) %>
+            <br>
+            <div class="subject"> reactions to: <%= post.subject %> </div>
+            <% requests.reverse.take(3).each do |request| %>
+            <div class="request-card">
+            <%= request.message %>
+             <div class="sender-request">- <%= link_to request.messenger.title, user_path(request.messenger) %></div> <br>
+
+            <!-- Add accept or decline button -->
+            <% if request.status == "pending" %>
+              <%= link_to "accept", accept_dashboard_received_request_path(request), method: :patch , class: "btn btn-success" %>
+              <%= link_to "decline", refuse_dashboard_received_request_path(request), method: :patch, class: "btn btn-danger" %>
+            <% elsif request.status == "accepted" %>
+              <div class="label label-success">You are now a match with <%= request.messenger.title %></div>
+            <% elsif request.status == "declined" %>
+              <div class="label label-danger">You declined this request</div>
+            <% else %>
+              <div class="wrong">Something went wrong</div>
+            <% end %>
+            </div>
+            <% end %> <br><br>
+            <div class="created-at">created at <%= post.created_at.strftime("%c") %></div><br>
+          </div>

@@ -1,0 +1,26 @@
+
+<div class="wrapper">
+<div class="text-center">
+<h2>Het profiel van <%= @user.title %></h2>
+<% if @user.full_picture %> <%= cl_image_tag @user.full_picture  %> <% end %>  <br>
+<% if @user.description %> <%= @user.description %> <% end %> <br>
+<% if @user.city %> I live in <%= @user.city %> <br> <% end %>
+<%= @user.kind %>
+</div>
+<br><br>
+<div class="posts">
+<br>
+  <p class="text-center">Posts of <%= @user.title %></p>
+  <% @user.posts.reverse.take(3).each do |post| %>
+<div class="dashboard-card right-card">
+          <div class="subject"> <%= link_to post.subject, post_path(post) %></div>
+          <%= post.content %> <br> <br>
+          <% if post.author.kind != current_user.kind %>
+          <%= link_to "send a request", new_post_request_path(post), class: "btn btn-warning" %>
+
+          <% end %>
+  </div> <br><br>
+  <% end %>
+</div>
+</div>
+

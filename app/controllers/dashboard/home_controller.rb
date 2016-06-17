@@ -1,5 +1,5 @@
 class Dashboard::HomeController < ApplicationController
-  before_action :find_user, only: [:index]
+  before_action :find_current_user, only: [:index]
    before_action :find_posts, only: [:index]
    before_action :find_received_requests, only: [:index]
    before_action :find_sent_requests, only: [:index]
@@ -10,7 +10,7 @@ class Dashboard::HomeController < ApplicationController
 
   private
 
-  def find_user
+  def find_current_user
     @user = current_user if current_user
   end
 
@@ -25,5 +25,7 @@ class Dashboard::HomeController < ApplicationController
   def find_sent_requests
     @sent_requests = current_user.sent_requests
   end
+
+
 
 end

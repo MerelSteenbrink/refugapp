@@ -47,7 +47,7 @@ class User < ActiveRecord::Base
   #== Instance methods ========================================
   def full_picture
     if self.photo.file != nil  
-      self.photo_url, height: 300, width: 400, crop: :fill  
+      self.photo_url
     elsif self.picture  
       self.picture
     else 

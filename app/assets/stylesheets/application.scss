@@ -15,4 +15,15 @@
 @import "vendor/index";
 
 // Dashboard
-@import "dashboard.scss"
+@import "dashboard.scss";
+
+// Linkjes zwart nu even hier, maar vergeet het niet zo weg te halen :)
+a {
+  color: black;
+}
+
+
+a:hover {
+  color: #e67e22;
+  text-decoration: none;
+}

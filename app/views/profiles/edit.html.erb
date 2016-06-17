@@ -17,6 +17,7 @@
         <% end  %>
         <%= f.input :description  %>
         <%= f.input :email  %>
+        <%= cl_image_tag @user.full_picture  %>
         <%= f.input :photo  %>
         <%= f.input :photo_cache, as: :hidden  %>
         <%= f.submit %>

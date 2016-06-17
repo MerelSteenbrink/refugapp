@@ -22,15 +22,16 @@
 .card-link {
   position: absolute;
   top: 0;
-  bottom: 30%;
+  bottom: 0;
   left: 0;
   width: 100%;
-  z-index:2;
+  z-index: -1;
   background: black;
   opacity: 0;
 }
 
-.card-link:hover{
-  opacity: 0.1;
+
+.card-title:hover{
+  opacity: 0.5;
 }
 

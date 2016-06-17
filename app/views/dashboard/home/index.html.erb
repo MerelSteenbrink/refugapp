@@ -8,11 +8,11 @@
       <!-- SHOW ALL RECEIVED REQUESTS -->
       <div class="received_requests">
         <h2>Your received requests</h2>
-        <% @received_requests.reverse.take(3).take(3).each do |request| %>
+        <% @received_requests.reverse.take(3).each do |request| %>
         <div class="dashboard-card left-card">
           <div class="subject"> reaction to: <%= link_to request.post.subject, post_path(request.post)  %> </div>
           <%= request.message %> <br>
-          <div class="sender-request">- <%= link_to username(request.messenger), user_path(@user) %></div>
+          <div class="sender-request">- <%= link_to username(request.messenger), user_path(request.messenger) %></div>
 
             <!-- Add accept or decline button -->
           <% if request.status == "pending" %>
@@ -80,7 +80,7 @@
             <% requests.reverse.take(3).each do |request| %>
             <div class="request-card">
             <%= request.message %>
-             <div class="sender-request">- <%= username(request.messenger) %></div> <br>
+             <div class="sender-request">- <%= link_to username(request.messenger, user_path(request.messenger)) %></div> <br>
 
             <!-- Add accept or decline button -->
             <% if request.status == "pending" %>

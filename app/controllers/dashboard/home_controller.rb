@@ -26,4 +26,6 @@ class Dashboard::HomeController < ApplicationController
     @sent_requests = current_user.sent_requests
   end
 
+
+
 end

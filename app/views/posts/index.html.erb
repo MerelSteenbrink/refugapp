@@ -13,6 +13,7 @@
             <div class="col-xs-12 col-sm-6">
               <div class= "card">
                 <div class="card-title"><h2><%= post.subject %></h2> </div>
+                <p><%= User.find(post.author_id).username %></p>
                 <div class="card-description">
                   <%= link_to "", post_path(post), class: 'card-link'  %>
                   <p><%= post.content %></p> </div>

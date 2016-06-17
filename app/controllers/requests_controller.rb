@@ -5,6 +5,8 @@ class RequestsController < ApplicationController
 
   def new
     @request = Request.new
+    @post = Post.find(params[:post_id])
+    @author = User.find(@post.author_id)
   end
 
   def create

@@ -17,6 +17,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @author = User.find(@post.author_id)
   end
 
   def new

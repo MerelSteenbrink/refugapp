@@ -1,7 +1,22 @@
-<h1><%= @post.subject %></h1>
-<p><%= @post.content %></p>
+<div class="wrapper">
+<div class= "card text-center">
+  <div class="card-title">
+    <h1><%= @post.subject %></h1>
+  </div>
 
-<p><%= link_to 'Back to overview', posts_path %></p>
+  <p><%= @post.updated_at.strftime("%d-%m-%Y %H:%M:%S") %></p>
+  <h3><%= @author.username %></h3>
+  <div class="card-description">
+    <p><%= @post.content %></p>
+    <p><%= link_to "Write a request to this Post", new_post_request_path(@post), class: "make btn btn-success" %></p>
+
+  </div>
+</div>
 
 
-<p><%= link_to "Write a request to this Post", new_post_request_path(@post) %></p>
+
+
+<p class="text-center"><%= link_to 'Back to overview', posts_path %></p>
+
+
+</div>

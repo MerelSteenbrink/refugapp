@@ -1,9 +1,34 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise  :database_authenticatable, :registerable, 
-          :recoverable, :rememberable, :trackable, :validatable,
-          :omniauthable, omniauth_providers: [:facebook]
+
+  #== Constants =========================================
+
+  devise  :database_authenticatable, :registerable,
+  :recoverable, :rememberable, :trackable, :validatable,
+  :omniauthable, omniauth_providers: [:facebook]
+
+  #== Attributes ========================================
+
+  #== Extensions ========================================
+  mount_uploader :photo, PhotoUploader
+
+  #== Relationships ======================================
+
+  has_many :posts, foreign_key: :author_id, dependent: :destroy
+  has_many :received_requests, class_name: 'Request', through: :posts, dependent: :destroy
+  has_many :sent_requests, class_name: 'Request', foreign_key: :messenger_id, dependent: :destroy
+
+  #== Validations =========================================
+
+  validates :username, uniqueness: true, if: :username
+  validates :kind, :inclusion => {in: ["dutchie", "refugee"]}, if: :kind
+
+  #== Scopes ==============================================
+
+  #== Callbacks ===========================================
+
+  #== Class methods =======================================
 
   def self.find_for_facebook_oauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -19,9 +44,14 @@ class User < ActiveRecord::Base
     end
   end
 
-  has_many :posts, foreign_key: :author_id
-  has_many :received_requests, class_name: 'Request', through: :posts
-  has_many :sent_requests, class_name: 'Request', foreign_key: :messenger_id
-
+  #== Instance methods ========================================
+  def full_picture
+    if self.photo.file != nil  
+      self.photo_url
+    elsif self.picture  
+      self.picture
+    else 
+      ""     
+    end
+  end
 end
-# fix

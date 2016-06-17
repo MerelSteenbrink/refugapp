@@ -1,0 +1,29 @@
+<div class="wrapper">
+  <div class="profile">
+    <h3>Edit your profile </h3>
+    <div class="profile-info">
+      <div>
+
+        <%= simple_form_for @user, url: profile_path(@user) do |f| %>
+        <%= f.input :username %>
+        <%= f.input :first_name  %>
+        <%= f.input :last_name  %>
+        <% if @user.kind == nil  %>
+        <p>I am a:
+          <div class="radio-buttons">
+            <%= f.collection_radio_buttons :kind, [['dutchie', 'dutchie'] ,['refugee', 'refugee']],:first, :last %>
+          </div>
+        </p>
+        <% end  %>
+        <%= f.input :description  %>
+        <%= f.input :email  %>
+        <%= cl_image_tag @user.full_picture  %>
+        <%= f.input :photo  %>
+        <%= f.input :photo_cache, as: :hidden  %>
+        <%= f.submit %>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>

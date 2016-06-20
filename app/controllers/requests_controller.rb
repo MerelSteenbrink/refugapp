@@ -6,7 +6,8 @@ class RequestsController < ApplicationController
   def new
     @request = Request.new
     @post = Post.find(params[:post_id])
-    @author = User.find(@post.author_id)
+    @author = @post.author
+
   end
 
   def create
@@ -14,8 +15,8 @@ class RequestsController < ApplicationController
     @request.messenger_id = current_user[:id]
     @request.status =  "pending"
     @request.post_id = @post.id
-    if @request.save
-      redirect_to posts_path()
+    if @request.save!
+      redirect_to dashboard_root_path()
     else
       render :new
     end

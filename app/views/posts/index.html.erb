@@ -11,6 +11,18 @@
       <br>
       <h1>POSTS</h1>
       <p><%= link_to 'Make a post!', new_post_path, class:"btn btn-danger btn-lg" %></p>
+
+      <!-- HERE -->
+      <%= form_tag(controller: "posts", action: "index", method: "get", class: "nifty_form") do %>
+      <%= label_tag(:q, "Search for:") %>
+
+      <%= check_box_tag(:category) %>
+<%= label_tag(:category, "Category") %>
+
+      <%= text_field_tag(:q) %>
+      <%= submit_tag("Search") %>
+      <% end %>
+
       <div class="card-wrapper">
         <div class="container">
           <div class="row">

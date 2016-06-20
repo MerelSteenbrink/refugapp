@@ -36,7 +36,16 @@
     var marker = new google.maps.Marker({
       position: myLatLng,
       map: map,
-      title: 'Hello World!'
+      icon: {
+        path: google.maps.SymbolPath.CIRCLE,
+        fillOpacity: 0.7,
+        fillColor: '#5F9CCE',
+        strokeOpacity: 1.0,
+        strokeColor: '#5F9CCE',
+        strokeWeight: 3.0,
+        scale: 40 //pixels
+      }
+
     });
   })
 </script>

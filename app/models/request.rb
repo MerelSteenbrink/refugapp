@@ -19,4 +19,12 @@ class Request < ActiveRecord::Base
     end
   end
 
+  def user_agent
+
+  end
+
+  def messenger
+    User.find(messenger_id).title
+  end
+
 end

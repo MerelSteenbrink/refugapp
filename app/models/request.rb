@@ -22,9 +22,4 @@ class Request < ActiveRecord::Base
   def user_agent
 
   end
-
-  def messenger
-    User.find(messenger_id).title
-  end
-
 end

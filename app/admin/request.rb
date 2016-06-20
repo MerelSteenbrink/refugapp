@@ -12,7 +12,11 @@ index do
   column :id
   column :message
   column :status
-  column :messenger
+
+  column :messenger do |request|
+    link_to request.messenger.title, admin_user_path(request.messenger)
+  end
+
   column :post_id
   column :created_at
 

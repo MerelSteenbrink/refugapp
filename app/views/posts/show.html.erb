@@ -5,7 +5,7 @@
     </div>
 
     <p><%= @post.updated_at.strftime("%d-%m-%Y %H:%M:%S") %></p>
-    <h3><%= @author.username %></h3>
+    <h3><%= link_to @author.username, user_path(@author) %></h3>
     <div class="card-description">
       <p><%= @post.content %></p>
       <p><%= link_to "Write a request to this Post", new_post_request_path(@post), class: "make btn btn-success" %></p>

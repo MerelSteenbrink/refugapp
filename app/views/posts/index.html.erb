@@ -19,7 +19,8 @@
               <div class= "card">
                 <div class="card-title"><h2><%= link_to post.subject, post_path(post) %></h2> </div>
                 <p><%= post.updated_at.strftime("%d-%m-%Y %H:%M:%S") %></p>
-                <p><%= User.find(post.author_id).username %></p>
+                <p><%= link_to post.author.title, user_path(post.author) %></p>
+
                 <div class="card-description">
                   <p><%= post.content %></p>
                   <p><%= link_to "Write a request to this Post", new_post_request_path(post), class: "make btn btn-success" %></p>

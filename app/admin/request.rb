@@ -1,52 +1,22 @@
 ActiveAdmin.register Request do
 
-# See permitted parameters documentation:
-# https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-#
-# permit_params :message, :status
+  actions :all, except: [:new, :create, :edit, :update]
 
-actions :all, except: [:edit, :update]
+  index do
+    selectable_column
+    column :id
+    column :message
+    column :status
 
-index do
-  selectable_column
-  column :id
-  column :message
-  column :status
-
-  column :messenger do |request|
-    link_to request.messenger.title, admin_user_path(request.messenger)
-  end
-
-  column :post_id
-  column :created_at
-
-
-  actions
-end
-
-form do |f|
-    f.inputs "Request" do
-      f.input :message
-      f.input :status
+  # Add the link to the messenger of a request, as ActiveAdmin was not giving this by default
+    column :messenger do |request|
+      link_to request.messenger.title, admin_user_path(request.messenger)
     end
 
-    f.actions
+    column :post_id
+    column :created_at
+
+    actions
   end
-
-  permit_params :name, :email, :admin
-
-# show do
-#   h3 request.subject
-
-# end
-
-# or
-#
-# permit_params do
-#   permitted = [:permitted, :attributes]
-#   permitted << :other if params[:action] == 'create' && current_user.admin?
-#   permitted
-# end
-
 
 end

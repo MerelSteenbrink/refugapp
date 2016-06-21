@@ -1,12 +1,8 @@
 ActiveAdmin.register User do
 
-# See permitted parameters documentation:
-# https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-#
-
   permit_params :admin
 
-  actions :all, except: [:update, :edit]
+  actions :all, except: [:new, :create, :update, :edit, :destroy]
 
   index do
     selectable_column
@@ -21,39 +17,32 @@ ActiveAdmin.register User do
     column :admin
     column :last_sign_in_at
 
+    # Implement default actions in the index
     actions defaults: true do |user|
-      link_to 'Make admin', admin_admin_user_path(user), method: :patch unless user.admin?
+      (link_to 'Make admin', admin_admin_user_path(user), method: :patch) +
+      (link_to 'Delete user', delete_user_admin_user_path(user), method: :delete) unless user.admin?
     end
+
   end
 
+# Make a custom action to make another user an admin
   action_item :admin, only: :show do
     link_to 'Make admin', admin_admin_user_path(user), method: :patch unless user.admin?
   end
 
- form do |f|
-    f.inputs "User" do
-      f.input :admin
-    end
-
-    f.actions
-  end
-
-   member_action :admin, method: :patch do
+  member_action :admin, method: :patch do
     resource.update(admin: true)
     redirect_to resource_path, notice: "Set as admin"
   end
 
+# Make a custom action to delete every other user except other admins
+  action_item :delete_user, only: :show do
+    link_to 'Delete user', delete_user_admin_user_path(user), method: :delete unless user.admin?
+  end
 
-
-
-#
-# or
-#
-# permit_params do
-#   permitted = [:permitted, :attributes]
-#   permitted << :other if params[:action] == 'create' && current_user.admin?
-#   permitted
-# end
-
+  member_action :delete_user, method: :delete do
+    resource.destroy
+    redirect_to admin_users_path, notice: "You deleted this user"
+  end
 
 end

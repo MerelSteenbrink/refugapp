@@ -2,7 +2,6 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
   def index
-
     @kind = params[:kind]
     @category = params[:category]
 
@@ -28,6 +27,7 @@ class PostsController < ApplicationController
     if @category && @category != "all"
       @posts = @posts.where(category: @category)
     end
+
 
 
 

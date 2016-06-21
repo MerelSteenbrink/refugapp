@@ -19,7 +19,7 @@
 
   <div class="banner posts" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), ;">
     <div class="banner-content">
-        <h1>POSTS</h1>
+      <h1>POSTS</h1>
       <div class="card-wrapper">
         <div class="container">
           <div class="row">
@@ -31,8 +31,9 @@
                 <p><%= User.find(post.author_id).username %></p>
                 <div class="card-description">
                   <p><%= post.content %></p>
+                  <% if post.button_valid?(current_user) %>
                   <p><%= link_to "Write a request to this Post", new_post_request_path(post), class: "make btn btn-success" %></p>
-
+                  <% end %>
                 </div>
               </div>
             </div>
@@ -41,7 +42,7 @@
           </div>
         </div>
       </div>
-        <%= link_to "SEE ALL POSTS", posts_path(), class:"btn btn-danger btn-lg" %>
-      </div>
-
+      <%= link_to "SEE ALL POSTS", posts_path(), class:"btn btn-danger btn-lg" %>
     </div>
+
+  </div>

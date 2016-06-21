@@ -19,6 +19,9 @@ class User < ActiveRecord::Base
   has_many :received_requests, class_name: 'Request', through: :posts, dependent: :destroy
   has_many :sent_requests, class_name: 'Request', foreign_key: :messenger_id, dependent: :destroy
 
+  accepts_nested_attributes_for :posts, :received_requests, :sent_requests
+
+
   #== Validations =========================================
 
   validates :username, uniqueness: true, if: :username

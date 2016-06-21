@@ -19,4 +19,7 @@ class Request < ActiveRecord::Base
     end
   end
 
+  def user_agent
+
+  end
 end

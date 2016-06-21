@@ -14,6 +14,9 @@
   <div class="text-center">
   <h1 class="text-center">New request:</h1>
     <%= form_for [@post, @request] do |f| %>
+      <% if @request.errors.any? %>
+        <div class="alert alert-warning alert-request"> <%= @request.errors.messages.first[1].join %> </div>
+      <% end %>
     <p><%= f.text_area :message ,:class => 'message' %></p>
     <p><%= f.submit :class => 'btn btn-success' %></p>
     <% end %>

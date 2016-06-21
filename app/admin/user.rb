@@ -15,19 +15,18 @@ ActiveAdmin.register User do
     column :city
     column :description
     column :admin
-    column :last_sign_in_at
 
     # Implement default actions in the index
     actions defaults: true do |user|
-      (link_to 'Make admin', admin_admin_user_path(user), method: :patch) +
-      (link_to 'Delete user', delete_user_admin_user_path(user), method: :delete) unless user.admin?
+      (link_to 'Make admin', admin_admin_user_path(user), method: :patch) + " " +
+      (link_to 'Delete user', delete_user_admin_user_path(user), method: :delete, data: {confirm: "Are you sure to delete #{user.title}?"})  unless user.admin?
     end
 
   end
 
 # Make a custom action to make another user an admin
   action_item :admin, only: :show do
-    link_to 'Make admin', admin_admin_user_path(user), method: :patch unless user.admin?
+    link_to 'Make admin  ', admin_admin_user_path(user), method: :patch unless user.admin?
   end
 
   member_action :admin, method: :patch do
@@ -37,12 +36,19 @@ ActiveAdmin.register User do
 
 # Make a custom action to delete every other user except other admins
   action_item :delete_user, only: :show do
-    link_to 'Delete user', delete_user_admin_user_path(user), method: :delete unless user.admin?
+    link_to 'Delete user  ', delete_user_admin_user_path(user), method: :delete, data: {confirm: "Are you sure to delete this #{user.title}?"} unless user.admin?
   end
 
   member_action :delete_user, method: :delete do
     resource.destroy
     redirect_to admin_users_path, notice: "You deleted this user"
   end
+
+  filter :email
+  filter :username
+  filter :city
+  filter :description
+  filter :kind
+  filter :admin
 
 end

@@ -23,8 +23,9 @@
 
                 <div class="card-description">
                   <p><%= post.content %></p>
+                  <% if current_user && current_user != post.author %>
                   <p><%= link_to "Write a request to this Post", new_post_request_path(post), class: "make btn btn-success" %></p>
-
+                  <% end %>
                 </div>
               </div>
             </div>

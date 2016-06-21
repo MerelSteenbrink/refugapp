@@ -11,6 +11,7 @@ class PostsController < ApplicationController
       @posts = @postsall.select { |post| User.find(post.author_id).kind == 'dutchie' }
     end
 
+    raise 'goodmrongint sunshine !'
     @posties = @posts.sort_by{ |post| post[:updated_at] }.reverse
 
 

@@ -10,7 +10,18 @@ class Post < ActiveRecord::Base
   geocoded_by :address
   after_validation :geocode, if: :postal_code_changed?
 
- private
+  def button_valid?
+    if current_user && current_user != self.author &&
+      self.received_requests.each do |request|
+        if request.messenger_id == current_user.id
+          return false
+        end
+      end
+    end
+  end
+
+
+  private
 
   def address
     "#{postal_code} #{city} Netherlands"

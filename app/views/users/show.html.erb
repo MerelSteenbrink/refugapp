@@ -15,7 +15,7 @@
 <div class="dashboard-card right-card">
           <div class="subject"> <%= link_to post.subject, post_path(post) %></div>
           <%= post.content %> <br> <br>
-          <% if post.author.kind != current_user.kind %>
+          <% if current_user && post.author.kind != current_user.kind %>
           <%= link_to "send a request", new_post_request_path(post), class: "btn btn-warning" %>
 
           <% end %>

@@ -10,13 +10,11 @@ class Post < ActiveRecord::Base
   geocoded_by :address
   after_validation :geocode, if: :postal_code_changed?
 
-  def button_valid?
-    if current_user && current_user != self.author &&
-      self.received_requests.each do |request|
-        if request.messenger_id == current_user.id
-          return false
-        end
-      end
+  def button_valid?(current_user)
+    if current_user &&
+      current_user != self.author &&
+      self.received_requests.select{ |req| req.messenger_id == current_user.id} == nil
+      return true
     end
   end
 

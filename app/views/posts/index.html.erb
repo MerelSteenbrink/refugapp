@@ -11,6 +11,20 @@
       <br>
       <h1>POSTS</h1>
       <p><%= link_to 'Make a post!', new_post_path, class:"btn btn-danger btn-lg" %></p>
+
+      <!-- FILTER THE RESULTS -->
+      <%= link_to "Refugee", posts_path(kind: 'refugee', category: @category), class: filter_kind_css_class('refugee') %>
+      <%= link_to "Dutchie", posts_path(kind: 'dutchie', category: @category), class: filter_kind_css_class('dutchie') %>
+      <%= link_to "All", posts_path(kind: 'all', category: @category), class: filter_kind_css_class('all') %>
+
+      <%= link_to "Skills", posts_path(category: 'skills', kind: @kind), class: filter_category_css_class('skills') %>
+
+      <%= link_to "Social", posts_path(category: 'social', kind: @kind), class: filter_category_css_class('social') %>
+
+      <%= link_to "Languages", posts_path(category: 'languages', kind: @kind), class: filter_category_css_class('languages') %>
+
+      <%= link_to "All", posts_path(category: 'all', kind: @kind), class: filter_category_css_class('all') %>
+
       <div class="card-wrapper">
         <div class="container">
           <div class="row">

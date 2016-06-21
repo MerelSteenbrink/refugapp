@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   def home
-    @postsall= Post.all
+
+### This commented part is just in case we only want to display the dutchie to the refugees and the other way around
 
 =begin
        if !current_user
@@ -12,7 +13,7 @@ class PagesController < ApplicationController
         end
 =end
 
-    @posts = @postsall
+    @posts = Post.all
     @posties = @posts.sort_by{ |post| post[:updated_at] }.reverse
   end
 end

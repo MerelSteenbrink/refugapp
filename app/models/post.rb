@@ -12,19 +12,20 @@ class Post < ActiveRecord::Base
 
   def button_valid?(current_user)
     if current_user &&
-       current_user != self.author &&
-      self.received_requests.select{ |req| req.messenger_id == current_user.id} == []
-      return true
-    else
-      return false
-    end
+     current_user != self.author &&
+     current_user.kind != self.author.kind &&
+     self.received_requests.select{ |req| req.messenger_id == current_user.id} == []
+     return true
+   else
+    return false
   end
+end
 
 
-  private
+private
 
-  def address
-    "#{postal_code} #{city} Netherlands"
-  end
+def address
+  "#{postal_code} #{city} Netherlands"
+end
 
 end

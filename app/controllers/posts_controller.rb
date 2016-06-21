@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
   def index
-    @postsall= Post.all
+### This commented part is just in case we only want to display the dutchie to the refugees and the other way around
 
 =begin
 if !current_user
@@ -14,7 +14,7 @@ if !current_user
     end
 =end
 
-    @posts = @postsall
+    @posts = Post.all
     @posties = @posts.sort_by{ |post| post[:updated_at] }.reverse
 
 

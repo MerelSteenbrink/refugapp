@@ -18,8 +18,11 @@
         <%= f.input :email  %>
         <%= f.input :description  %>
         <%= f.input :city %>
-        <%= cl_image_tag @user.full_picture  %>
-        <%= f.input :photo  %>
+         <%= cl_image_tag @user.full_picture, class: "active avatar-large"  %>
+         <div class="upload-preview">
+          <img class="avatar-large"/>
+        </div>
+        <%= f.input :photo, class: "file", name: "photo"  %>
         <%= f.input :photo_cache, as: :hidden  %>
         <%= f.submit %>
         <% end %>

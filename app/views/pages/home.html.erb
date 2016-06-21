@@ -31,7 +31,7 @@
                 <p><%= User.find(post.author_id).username %></p>
                 <div class="card-description">
                   <p><%= post.content %></p>
-                  <% if post.button_valid(current_user) %>
+                  <% if post.button_valid?(current_user) %>
                   <p><%= link_to "Write a request to this Post", new_post_request_path(post), class: "make btn btn-success" %></p>
                   <% end %>
                 </div>

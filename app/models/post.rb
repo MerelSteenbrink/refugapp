@@ -12,9 +12,11 @@ class Post < ActiveRecord::Base
 
   def button_valid?(current_user)
     if current_user &&
-      current_user != self.author &&
-      self.received_requests.select{ |req| req.messenger_id == current_user.id} == nil
+       current_user != self.author &&
+      self.received_requests.select{ |req| req.messenger_id == current_user.id} == []
       return true
+    else
+      return false
     end
   end
 

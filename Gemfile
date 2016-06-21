@@ -15,6 +15,9 @@ gem 'redis'
 gem 'omniauth-facebook'
 gem 'cloudinary'
 gem 'carrierwave'
+gem "geocoder"
+gem "gmaps4rails"
+gem 'enumerize'
 
 gem 'sass-rails'
 gem 'jquery-rails'
@@ -23,10 +26,9 @@ gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
-
 gem "coffee-rails"
-gem "geocoder"
-gem "gmaps4rails"
+
+
 
 gem 'activeadmin', github: 'activeadmin'
 

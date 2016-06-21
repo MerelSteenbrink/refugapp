@@ -24,7 +24,7 @@
         <%= f.submit %>
         <% end %>
 
-        <%= link_to "delete profile", edit_user_registration_path, :confirm => "Are your sure you want to delete your profile?", method: :delete  %>
+        <%= link_to "delete profile", edit_user_registration_path, data: {confirm: "Are your sure you want to delete your profile?"}, method: :delete  %>
 
       </div>
     </div>

@@ -5,6 +5,9 @@ class SharedStory < ActiveRecord::Base
 
 #== Instance methods ========================================
 
+  validates :title, :story, :member, :author, presence: { message: "can't be blank" }
+  validates :title, length: {maximum: 30}
+  validates :story, length: {maximum: 600}
 
 
 end

@@ -1,15 +1,19 @@
 <div class="wrapper">
-<h1>Write a story</h1>
-<p>
-  <%=  simple_form_for [@story] do |f| %>
+  <h1>Write a story</h1>
+  <p>
+    <%=  simple_form_for [@story] do |f| %>
 
-<%= f.input :title %>
-<%= f.input :story %>
- <%= f.collection_select :member_id, current_user.connections, :id, :title %>
-<%= f.submit %>
+    <% if @story.errors.any? %>
+    <div class="alert alert-warning"> <%= @story.errors.messages.first[1].join %> </div>
+    <% end %>
 
-<% end %>
-</p>
+    <%= f.input :title %>
+    <%= f.input :story %>
+    <%= f.collection_select :member_id, current_user.connections, :id, :title %>
+    <%= f.submit %>
+
+    <% end %>
+  </p>
 
 </div>
 

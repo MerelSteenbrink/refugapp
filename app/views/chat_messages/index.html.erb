@@ -8,7 +8,8 @@
   <% @chat_messages.each do |chat_message| %>
     <li>
       <p>
-        <b><%= User.find(chat_message.user_id).title %>:</b>tl
+      <%= raise "peerd" %>
+        <b><%= User.find(chat_message.user_id).title %>:</b>
         <%= chat_message.content %>
       </p>
     </li>

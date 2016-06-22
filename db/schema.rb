@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160620092624) do
+ActiveRecord::Schema.define(version: 20160622091252) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,15 @@ ActiveRecord::Schema.define(version: 20160620092624) do
   add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace", using: :btree
   add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
 
+  create_table "chat_messages", force: :cascade do |t|
+    t.text     "content"
+    t.integer  "request_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "chat_messages", ["request_id"], name: "index_chat_messages_on_request_id", using: :btree
+
   create_table "posts", force: :cascade do |t|
     t.string   "subject"
     t.text     "content"
@@ -41,6 +50,7 @@ ActiveRecord::Schema.define(version: 20160620092624) do
     t.float    "longitude"
     t.string   "postal_code"
     t.string   "city"
+    t.string   "category"
   end
 
   create_table "requests", force: :cascade do |t|
@@ -86,5 +96,6 @@ ActiveRecord::Schema.define(version: 20160620092624) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "chat_messages", "requests"
   add_foreign_key "requests", "posts"
 end

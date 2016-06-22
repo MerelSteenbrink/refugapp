@@ -31,7 +31,7 @@ class SharedStoriesController < ApplicationController
   end
 
   def story_params
-    params.require(:shared_story).permit(:title, :story, :member)
+    params.require(:shared_story).permit(:title, :story, :member_id)
   end
 
 end

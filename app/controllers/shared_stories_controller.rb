@@ -17,7 +17,7 @@ class SharedStoriesController < ApplicationController
     @story = SharedStory.new(story_params)
     @story.author = current_user
 
-    if @story.save!
+    if @story.save
       redirect_to shared_story_path(@story)
     else
       render :new

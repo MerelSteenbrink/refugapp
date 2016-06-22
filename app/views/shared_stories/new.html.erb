@@ -1,0 +1,15 @@
+<div class="wrapper">
+<h1>Write a story</h1>
+<p>
+  <%=  simple_form_for [@story] do |f| %>
+
+<%= f.input :title %>
+<%= f.input :story %>
+
+<%= f.submit %>
+
+<% end %>
+</p>
+
+</div>
+

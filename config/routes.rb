@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :destroy]
 
+  resources :shared_stories, only: [:index, :show, :new, :create]
+
   resources :posts, only: [:index, :show, :new, :create] do
     resources :requests, only: [:new, :create]
   end

@@ -16,7 +16,7 @@ class RequestsController < ApplicationController
     @request.messenger_id = current_user[:id]
     @request.status =  "pending"
     @request.post_id = @post.id
-    if @request.save!
+    if @request.save
       redirect_to dashboard_root_path()
     else
       render :new

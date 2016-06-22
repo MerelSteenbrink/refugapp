@@ -10,6 +10,12 @@
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
 
+     <div class="navbar-wagon-item navbar-wagon-link">
+      <%= link_to shared_stories_path() do%>
+      <i class="fa fa-paper-plane"></i>
+      <% end  %>
+    </div>
+
     <!-- Notification -->
     <div class="navbar-wagon-item navbar-wagon-link">
       <%= link_to dashboard_root_path() do%>

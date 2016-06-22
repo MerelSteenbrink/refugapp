@@ -3,4 +3,10 @@
 //= require bootstrap-sprockets
 //= require underscore
 //= require gmaps/google
-//= require_tree .
+//= require image-picker
+
+// YOUR JS
+
+//= require profiles
+//= require shared_stories
+

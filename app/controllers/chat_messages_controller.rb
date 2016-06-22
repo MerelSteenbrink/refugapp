@@ -2,6 +2,7 @@ class ChatMessagesController < ApplicationController
   before_action :set_request
 
     def index
+
       @chat_messages = @request.chat_messages.all
       # update_read_status unless @chat_messages.empty?
       #Dit misschien nog even uitzoeken heo en wat:::
@@ -10,11 +11,12 @@ class ChatMessagesController < ApplicationController
     end
 
     def create
+      @post = @request.post
       @chat_message = ChatMessage.new(chat_message_params)
       @chat_message.request_id = @request.id
       @chat_message.user_id = current_user.id
       if @chat_message.save!
-        redirect_to post_request_chat_messages_path(@request)
+        redirect_to post_request_chat_messages_path(@post, @request)
       end
     end
 

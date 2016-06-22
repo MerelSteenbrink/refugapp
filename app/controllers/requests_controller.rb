@@ -1,3 +1,4 @@
+
 class RequestsController < ApplicationController
 
   before_action :find_post, only: [:new, :create]

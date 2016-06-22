@@ -1,0 +1,23 @@
+<div class="wrapper">
+
+<h1>Chat History:</h1>
+
+<%= link_to 'Back', dashboard_root_path %>
+
+<ul>
+  <% @chat_messages.each do |chat_message| %>
+    <li>
+      <p>
+        <b><%= User.find(chat_message.user_id).title %>:</b>tl
+        <%= chat_message.content %>
+      </p>
+    </li>
+  <% end %>
+</ul>
+
+<%= simple_form_for [@request, @chat_message], url: post_request_chat_messages_path, html: {method: :post } do |f| %>
+  <%= f.input :content %>
+  <%= f.submit %>
+<% end %>
+
+</div>

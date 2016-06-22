@@ -13,8 +13,8 @@ class ChatMessagesController < ApplicationController
     def create
       @post = @request.post
       @chat_message = ChatMessage.new(chat_message_params)
-      @chat_message.request_id = @request.id
       @chat_message.user_id = current_user.id
+      @chat_message.request_id = @request.id
       if @chat_message.save!
         redirect_to post_request_chat_messages_path(@post, @request)
       end

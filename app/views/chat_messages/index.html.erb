@@ -1,24 +1,39 @@
 <div class="wrapper">
+  <div class="container">
+    <div class="row">
+    <div class="col-xs-12 col-lg-6 col-lg-offset-3 chatblock">
+        <h1>Your Chat</h1>
 
-<h1>Chat History:</h1>
+        <ul>
+        <li><b><%= User.find(@request.messenger_id).title %>:</b>
+        <%= @request.message %></li>
+          <% @chat_messages.each do |chat_message| %>
+          <li>
+            <p>
 
-<%= link_to 'Back', dashboard_root_path %>
+              <% if chat_message.user_id == current_user.id %>
+              <div class ="you">
+                <b>You:</b>
+                <%= chat_message.content %>
+              </div>
+              <% else %>
+              <div class="response">
+                <b><%= User.find(chat_message.user_id).title %>:</b>
+                <%= chat_message.content %>
+              </div>
+              <% end %>
+            </p>
+          </li>
+          <% end %>
+        </ul>
 
-<ul>
-  <% @chat_messages.each do |chat_message| %>
-    <li>
-      <p>
-      <%= raise "peerd" %>
-        <b><%= User.find(chat_message.user_id).title %>:</b>
-        <%= chat_message.content %>
-      </p>
-    </li>
-  <% end %>
-</ul>
+        <%= simple_form_for [@request, @chat_message], url: post_request_chat_messages_path, html: {method: :post } do |f| %>
+        <%= f.input :content %>
+        <%= f.submit %>
+        <% end %>
 
-<%= simple_form_for [@request, @chat_message], url: post_request_chat_messages_path, html: {method: :post } do |f| %>
-  <%= f.input :content %>
-  <%= f.submit %>
-<% end %>
-
+        <%= link_to 'Back', dashboard_root_path %>
+      </div>
+    </div>
+  </div>
 </div>

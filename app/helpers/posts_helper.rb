@@ -2,7 +2,7 @@ module PostsHelper
 
 
   def filter_kind_css_class(filter_kind)
-    css_class = "btn btn-danger"
+    css_class = "btn btn-default btn-block btn-lg"
 
     # if the button is active/ selected add the class active to the button
     if filter_kind == @kind
@@ -13,7 +13,7 @@ module PostsHelper
 
 
   def filter_category_css_class(filter_category)
-    css_class = "btn btn-warning"
+    css_class = "btn btn-default btn-lg"
 
     # if the button is active/ selected add the class active to the button
     if filter_category == @category

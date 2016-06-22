@@ -11,6 +11,9 @@
 
   </div>
 
-<%= link_to "Back to all stories", shared_stories_path %>
-<%= link_to "Write a story", new_shared_story_path  %>
+<%= link_to "Back to all stories", shared_stories_path %> <br>
+
+<% if current_user %>
+  <%= link_to "Write a story", new_shared_story_path  %>
+<% end %>
 </div>

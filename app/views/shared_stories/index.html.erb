@@ -19,7 +19,9 @@
 <hr>
 
   <% end %>
+  <% if current_user %>
+     <%= link_to "Write a story", new_shared_story_path  %>
+  <% end %>
 
-  <%= link_to "Write a story", new_shared_story_path  %>
 
 </div>

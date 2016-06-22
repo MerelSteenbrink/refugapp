@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :destroy]
 
   resources :posts, only: [:index, :show, :new, :create] do
-    resources :requests, only: [:new, :create]
+    resources :requests, only: [:new, :create] do
+      resources :chat_messages, only: [:index, :create]
+    end
   end
 
   namespace :dashboard do

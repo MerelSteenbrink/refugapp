@@ -1,6 +1,10 @@
 <div class="dashboard-card left-card">
           <div class="subject">reaction to: <%=link_to request.post.subject, post_path(request.post) %></div>
-          <%= request.message %> <br> <br>
+          <%= request.message %>
+          <br>
+          <%= link_to "chatti chatti!",
+          post_request_chat_messages_path(request.post, request) %>
+          <br> <br>
 
             <!-- Show status of request -->
             <% if request.status == "pending" %>

@@ -59,9 +59,9 @@ class User < ActiveRecord::Base
   end
 
   def title
-    if self.username != "" || nil
+    if self.username != "" && !self.username.nil?
       self.username
-    elsif self.first_name != "" || nil
+    elsif self.first_name != "" && !self.first_name.nil?
       self.first_name
     else
       "Anonymous"

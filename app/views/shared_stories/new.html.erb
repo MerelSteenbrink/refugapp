@@ -1,0 +1,23 @@
+<div class="wrapper">
+  <h1>Write a story</h1>
+  <p>
+    <%=  simple_form_for [@story] do |f| %>
+
+    <% if @story.errors.any? %>
+    <div class="alert alert-warning"> <%= @story.errors.messages.first[1].join %> </div>
+    <% end %>
+
+    <%= f.input :title %>
+    <%= f.input :story %>
+    <%= f.collection_select :member_id, current_user.connections, :id, :title %>
+    <%#= select_tag "member_id", options_for_select(current_user.connections.map { |connection| [connection.title, connection.id, "data-img-src" => connection.full_picture] }), multiple: false, class: "avatar" %>
+    <br>
+    <%= f.submit %>
+
+    <% end %>
+  </p>
+
+</div>
+
+
+

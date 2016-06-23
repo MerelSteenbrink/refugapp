@@ -124,6 +124,8 @@ GEM
       activesupport (>= 3.2, < 5)
     hashie (3.4.4)
     i18n (0.7.0)
+    image-picker-rails (0.2.4)
+      railties (>= 3.0)
     inherited_resources (1.6.0)
       actionpack (>= 3.2, < 5)
       has_scope (~> 0.6.0.rc)
@@ -283,6 +285,7 @@ DEPENDENCIES
   font-awesome-sass
   geocoder
   gmaps4rails
+  image-picker-rails
   jbuilder (~> 2.0)
   jquery-rails
   omniauth-facebook

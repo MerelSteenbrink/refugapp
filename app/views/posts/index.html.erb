@@ -13,17 +13,23 @@
       <p><%= link_to 'Make a post!', new_post_path, class:"btn btn-danger btn-lg" %></p>
 
       <!-- FILTER THE RESULTS -->
-      <%= link_to "Refugee", posts_path(kind: 'refugee', category: @category), class: filter_kind_css_class('refugee') %>
-      <%= link_to "Dutchie", posts_path(kind: 'dutchie', category: @category), class: filter_kind_css_class('dutchie') %>
-      <%= link_to "All", posts_path(kind: 'all', category: @category), class: filter_kind_css_class('all') %>
+      <div>
+        <%= link_to "Refugee", posts_path(kind: 'refugee', category: @category), class: filter_kind_css_class('refugee') %>
 
-      <%= link_to "Skills", posts_path(category: 'skills', kind: @kind), class: filter_category_css_class('skills') %>
+        <%= link_to "Dutchie", posts_path(kind: 'dutchie', category: @category), class: filter_kind_css_class('dutchie') %>
 
-      <%= link_to "Social", posts_path(category: 'social', kind: @kind), class: filter_category_css_class('social') %>
+        <%= link_to "All", posts_path(kind: 'all', category: @category), class: filter_kind_css_class('all') %>
+      </div>
 
-      <%= link_to "Languages", posts_path(category: 'languages', kind: @kind), class: filter_category_css_class('languages') %>
+      <div>
+        <%= link_to "Skills", posts_path(category: 'skills', kind: @kind), class: filter_category_css_class('skills') %>
 
-      <%= link_to "All", posts_path(category: 'all', kind: @kind), class: filter_category_css_class('all') %>
+        <%= link_to "Social", posts_path(category: 'social', kind: @kind), class: filter_category_css_class('social') %>
+
+        <%= link_to "Languages", posts_path(category: 'languages', kind: @kind), class: filter_category_css_class('languages') %>
+
+        <%= link_to "All", posts_path(category: 'all', kind: @kind), class: filter_category_css_class('all') %>
+      </div>
 
       <div class="card-wrapper">
         <div class="container">
@@ -53,7 +59,7 @@
   </div>
 </div>
 
-<div id="map" style="width: 100%; height: 600px;"></div>
+<div id="map" style="width: 100%; height: 400px;"></div>
 
 
 <!-- This is the code for the map -->
@@ -61,10 +67,18 @@
 <%= javascript_tag do %>
 $(document).on('ready', function() {
 handler = Gmaps.build('Google');
-handler.buildMap({ internal: { id: 'map' } }, function(){
+handler.buildMap({
+internal: { id: 'map' },
+provider: {
+zoom: 8,
+center:   new google.maps.LatLng(52.3702, 4.8952),
+styles: window.mapStyle
+}
+},
+function(){
 markers = handler.addMarkers(<%= raw @markers.to_json %>);
 handler.bounds.extendWith(markers);
-handler.fitMapToBounds();
+<!-- handler.fitMapToBounds(); -->
 });
 })
 <% end %>

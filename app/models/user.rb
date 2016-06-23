@@ -19,6 +19,10 @@ class User < ActiveRecord::Base
   has_many :received_requests, class_name: 'Request', through: :posts, dependent: :destroy
   has_many :sent_requests, class_name: 'Request', foreign_key: :messenger_id, dependent: :destroy
 
+  has_many :shared_stories
+  has_many :written_stories, class_name: 'SharedStory', foreign_key: :author_id
+  has_many :joined_stories, class_name: 'SharedStory', foreign_key: :member_id
+
   accepts_nested_attributes_for :posts, :received_requests, :sent_requests
 
 
@@ -58,6 +62,8 @@ class User < ActiveRecord::Base
     end
   end
 
+# This method will return the username of an user, when he doesn't have this it
+# will return the first name and else "anonymous"
   def title
     if self.username != "" && !self.username.nil?
       self.username
@@ -68,4 +74,33 @@ class User < ActiveRecord::Base
     end
 
   end
+
+# This instancemethod will return all the stories where a user is either a member or a author
+  def shared_stories
+    self.joined_stories + self.written_stories
+  end
+
+
+  def requests
+    self.sent_requests + self.received_requests
+  end
+
+# This instancemethod will return all the connections
+# This are people that you sent or received a request to or from which has the status accepted
+  def connections
+    connections = []
+    self.requests.each do |request|
+      if request.status == "accepted"
+        if request.post.author == self
+          connections << request.messenger
+        else
+          connections << request.post.author
+        end
+      end
+    end
+    connections
+  end
+
+
 end
+

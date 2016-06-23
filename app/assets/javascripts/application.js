@@ -3,4 +3,8 @@
 //= require bootstrap-sprockets
 //= require underscore
 //= require gmaps/google
-//= require_tree .
+
+// YOUR JS
+
+//= require profiles
+//= require map_style

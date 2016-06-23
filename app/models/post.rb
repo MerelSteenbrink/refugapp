@@ -7,6 +7,7 @@ class Post < ActiveRecord::Base
   belongs_to :author,  class_name: 'User', foreign_key: :author_id
 
 
+
   accepts_nested_attributes_for :received_requests
 
   validates :subject, :content, :author_id, :postal_code, :city, :category, presence: true

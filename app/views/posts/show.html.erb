@@ -29,7 +29,8 @@
 
     var map = new google.maps.Map(document.getElementById('post_map'), {
       zoom: 15,
-      center: myLatLng
+      center: myLatLng,
+      styles: window.mapStyle
     });
 
     var marker = new google.maps.Marker({

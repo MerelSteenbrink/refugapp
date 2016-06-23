@@ -28,6 +28,7 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 gem "coffee-rails"
 gem 'image-picker-rails'
+gem 'hover-rails'
 
 
 

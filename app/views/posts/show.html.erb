@@ -4,13 +4,16 @@
       <h1><%= @post.subject %></h1>
     </div>
 
-    <p><%= @post.updated_at.strftime("%d-%m-%Y %H:%M:%S") %></p>
-    <h3><%= link_to @author.username, user_path(@author) %></h3>
+    <h3><%= link_to @author.username, user_path(@author) %>
+      <i> <%= time_ago_in_words(@post.created_at) %> ago</i>
+    </h3>
+
+
     <div class="card-description">
       <p><%= @post.content %></p>
       <% if @post.button_valid?(current_user) %>
-        <p><%= link_to "Write a request to this Post", new_post_request_path(@post), class: "make btn btn-success" %></p>
-        <% end %>
+      <p><%= link_to "Write aA request to this Post", new_post_request_path(@post), class: "make btn btn-success" %></p>
+      <% end %>
       <p><%= link_to 'Back to overview', posts_path %></p>
       <div id="post_map" style="width: 300px; height: 300px";></div>
 

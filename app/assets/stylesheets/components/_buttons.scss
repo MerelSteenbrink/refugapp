@@ -1,0 +1,145 @@
+.btn-orange {
+  padding: 10px;
+  border: 2px solid $orange;
+  color: $orange;
+  font-family: $base-font;
+  &:before {
+    background: $orange;
+  }
+}
+
+.btn-blue {
+  padding: 10px;
+  border: 2px solid $light-blue;
+  color: $light-blue;
+  font-family: $base-font;
+  &:before {
+    background: $light-blue;
+  }
+}
+
+.btn-black {
+  padding: 10px;
+  border: 2px solid black;
+  color: black;
+  font-family: $base-font;
+  background-color: white;
+  &:before {
+    background: black;
+  }
+}
+
+.btn-border-blue {
+  font-family: arial;
+  padding: 10px;
+  background-color: $light-blue;
+  font-family: $base-font;
+  &:hover {
+    background-color: rgba(0,0,0,0);
+    color: $light-blue;
+    transition: background-color 1s ease;
+  }
+  &:before {
+    background: $light-blue;
+  }
+}
+
+.btn-border-orange {
+  font-family: arial;
+  padding: 10px;
+  background-color: $orange;
+   font-family: $base-font;
+  &:hover {
+    color: $orange;
+    background-color: rgba(0,0,0,0);
+    transition: background-color 1s ease;
+  }
+  &:before {
+    background: $orange;
+  }
+}
+
+
+.btn-border-black {
+  font-family: arial;
+  padding: 10px;
+  background-color: black;
+   font-family: $base-font;
+   color: white;
+  &:hover {
+    background-color: rgba(0,0,0,0);
+    color: black;
+    transition: background-color 1s, color 1s ease;
+  }
+  &:before {
+    background: black;
+  }
+}
+
+
+.btn-orange-black {
+  margin: 10px;
+  border: 2px solid black;
+  background-color: $orange;
+  transition: background-color 0.4s, color 0.4s ease;
+  padding: 10px;
+  font-family: $base-font;
+  color: black;
+  &:hover {
+    background-color: black;
+    color: white;
+  }
+}
+
+.btn-blue-black {
+  margin: 10px;
+  border: 2px solid black;
+  background-color: $light-blue;
+  transition: background-color 0.4s, color 0.4s ease;
+  padding: 10px;
+  font-family: $base-font;
+  color: black;
+  &:hover {
+    background-color: black;
+    color: white;
+  }
+}
+
+.btn-simple-orange {
+  padding: 10px;
+  color: $orange;
+    font-family: $base-font;
+  &:hover {
+    color: $orange;
+  }
+  &:before {
+    background-color: $orange;
+    height: 1px;
+  }
+}
+
+.btn-simple-blue {
+  padding: 10px;
+  color: $light-blue;
+    font-family: $base-font;
+   &:hover {
+     color: $light-blue;
+  }
+  &:before {
+    background-color: $light-blue;
+    height: 1px;
+  }
+}
+
+.btn-simple-black {
+  padding: 10px;
+  color: black;
+    font-family: $base-font;
+  &:hover {
+     color: black;
+  }
+  &:before {
+    background-color: black;
+    height: 1px;
+  }
+}

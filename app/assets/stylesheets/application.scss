@@ -7,6 +7,8 @@
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "image-picker";
+@import 'hover';
 
 // Your CSS
 @import "layout/index";
@@ -17,9 +19,10 @@
 // Dashboard
 @import "dashboard.scss";
 
+
 // Linkjes zwart nu even hier, maar vergeet het niet zo weg te halen :)
 a {
-  color: black;
+  color: $dark-gray;
 }
 
 

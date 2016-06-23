@@ -1,9 +1,14 @@
+.string {
+  border: 0;
+  box-shadow: 0px;
+}
+
 .form {
 
   max-width: 550px;
   margin: 100px auto;
   background-color: $light-blue;
-  padding: 80px;
+  padding: 40px 80px;
   font-family: "Open Sans";
 }
 
@@ -24,4 +29,36 @@
 
 .form-inputs {
   margin-top: 20px;
+}
+
+.shared-links {
+  margin-top: 20px;
+}
+
+.collection_radio_buttons {
+  margin: 0px 5px;
+  font-weight: 400;
+}
+
+.preview-image {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}
+
+.fileUpload {
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+}
+.fileUpload input.upload {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  filter: alpha(opacity=0);
 }

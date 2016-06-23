@@ -1,32 +1,37 @@
-<h2>Sign up</h2>
+<div class="wrapper">
+  <div class="form">
+    <h3 class="form-title">SIGN UP </h3>
+    <div class="profile-info">
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-<%= f.error_notification %>
+      <div class="form-inputs">
+        <%= f.input :username, required: true, autofocus: true, placeholder: 'username', label: false %>
+        <%= f.input :first_name, required: true, placeholder: 'first name', label: false  %>
+        <%= f.input :last_name, required: true, placeholder: 'last name', label: false  %>
+        <p>I am a:
+          <div class="radio-buttons">
+            <%= f.collection_radio_buttons :kind, [['dutchie', 'dutchie'] ,['refugee', 'refugee']],:first, :last, required: true %>
+          </div>
+        </p>
+        <%= f.input :description, placeholder: 'write something about yourself', label: false  %>
+        <%= f.input :city, required: true, placeholder: 'city', label: false %>
+        <%= f.input :email, required: true, placeholder: 'e-mail', label: false  %>
+        <%= f.input :password, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+        <%= f.input :password_confirmation %>
+        <div class="upload-preview">
+          <img class="avatar-large"/>
+        </div>
+        <%= f.input :photo, class: "file", name: "photo"  %>
+        <%= f.input :photo_cache, as: :hidden  %>
+      </div>
 
-<div class="form-inputs">
-  <%= f.input :username, autofocus: true  %>
-  <%= f.input :first_name  %>
-  <%= f.input :last_name %>
-  <%= f.input :city %>
-  <p>I am a:
-    <div class="radio-buttons">
-      <%= f.collection_radio_buttons :kind, [['dutchie', 'dutchie'] ,['refugee', 'refugee']],:first, :last %>
+      <div class="form-actions">
+        <%= f.button :submit, "Sign up", class: "form-button" %>
+      </div>
+      <% end %>
+
+      <%= render "devise/shared/links" %>
     </div>
-  </p>
-  <%= f.input :description  %>
-  <%= f.input :email %>
-  <%= f.input :password, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-  <%= f.input :password_confirmation %>
-  <div class="upload-preview">
-    <img class="avatar-large"/>
   </div>
-  <%= f.input :photo, class: "file", name: "photo"  %>
-  <%= f.input :photo_cache, as: :hidden  %>
 </div>
-
-<div class="form-actions">
-  <%= f.button :submit, "Sign up" %>
-</div>
-<% end %>
-
-<%= render "devise/shared/links" %>

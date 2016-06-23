@@ -1,6 +1,3 @@
-// Place all the behaviors and hooks related to the matching controller here.
-// All this logic will automatically be available in application.js.
-
 $(document).ready(function(){
   var preview = $(".upload-preview img");
 
@@ -11,7 +8,8 @@ $(document).ready(function(){
    reader.onload = function(e){
      image_base64 = e.target.result;
      preview.attr("src", image_base64);
-      $(".active").addClass("hidden");
+      $(".facebook-preview").addClass("hidden");
+      $(".photo-preview").removeClass("hidden");
    };
    reader.readAsDataURL(file);
  });

@@ -1,5 +1,27 @@
 .form {
   text-align: center;
-  max-width: 80%;
-  margin: 0 auto;
+  max-width: 550px;
+  margin: 100px auto;
+  background-color: $light-blue;
+  padding: 80px;
+  font-family: "Open Sans";
+}
+
+.form-title {
+  font-weight: 700;
+  margin-bottom: 45px;
+  font-size: 45px;
+}
+
+.facebook-button {
+  background-color: #49639F;
+  padding: 10px 115px;
+  color: white; 
+}
+.facebook-button:hover {
+  color: white;
+}
+
+.form-inputs {
+  margin-top: 20px;
 }

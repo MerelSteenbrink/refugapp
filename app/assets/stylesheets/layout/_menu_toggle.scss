@@ -1,0 +1,48 @@
+.menu-toggle {
+  padding: 20px;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  z-index: 99999;
+  .fa {
+    font-size: 50px;
+  }
+  &:hover {
+    color: $orange;
+  }
+}
+
+.menu-links {
+  font-family: $base-font;
+  font-size: 32px;
+  // padding: 50px;
+  margin-top: 15%;
+}
+
+// .menu-overlay {
+//   height: 100%;
+//   width: 100%;
+//   position: relative;
+// }
+
+.overlay-content {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  height: 100%;
+  width: 100%;
+  // height: 80%;
+  text-align: center;
+  background-color: rgba(0, 199, 253, 0.95);
+  z-index: 999;
+  // overflow: auto;
+}
+
+#menu-slider {
+  display: none;
+}
+
+.small-font {
+  font-size: 22px;
+  font-weight: 500;
+}

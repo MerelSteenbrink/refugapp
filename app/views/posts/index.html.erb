@@ -43,7 +43,7 @@
                 </p>
 
                 <div class="card-description">
-                <p><%=h truncate(post.content, :length => 150) %></p>
+                <p><%= truncate(post.content, :length => 150) %></p>
                   <% if post.content.length > 150 %>
                   <p class="read_more_button"> <%= link_to "Read more", post_path(post) %></p>
                   <% end  %>

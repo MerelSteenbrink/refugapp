@@ -11,7 +11,8 @@ $(document).ready(function(){
    reader.onload = function(e){
      image_base64 = e.target.result;
      preview.attr("src", image_base64);
-      $(".active").addClass("hidden");
+      $(".facebook-preview").addClass("hidden");
+      $(".photo-preview").removeClass("hidden");
    };
    reader.readAsDataURL(file);
  });

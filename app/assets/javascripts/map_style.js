@@ -55,7 +55,7 @@ window.mapStyle = [
   "visibility": "on"
 },
 {
-  "color": "#ff8700"
+  "color": '#FF5600'
 }
 ]
 },
@@ -64,7 +64,7 @@ window.mapStyle = [
   "elementType": "geometry.fill",
   "stylers": [
   {
-  "color": "#ff6a00"
+  "color": '#FF5600'
 }
 ]
 },
@@ -91,7 +91,7 @@ window.mapStyle = [
   "elementType": "all",
   "stylers": [
   {
-  "color": "#2db2e8"
+  "color": '#00C7FD'
 },
 {
   "visibility": "on"

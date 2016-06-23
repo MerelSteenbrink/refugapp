@@ -8,3 +8,4 @@
 
 //= require profiles
 //= require map_style
+//= require upload_button

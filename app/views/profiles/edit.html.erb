@@ -15,18 +15,22 @@
           </div>
         </p>
         <% end  %>
-        <%= f.input :email, required: true, placeholder: 'e-mail', label: false  %>
         <%= f.input :description, placeholder: 'write a short description of yourself', label: false  %>
         <%= f.input :city, required: true, placeholder: 'city', label: false %>
+        <%= f.input :email, required: true, placeholder: 'e-mail', label: false  %>
         <%= cl_image_tag @user.full_picture, class: "facebook-preview preview-image"  %>
         <div class="upload-preview">
           <img class="hidden photo-preview preview-image"/>
         </div>
-        <%= f.input :photo, class: "file", name: "photo"  %>
-        <%= f.input :photo_cache, as: :hidden  %>
+
+        <div class="input-file-container">         
+          <%= f.input :photo, input_html: {class: "file input-file hidden"}, name: "photo"  %>
+          <label for="my-file" class="input-file-trigger form-button" tabindex="0">Select a file...</label>
+        </div>
+        <%= f.input :photo_cache, as: :hidden, input_html: {class: "form-button"}  %>
         <%= f.submit %>
         <% end %>
-        
+
         <div class="shared-links">
           <%= link_to "delete profile", edit_user_registration_path, data: {confirm: "Are your sure you want to delete your profile?"}, method: :delete  %>
         </div>

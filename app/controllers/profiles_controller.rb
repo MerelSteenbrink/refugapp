@@ -9,7 +9,7 @@ class ProfilesController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to profile_path(current_user)
+      redirect_to profile_path
     else
       render "edit"
     end

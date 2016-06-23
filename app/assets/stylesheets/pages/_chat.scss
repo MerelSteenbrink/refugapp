@@ -55,48 +55,12 @@ ul{
 .hesender{
   color: $blue;
 }
-// .msg p {
-//   font-size: 0.8rem;
-//   margin: 0 0 0.2rem 0;
-//   color: #777;
-// }
 
+.msg time {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-top: 3px;
 
-/* .other {
-  border-top-left-radius: 0px;
-  box-shadow: -1px 2px 0px #D4D4D4;
+  cursor: default;
+
 }
- */
-
-/* .you .msg {
-
-  border-bottom-right-radius: 0px;
-  box-shadow: 1px 2px 0px #D4D4D4;
-} */
-
-
-.msg .bubble-right:after{
-  z-index: 9002;
-display: block;
-content: "";
-position:absolute;
-bottom:-12px;
-right: 0;
-border-top: 0 #efefef solid;
-border-bottom: 12px transparent solid;
-border-right: 20px  #efefef solid;
-}
-
-
-.msg .bubble-left:after{
-z-index: 9002;
-display: block;
-content: "";
-position:absolute;
-bottom:-12px;
-left: 0;
-border-top: 0 #efefef solid;
-border-bottom: 12px transparent solid;
-border-left: 20px  #efefef solid;
-}
-

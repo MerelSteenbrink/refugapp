@@ -5,6 +5,7 @@
         <h1 class= "form-title">Your Chat</h1>
 <!-- col-xs-12 col-lg-6 col-lg-offset-3 chatblock
 -->
+
 <div class="chat">
   <ul>
     <% if @request.messenger_id == current_user.id %>
@@ -12,13 +13,16 @@
       <div class ="msg bubble-right">
         <div class="yousender"><b>You</b></div>
         <p><%= @request.message %></p>
+        <time><%=time_ago_in_words(@request.created_at) %> ago</time>
       </div>
     </li>
     <% else %>
     <li class= "other">
-      <div class="msg bubble-left">
+      <div class="msg">
         <div class="hesender "><p><b><%= User.find(@request.messenger_id).title %></b></p></div>
         <p><%= @request.message %></p>
+        <time><%=time_ago_in_words(@request.created_at) %> ago</time>
+
       </div>
     </li>
     <% end %>
@@ -26,16 +30,18 @@
     <% @chat_messages.each do |chat_message| %>
     <% if chat_message.user_id == current_user.id %>
     <li class= "you">
-      <div class ="msg bubble-right">
+      <div class ="msg ">
         <div class="yousender"><b>You</b></div>
         <p><%= chat_message.content %></p>
+        <time><%=time_ago_in_words(@request.created_at) %> ago</time>
       </div>
     </li>
     <% else %>
     <li class= "other">
-      <div class="msg bubble-left">
+      <div class="msg">
         <div class="hesender "><p><b><%= User.find(chat_message.user_id).title %>:</b></p></div>
         <p><%= chat_message.content %></p>
+        <time><%=time_ago_in_words(@request.created_at) %> ago</time>
       </div>
     </li>
     <% end %>

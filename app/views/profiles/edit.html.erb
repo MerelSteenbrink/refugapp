@@ -25,10 +25,10 @@
 
         <div class="input-file-container">         
           <%= f.input :photo, input_html: {class: "file input-file hidden"}, name: "photo"  %>
-          <label for="my-file" class="input-file-trigger form-button" tabindex="0">Select a file...</label>
+          <label for="my-file" class="input-file-trigger btn form-button" tabindex="0">select picture</label>
         </div>
-        <%= f.input :photo_cache, as: :hidden, input_html: {class: "form-button"}  %>
-        <%= f.submit %>
+        <%= f.input :photo_cache, as: :hidden  %>
+        <%= f.submit class: "form-button" %>
         <% end %>
 
         <div class="shared-links">

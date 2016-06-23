@@ -1,27 +1,25 @@
 <div class="wrapper">
-
   <h1>Shared Stories</h1>
 
   <% @shared_stories.each do |story| %>
   <div class="shared_story">
     <%= cl_image_tag story.author.full_picture, class: "avatar" %>
-       <%= link_to story.author.title, user_path(story.author) %>
+    <%= link_to story.author.title, user_path(story.author) %>
     <%= cl_image_tag story.member.full_picture, class: "avatar"%>
 
-      <%= link_to story.member.title, user_path(story.member) %> <br>
+    <%= link_to story.member.title, user_path(story.member) %> <br>
 
-      <%= story.title %> <br>
-      <%= story.story %> <br>
-      <%= link_to "See this story", shared_story_path(story) %>
+    <%= story.title %> <br>
+    <%= story.story %> <br>
+    <%= link_to "See this story", shared_story_path(story), class: "hvr-underline-from-center btn-simple-blue" %>
   </div>
 
 
-<hr>
+  <hr>
 
   <% end %>
   <% if current_user %>
-     <%= link_to "Write a story", new_shared_story_path  %>
+  <%= link_to "Write a story", new_shared_story_path, class: "hvr-sweep-to-right btn-orange"  %>
   <% end %>
-
 
 </div>

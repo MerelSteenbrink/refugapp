@@ -123,6 +123,8 @@ GEM
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
     hashie (3.4.4)
+    hover-rails (2.0.2)
+      railties (>= 3.2)
     i18n (0.7.0)
     image-picker-rails (0.2.4)
       railties (>= 3.0)
@@ -285,6 +287,7 @@ DEPENDENCIES
   font-awesome-sass
   geocoder
   gmaps4rails
+  hover-rails
   image-picker-rails
   jbuilder (~> 2.0)
   jquery-rails

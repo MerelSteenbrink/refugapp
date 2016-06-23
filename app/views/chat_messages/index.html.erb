@@ -1,39 +1,46 @@
 <div class="wrapper">
   <div class="container">
     <div class="row">
-    <div class="col-xs-12 col-lg-6 col-lg-offset-3 chatblock">
-        <h1>Your Chat</h1>
-
-        <ul>
-        <li><b><%= User.find(@request.messenger_id).title %>:</b>
-        <%= @request.message %></li>
-          <% @chat_messages.each do |chat_message| %>
-          <li>
-            <p>
-
-              <% if chat_message.user_id == current_user.id %>
-              <div class ="you">
-                <b>You:</b>
-                <%= chat_message.content %>
-              </div>
-              <% else %>
-              <div class="response">
-                <b><%= User.find(chat_message.user_id).title %>:</b>
-                <%= chat_message.content %>
-              </div>
-              <% end %>
-            </p>
-          </li>
-          <% end %>
-        </ul>
-
-        <%= simple_form_for [@request, @chat_message], url: post_request_chat_messages_path, html: {method: :post } do |f| %>
-        <%= f.input :content %>
-        <%= f.submit %>
-        <% end %>
-
-        <%= link_to 'Back', dashboard_root_path %>
+      <div class="form">
+        <h1 class= "form-title">Your Chat</h1>
+<!-- col-xs-12 col-lg-6 col-lg-offset-3 chatblock
+-->
+<div class="chat">
+  <ul>
+    <li>
+      <div class="msg">
+      <p><b><%= User.find(@request.messenger_id).title %>:</b></p>
+      <p> <%= @request.message %></p>
       </div>
-    </div>
-  </div>
+    </li>
+    <% @chat_messages.each do |chat_message| %>
+    <li>
+      <% if chat_message.user_id == current_user.id %>
+      <div class ="msg you">
+        <p><b>You:</b></p>
+        <p><%= chat_message.content %></p>
+      </div>
+      <% else %>
+      <div class="msg other">
+        <p><b><%= User.find(chat_message.user_id).title %>:</b></p>
+        <p><%= chat_message.content %></p>
+      </div>
+      <% end %>
+    </li>
+    <% end %>
+  </ul>
+</div>
+<%= simple_form_for [@request, @chat_message], url: post_request_chat_messages_path, html: {method: :post } do |f| %>
+<%= f.full_error :unlock_token %>
+
+<div class="form_inputs">
+  <%= f.input :content, autofocus: true, placeholder: 'Your message', label: false%>
+</div>
+<%= f.submit %>
+<% end %>
+
+<%= link_to 'Back', dashboard_root_path %>
+</div>
+</div>
+</div>
 </div>

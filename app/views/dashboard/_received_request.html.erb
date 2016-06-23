@@ -2,8 +2,6 @@
   <div class="subject"> reaction to: <%= link_to request.post.subject, post_path(request.post)  %> </div>
   <%= request.message %> <br>
   <div class="sender-request">- <%= link_to request.messenger.title, user_path(request.messenger) %></div>
-  <%= link_to "chatti chatti!",
-  post_request_chat_messages_path(request.post, request) %>
 
   <!-- Add accept or decline button -->
   <% if request.status == "pending" %>
@@ -11,6 +9,8 @@
   <%= link_to "decline", refuse_dashboard_received_request_path(request), method: :patch, class: "btn btn-danger" %>
   <% elsif request.status == "accepted" %>
   <div class="label label-success">You are now a match with <%= request.messenger.title %></div>
+
+  <%= link_to "Chat with him/her!",   post_request_chat_messages_path(request.post, request) %>
   <% elsif request.status == "declined" %>
   <div class="label label-danger">You declined this request</div>
   <% else %>

@@ -1,8 +1,62 @@
-.chatblock{
-  background-color: blue;
-  padding: 50px;
+ul
+{
+  list-style-type: none;
 }
 
-.chatblock h1{
-  text-align: center
+
+
+
+
+
+.chat {
+  display: flex;
+  list-style: none;
+  background: none;
+  margin: 0;
+  padding: 0 0 50px 0;
+  margin-top: 60px;
+  margin-bottom: 10px;
+}
+
+.chat li {
+  padding: 0.5rem;
+  overflow: hidden;
+  display: flex;
+  position: relative;
+}
+
+.msg {
+  background: white;
+  min-width: 50px;
+  padding: 10px;
+  border-radius: 2px;
+  box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.07);
+}
+
+.msg p {
+  font-size: 0.8rem;
+  margin: 0 0 0.2rem 0;
+  color: #777;
+}
+
+
+.other .msg {
+  border-top-left-radius: 0px;
+  box-shadow: -1px 2px 0px #D4D4D4;
+}
+
+.you {
+  align-items: flex-end;
+  display: -webkit-flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-end;
+
+
+}
+
+.you .msg {
+
+  border-bottom-right-radius: 0px;
+  box-shadow: 1px 2px 0px #D4D4D4;
 }

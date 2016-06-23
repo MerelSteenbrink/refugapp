@@ -1,3 +1,24 @@
+/* Fills on hover
+hvr-sweep-to-right btn-orange
+hvr-sweep-to-right btn-blue
+hvr-sweep-to-right btn-black
+
+filled and on hover underline (no fill)
+hvr-underline-from-center btn-border-blue
+hvr-underline-from-center btn-border-orange
+hvr-underline-from-center btn-border-black
+
+Simple: text and on hover underlined with effect
+hvr-underline-from-center btn-simple-blue
+hvr-underline-from-center ban-simple-orange
+hvr-underline-from-center btn-simple-black
+
+Changes from filled in color to filled in black
+btn btn-orange-black
+btn btn-blue-black
+*/
+
+
 .btn-orange {
   padding: 10px;
   border: 2px solid $orange;
@@ -141,5 +162,22 @@
   &:before {
     background-color: black;
     height: 1px;
+  }
+}
+
+
+
+
+.form-button {
+  margin: 10px;
+  border: 2px $dark-gray;
+  background-color: $orange;
+  transition: background-color 0.4s, color 0.4s ease;
+  padding: 10px;
+  font-family: $base-font;
+  color: white;
+  &:hover {
+    background-color: $dark-gray;
+    color: white;
   }
 }

@@ -1,39 +1,64 @@
 <div class="wrapper">
   <div class="container">
     <div class="row">
-    <div class="col-xs-12 col-lg-6 col-lg-offset-3 chatblock">
-        <h1>Your Chat</h1>
+      <div class="chatbox">
+        <h1 class= "form-title">Your Chat</h1>
+<!-- col-xs-12 col-lg-6 col-lg-offset-3 chatblock
+-->
 
-        <ul>
-        <li><b><%= User.find(@request.messenger_id).title %>:</b>
-        <%= @request.message %></li>
-          <% @chat_messages.each do |chat_message| %>
-          <li>
-            <p>
-
-              <% if chat_message.user_id == current_user.id %>
-              <div class ="you">
-                <b>You:</b>
-                <%= chat_message.content %>
-              </div>
-              <% else %>
-              <div class="response">
-                <b><%= User.find(chat_message.user_id).title %>:</b>
-                <%= chat_message.content %>
-              </div>
-              <% end %>
-            </p>
-          </li>
-          <% end %>
-        </ul>
-
-        <%= simple_form_for [@request, @chat_message], url: post_request_chat_messages_path, html: {method: :post } do |f| %>
-        <%= f.input :content %>
-        <%= f.submit %>
-        <% end %>
-
-        <%= link_to 'Back', dashboard_root_path %>
+<div class="chat">
+  <ul>
+    <% if @request.messenger_id == current_user.id %>
+    <li class= "you">
+      <div class ="msg bubble-right">
+        <div class="yousender"><b>You</b></div>
+        <p><%= @request.message %></p>
+        <time><%=time_ago_in_words(@request.created_at) %> ago</time>
       </div>
-    </div>
-  </div>
+    </li>
+    <% else %>
+    <li class= "other">
+      <div class="msg">
+        <div class="hesender "><p><b><%= User.find(@request.messenger_id).title %></b></p></div>
+        <p><%= @request.message %></p>
+        <time><%=time_ago_in_words(@request.created_at) %> ago</time>
+
+      </div>
+    </li>
+    <% end %>
+
+    <% @chat_messages.each do |chat_message| %>
+    <% if chat_message.user_id == current_user.id %>
+    <li class= "you">
+      <div class ="msg ">
+        <div class="yousender"><b>You</b></div>
+        <p><%= chat_message.content %></p>
+        <time><%=time_ago_in_words(chat_message.created_at) %> ago</time>
+      </div>
+    </li>
+    <% else %>
+    <li class= "other">
+      <div class="msg">
+        <div class="hesender "><p><b><%= User.find(chat_message.user_id).title %>:</b></p></div>
+        <p><%= chat_message.content %></p>
+        <time><%=time_ago_in_words(chat_message.created_at) %> ago</time>
+      </div>
+    </li>
+    <% end %>
+    <% end %>
+  </ul>
+</div>
+<%= simple_form_for [@request, @chat_message], url: post_request_chat_messages_path, html: {method: :post } do |f| %>
+<%= f.full_error :unlock_token %>
+
+<div class="form_inputs">
+  <%= f.input :content, autofocus: true, placeholder: 'Your message', label: false%>
+</div>
+<%= f.submit %>
+<% end %>
+
+<%= link_to 'Back', dashboard_root_path %>
+</div>
+</div>
+</div>
 </div>

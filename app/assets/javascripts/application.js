@@ -11,3 +11,4 @@
 //= require shared_stories
 //= require map_style
 //= require menu_toggle
+//= require upload_button

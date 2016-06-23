@@ -1,34 +1,39 @@
 <div class="wrapper">
-  <div class="profile">
-    <h3>Edit your profile </h3>
+  <div class="form">
+    <h3 class="form-title">EDIT YOUR PROFILE </h3>
     <div class="profile-info">
       <div>
 
         <%= simple_form_for @user, url: profile_path(@user) do |f| %>
-        <%= f.input :username %>
-        <%= f.input :first_name  %>
-        <%= f.input :last_name  %>
+        <%= f.input :username, required: true, autofocus: true, placeholder: 'username', label: false %>
+        <%= f.input :first_name, required: true, placeholder: 'first name', label: false  %>
+        <%= f.input :last_name, required: true, placeholder: 'last name', label: false  %>
         <% if @user.kind == nil  %>
         <p>I am a:
           <div class="radio-buttons">
-            <%= f.collection_radio_buttons :kind, [['dutchie', 'dutchie'] ,['refugee', 'refugee']],:first, :last %>
+            <%= f.collection_radio_buttons :kind, [['dutchie', 'dutchie'] ,['refugee', 'refugee']],:first, :last, required: true %>
           </div>
         </p>
         <% end  %>
-        <%= f.input :email  %>
-        <%= f.input :description  %>
-        <%= f.input :city %>
-         <%= cl_image_tag @user.full_picture, class: "active avatar-large"  %>
-         <div class="upload-preview">
-          <img class="avatar-large"/>
+        <%= f.input :description, placeholder: 'write a short description of yourself', label: false  %>
+        <%= f.input :city, required: true, placeholder: 'city', label: false %>
+        <%= f.input :email, required: true, placeholder: 'e-mail', label: false  %>
+        <%= cl_image_tag @user.full_picture, class: "facebook-preview preview-image"  %>
+        <div class="upload-preview">
+          <img class="hidden photo-preview preview-image"/>
         </div>
-        <%= f.input :photo, class: "file", name: "photo"  %>
+
+        <div class="input-file-container">         
+          <%= f.input :photo, input_html: {class: "file input-file hidden"}, name: "photo"  %>
+          <label for="my-file" class="input-file-trigger btn form-button" tabindex="0">select picture</label>
+        </div>
         <%= f.input :photo_cache, as: :hidden  %>
-        <%= f.submit %>
+        <%= f.submit class: "form-button" %>
         <% end %>
 
-        <%= link_to "delete profile", edit_user_registration_path, data: {confirm: "Are your sure you want to delete your profile?"}, method: :delete  %>
-
+        <div class="shared-links">
+          <%= link_to "delete profile", edit_user_registration_path, data: {confirm: "Are your sure you want to delete your profile?"}, method: :delete  %>
+        </div>
       </div>
     </div>
   </div>

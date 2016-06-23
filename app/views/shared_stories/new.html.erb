@@ -10,7 +10,7 @@
     <%= f.input :title %>
     <%= f.input :story %>
     <%#= f.collection_select :member_id, current_user.connections, :id, :title %>
-    <%= select_tag "shared_story[member_id]", options_for_select(current_user.connections.map { |connection| [connection.title, connection.id, { "data-img-src" => connection.full_picture, class: "image-thingy" }] }), class: "js-member-image-picker blabla" %>
+    <%= select_tag "shared_story[member_id]", options_for_select(current_user.connections.map { |connection| [connection.title, connection.id, { "data-img-src" => connection.full_picture }] }), class: "js-member-image-picker" %>
     <br>
     <%= f.submit %>
 

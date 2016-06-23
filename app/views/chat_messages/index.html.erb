@@ -7,28 +7,38 @@
 -->
 <div class="chat">
   <ul>
-    <li>
-      <div class="msg">
-        <b><%= User.find(@request.messenger_id).title %>:</b></p>
-        <p> <%= @request.message %></p>
-      </div>
-    </li>
-    <% @chat_messages.each do |chat_message| %>
-      <% if chat_message.user_id == current_user.id %>
+    <% if @request.messenger_id == current_user.id %>
     <li class= "you">
       <div class ="msg bubble-right">
-          <p><b>You:</b></p>
-          <p><%= chat_message.content %></p>
+        <div class="yousender"><b>You</b></div>
+        <p><%= @request.message %></p>
       </div>
     </li>
-      <% else %>
-      <li class= "other">
+    <% else %>
+    <li class= "other">
       <div class="msg bubble-left">
-        <p><b><%= User.find(chat_message.user_id).title %>:</b></p>
+        <div class="hesender "><p><b><%= User.find(@request.messenger_id).title %></b></p></div>
+        <p><%= @request.message %></p>
+      </div>
+    </li>
+    <% end %>
+
+    <% @chat_messages.each do |chat_message| %>
+    <% if chat_message.user_id == current_user.id %>
+    <li class= "you">
+      <div class ="msg bubble-right">
+        <div class="yousender"><b>You</b></div>
         <p><%= chat_message.content %></p>
       </div>
     </li>
-      <% end %>
+    <% else %>
+    <li class= "other">
+      <div class="msg bubble-left">
+        <div class="hesender "><p><b><%= User.find(chat_message.user_id).title %>:</b></p></div>
+        <p><%= chat_message.content %></p>
+      </div>
+    </li>
+    <% end %>
     <% end %>
   </ul>
 </div>

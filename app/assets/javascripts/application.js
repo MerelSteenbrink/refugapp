@@ -10,4 +10,3 @@
 //= require profiles
 //= require shared_stories
 //= require map_style
-//= require buttons

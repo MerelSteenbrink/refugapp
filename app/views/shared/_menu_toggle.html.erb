@@ -7,10 +7,19 @@
   <!-- the menu itself -->
   <div id="menu-slider" class="overlay-content">
     <div class="menu-links">
-      <a href="#" class="hvr-underline-from-center btn-simple-black">Posts</a> <br>
-    <a href="#" class="hvr-underline-from-center btn-simple-black">Shared Stories</a> <br>
-    <a href="#" class="hvr-underline-from-center btn-simple-black">My dashboard</a> <br>
-    <a href="#" class="hvr-underline-from-center btn-simple-black">About</a> <br>
+    <%= link_to "Home", root_path, class: "hvr-underline-from-center btn-simple-black" %> <br>
+      <%= link_to "All posts", posts_path, class: "hvr-underline-from-center btn-simple-black" %> <br>
+      <%= link_to "Shared stories", shared_stories_path, class: "hvr-underline-from-center btn-simple-black" %> <br>
+      <% if current_user %>
+        <%= link_to "My dashboard", dashboard_root_path, class: "hvr-underline-from-center btn-simple-black" %> <br>
+      <%= link_to "My profile", profile_path, class: "hvr-underline-from-center btn-simple-black" %> <br> <br>
+      <%= link_to "Log out",  destroy_user_session_path, method: :delete, class: "hvr-underline-from-center btn-simple-black small-font"  %>
+      <% else %>
+      <br> <br>
+        <%= link_to "Log in / Sign up", new_user_session_path, class: "hvr-sweep-to-right btn-orange"%>
+      <% end %>
+
+
     </div>
   </div>
 

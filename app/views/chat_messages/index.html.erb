@@ -1,7 +1,7 @@
 <div class="wrapper">
   <div class="container">
     <div class="row">
-      <div class="form">
+      <div class="chatbox">
         <h1 class= "form-title">Your Chat</h1>
 <!-- col-xs-12 col-lg-6 col-lg-offset-3 chatblock
 -->
@@ -9,24 +9,26 @@
   <ul>
     <li>
       <div class="msg">
-      <p><b><%= User.find(@request.messenger_id).title %>:</b></p>
-      <p> <%= @request.message %></p>
+        <b><%= User.find(@request.messenger_id).title %>:</b></p>
+        <p> <%= @request.message %></p>
       </div>
     </li>
     <% @chat_messages.each do |chat_message| %>
-    <li>
       <% if chat_message.user_id == current_user.id %>
-      <div class ="msg you">
-        <p><b>You:</b></p>
-        <p><%= chat_message.content %></p>
+    <li class= "you">
+      <div class ="msg bubble-right">
+          <p><b>You:</b></p>
+          <p><%= chat_message.content %></p>
       </div>
+    </li>
       <% else %>
-      <div class="msg other">
+      <li class= "other">
+      <div class="msg bubble-left">
         <p><b><%= User.find(chat_message.user_id).title %>:</b></p>
         <p><%= chat_message.content %></p>
       </div>
-      <% end %>
     </li>
+      <% end %>
     <% end %>
   </ul>
 </div>

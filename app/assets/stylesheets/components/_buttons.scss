@@ -69,7 +69,7 @@ btn btn-blue-black
   font-family: arial;
   padding: 10px;
   background-color: $orange;
-   font-family: $base-font;
+  font-family: $base-font;
   &:hover {
     color: $orange;
     background-color: rgba(0,0,0,0);
@@ -85,8 +85,8 @@ btn btn-blue-black
   font-family: arial;
   padding: 10px;
   background-color: black;
-   font-family: $base-font;
-   color: white;
+  font-family: $base-font;
+  color: white;
   &:hover {
     background-color: rgba(0,0,0,0);
     color: black;
@@ -129,7 +129,7 @@ btn btn-blue-black
 .btn-simple-orange {
   padding: 10px;
   color: $orange;
-    font-family: $base-font;
+  font-family: $base-font;
   &:hover {
     color: $orange;
   }
@@ -142,31 +142,28 @@ btn btn-blue-black
 .btn-simple-blue {
   padding: 10px;
   color: $light-blue;
-    font-family: $base-font;
-   &:hover {
-     color: $light-blue;
-  }
-  &:before {
-    background-color: $light-blue;
-    height: 1px;
-  }
+  font-family: $base-font;
+  &:hover {
+   color: $light-blue;
+ }
+ &:before {
+  background-color: $light-blue;
+  height: 1px;
+}
 }
 
 .btn-simple-black {
   padding: 10px;
   color: black;
-    font-family: $base-font;
+  font-family: $base-font;
   &:hover {
-     color: black;
-  }
-  &:before {
-    background-color: black;
-    height: 1px;
-  }
+   color: black;
+ }
+ &:before {
+  background-color: black;
+  height: 1px;
 }
-
-
-
+}
 
 .form-button {
   margin: 10px;
@@ -180,4 +177,17 @@ btn btn-blue-black
     background-color: $dark-gray;
     color: white;
   }
+}
+
+.facebook-button {
+  padding: 5px 0;
+  background-color: #49639F;
+  color: white; 
+  a {
+    text-decoration: none;
+  }
+}
+
+.facebook-button:hover {
+  color: white;
 }

@@ -2,7 +2,7 @@ class Request < ActiveRecord::Base
 
   belongs_to :post
   belongs_to :messenger, class_name: 'User', foreign_key: :messenger_id
-  has_many :chat_messages
+  has_many :chat_messages, dependent: :destroy
 
   validates :message, :status, :messenger_id, :post_id, presence: true
   validates :status, :inclusion => {in: ["pending", "accepted", "declined"], allow_nil: false}

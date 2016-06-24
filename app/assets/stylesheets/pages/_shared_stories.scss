@@ -1,0 +1,50 @@
+.wrapper-stories {
+  background-color: white;
+  margin-top: 0;
+  font-family: $base-font;
+  padding: 80px 40px;
+}
+
+.stories-card {
+  background-color: white;
+  border: 4px solid $orange;
+  padding: 40px;
+  margin: 20px 0px;
+  min-height: 372px;
+  position: relative;
+
+}
+
+.stories-title {
+  color: black;
+  text-decoration: none;
+
+}
+
+.stories-underline {
+  color: $orange;
+  text-decoration: underline;
+  text-align: center;
+  font-size: 32px;
+}
+
+.stories-underline-blue {
+  color: $light-blue;
+  text-decoration: underline;
+  text-align: center;
+  font-size: 20px;
+}
+
+.stories-story {
+  min-height: 150px;
+}
+
+.stories-center {
+  text-align: center;
+  margin: auto;
+}
+
+.stories-images {
+  position: absolute;
+  bottom: 30px;
+}

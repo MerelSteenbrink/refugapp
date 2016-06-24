@@ -14,7 +14,7 @@
             <%= f.collection_radio_buttons :kind, [['dutchie', 'dutchie'] ,['refugee', 'refugee']],:first, :last, required: true %>
           </div>
         </p>
-        <%= f.input :description, placeholder: 'write something about yourself', label: false  %>
+        <%= f.input :description, placeholder: 'write something about yourself', required: true, label: false  %>
         <%= f.input :city, required: true, placeholder: 'city', label: false %>
         <%= f.input :email, required: true, placeholder: 'e-mail', label: false  %>
         <%= f.input :password, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
@@ -23,7 +23,7 @@
           <img class="hidden photo-preview preview-image"/>
         </div>
 
-        <div class="input-file-container">         
+        <div class="input-file-container">
           <%= f.input :photo, input_html: {class: "file input-file hidden"}, name: "photo"  %>
           <label for="my-file" class="input-file-trigger btn form-button" tabindex="0">select picture</label>
         </div>

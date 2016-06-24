@@ -1,11 +1,12 @@
-body {
-  background-color: white !important;
-}
-
 .profile-body {
  width: 100%;
  background-color: $light-blue;
+  margin-bottom: 40px;
+}
 
+.wrapper-profile {
+  padding: 80px 40px;
+  background-color: white;
 }
 
 .profile-picture {
@@ -73,6 +74,7 @@ body {
   padding: 40px;
   background-color: $orange;
   color: white;
+  min-height: 300px;
   a:hover {
     color: $light-blue;
   }
@@ -81,6 +83,7 @@ body {
 .profile-posts {
   padding: 40px;
   background-color: white;
+  min-height: 300px;
 }
 
 .ruimte {

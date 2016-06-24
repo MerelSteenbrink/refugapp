@@ -1,9 +1,98 @@
-.top-div {
+.home-top {
   background-color: $light-blue;
-  height: 115px;
+  height: 90px;
+  position: relative;
+}
+
+.home-middle {
+  background-image: image-url("skew.svg");
+  background-repeat: no-repeat;
+  background-position: left-top;
+  background-size: 100% auto;
+  margin-top: -2px;
+  text-align: center;
+  min-height: 300px;
+}
+
+.diagonal-blue {
+  position: absolute;
+  top: 129px;
+  width: 100%;
+}
+
+.home-logo {
+  padding-top: 20px;
+}
+
+.home-tagline {
+  font-family: $base-font;
+  font-size: 20px;
+}
+
+.home-about {
+  text-align: center;
+  font-family: $base-font;
+  padding: 20px 100px;
+}
+
+.home-title {
+  color: black;
+  text-decoration: none;
+
+}
+
+.home-underline {
+  color: $light-blue;
+  text-decoration: underline;
+  text-align: center;
+}
+
+.home-middle {
+  background-image: url("skew.svg");
+  background-repeat: no-repeat;
+  background-position: left-top;
+  background-size: 100% auto;
+  margin-top: -1px;
+  text-align: center;
+  min-height: 300px;
+}
+
+.diagonal-blue {
+  position: absolute;
+  top: 129px;
+  width: 100%;
 }
 
 .center-div {
   background-color: white;
-  text-align: center;
+
 }
+
+.home-logo {
+  padding-top: 20px;
+}
+
+.home-tagline {
+  font-family: $base-font;
+  font-size: 20px;
+}
+
+.home-about {
+  text-align: center;
+  font-family: $base-font;
+  padding: 20px 100px;
+}
+
+.home-title {
+  color: black;
+  text-decoration: none;
+
+}
+
+.home-underline {
+  color: $light-blue;
+  text-decoration: underline;
+  text-align: center;
+  font-size: 32px;
+}
+

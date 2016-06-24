@@ -20,7 +20,7 @@ ul{
 
 .chat {
   overflow: auto;
-  height: 80vh;
+  height: 70vh;
   display: flex;
   background: none;
   margin: 0;
@@ -79,4 +79,8 @@ ul{
 
 .submit{
   float: right;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }

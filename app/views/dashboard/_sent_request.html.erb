@@ -1,14 +1,13 @@
 <div class="dashboard-card left-card">
-  <div class="subject">reaction to: <%=link_to request.post.subject, post_path(request.post) %></div>
+  <div class="subject">For: <%=link_to request.post.subject, post_path(request.post) %></div>
   <%= request.message %>
-  <br>
-  <br> <br>
+  <div class="sender-request">- <%= link_to request.messenger.title, user_path(request.messenger) %> <i> (<%= time_ago_in_words(request.created_at) %> ago)</i></div> <br>
 
   <!-- Show status of request -->
   <% if request.status == "pending" %>
   <div class="label label-warning"><%= request.post.author.title %> didn't respond yet!</div>
   <% elsif request.status == "accepted" %>
-  <div class="label label-success">You are a match with <%= request.post.author.title %> </div>
+  <div class="label label-success">Connected with <%= request.post.author.title %> </div>
   <br>
   <%= link_to "Chat with him/her!",
   post_request_chat_messages_path(request.post, request) %>
@@ -16,6 +15,8 @@
   <div class="label label-danger"><%= request.post.author.title %> declined your request</div>
   <% else %>
   <div class="wrong">Something went wrong</div>
-  <% end %> <br> <br>
-  <div class="created-at"> updated at <%= request.updated_at.strftime("%c") %></div> <br>
+  <% end %>
 </div>
+
+
+

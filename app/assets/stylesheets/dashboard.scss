@@ -1,10 +1,10 @@
 body {
-  font-family: Courier;
+  font-family: $base-font;
 }
 
 .text-center {
-text-align: center;
-  }
+  text-align: center;
+}
 
 .dashboard-wrapper {
 
@@ -13,24 +13,28 @@ text-align: center;
 .dashboard-banner {
   padding: 120px;
   height: 200px;
-  background-color: black;
-  color: rgba(250, 250, 0, 0.8);
+  background-color: white;
+  color: $orange;
 }
 
 .dashboard-container {
   display: flex;
   // justify-content: center;
+  h2 {
+    color: white;
+    text-align: center;
+  }
 }
 
 .dashboard-left {
   padding: 40px;
   flex: 1 1 auto;
-  // background-color: yellow;
+  background-color: $gray-dark;
 }
 
 .dashboard-right {
   padding: 40px;
-  background-color: rgba(250, 250, 0, 0.8);
+  background-color: $gray-light;
 }
 
 .dashboard-card {
@@ -59,6 +63,7 @@ text-align: center;
   }
   .right-card {
     background-color: white;
+
   }
 
   .post-card {

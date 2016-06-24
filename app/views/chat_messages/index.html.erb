@@ -1,10 +1,7 @@
 <div class="wrapper">
   <div class="container">
-    <div class="row">
-      <div class="chatbox">
-        <h1 class= "form-title">Your Chat</h1>
-<!-- col-xs-12 col-lg-6 col-lg-offset-3 chatblock
--->
+    <div class="chatbox">
+      <h1 class= "form-title">Your Chat</h1>
 
 <div class="chat">
   <ul>
@@ -52,13 +49,11 @@
 <%= f.full_error :unlock_token %>
 
 <div class="form_inputs">
-  <%= f.input :content, autofocus: true, placeholder: 'Your message', label: false%>
+  <%= f.input :content, autofocus: true, placeholder: 'Your message', label: false, class:"textinput"%>
 </div>
-<%= f.submit %>
+<%= f.submit 'Send', class: "btn btn-orange-black submit" %>
 <% end %>
 
-<%= link_to 'Back', dashboard_root_path %>
 </div>
-</div>
-</div>
+<%= link_to 'Back', dashboard_root_path, class:"hvr-sweep-to-right btn-orange" %>
 </div>

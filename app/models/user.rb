@@ -28,8 +28,13 @@ class User < ActiveRecord::Base
 
   #== Validations =========================================
 
-  validates :username, uniqueness: true, if: :username
-  validates :kind, :inclusion => {in: ["dutchie", "refugee"]}, if: :kind
+  validates :username, presence: true, uniqueness: true, if: :regular_signup_or_existing_user?
+  validates :first_name, presence: true, if: :regular_signup_or_existing_user?
+  validates :last_name, presence: true, if: :regular_signup_or_existing_user?
+  validates :kind, presence: true, inclusion: {in: ["dutchie", "refugee"]}, if: :regular_signup_or_existing_user?
+  validates :description, presence: true, if: :regular_signup_or_existing_user?
+  validates :city, presence: true, if: :regular_signup_or_existing_user?
+  validates :email, presence: true, uniqueness: true, if: :regular_signup_or_existing_user?
 
   #== Scopes ==============================================
 
@@ -62,8 +67,8 @@ class User < ActiveRecord::Base
     end
   end
 
-# This method will return the username of an user, when he doesn't have this it
-# will return the first name and else "anonymous"
+  # This method will return the username of an user, when he doesn't have this it
+  # will return the first name and else "anonymous"
   def title
     if self.username != "" && !self.username.nil?
       self.username
@@ -75,7 +80,7 @@ class User < ActiveRecord::Base
 
   end
 
-# This instancemethod will return all the stories where a user is either a member or a author
+  # This instancemethod will return all the stories where a user is either a member or a author
   def shared_stories
     self.joined_stories + self.written_stories
   end
@@ -85,8 +90,8 @@ class User < ActiveRecord::Base
     self.sent_requests + self.received_requests
   end
 
-# This instancemethod will return all the connections
-# This are people that you sent or received a request to or from which has the status accepted
+  # This instancemethod will return all the connections
+  # This are people that you sent or received a request to or from which has the status accepted
   def connections
     connections = []
     self.requests.each do |request|
@@ -101,6 +106,11 @@ class User < ActiveRecord::Base
     connections
   end
 
+  private
+
+  def regular_signup_or_existing_user?
+   (new_record? && provider.nil?) || persisted?
+ end
 
 end
 

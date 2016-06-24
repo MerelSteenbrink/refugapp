@@ -4,27 +4,18 @@
 }
 
 .form {
-
   max-width: 550px;
   margin: 100px auto;
   background-color: $light-blue;
   padding: 40px 80px;
   font-family: "Open Sans";
+  text-align: center;
 }
 
 .form-title {
   font-weight: 700;
   margin-bottom: 45px;
   font-size: 45px;
-}
-
-.facebook-button {
-  background-color: #49639F;
-  padding: 10px 115px;
-  color: white;
-}
-.facebook-button:hover {
-  color: white;
 }
 
 .form-inputs {

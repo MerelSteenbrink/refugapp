@@ -1,25 +1,55 @@
-
-<div class="wrapper">
-  <div class="text-center">
-    <h2>Het profiel van <%= @user.title %></h2>
-    <% if @user.full_picture %> <%= cl_image_tag @user.full_picture  %> <% end %>  <br>
-    <% if @user.description %> <%= @user.description %> <% end %> <br>
-    <% if @user.city %> I live in <%= @user.city %> <br> <% end %>
-    <%= @user.kind %>
-  </div>
-  <br><br>
-  <div class="posts">
-    <br>
-    <p class="text-center">Posts of <%= @user.title %></p>
-    <% @user.posts.reverse.take(3).each do |post| %>
-    <div class="dashboard-card right-card">
-      <div class="subject"> <%= link_to post.subject, post_path(post) %></div>
-      <%= post.content %> <br> <br>
-      <% if post.button_valid?(current_user) %>
-      <%= link_to "send a request", new_post_request_path(post), class: "btn btn-warning" %>
+<div class="wrapper-profile">
+<div class="profile-body">
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 col-xs-12">
+    <div class="profile-flex">
+      <%= cl_image_tag @user.full_picture, class: " profile-picture" %>
+    </div>
+    </div>
+    <div class="col-md-8 col-xs-12">
+      <div class="profile-content">
+      <h3 class="profile-underline"><span class="profile-title"><%= @user.title  %></span></h3>
+      <div class="profile-description"> <%= @user.description %> </div>
+      <user class="profile-city">I'm from <%= @user.city %></user> <br>
+      <% if @user == current_user %>
+      <%= link_to "EDIT", edit_profile_path, class: "hvr-underline-from-center btn-border-black ruimte"  %>
       <% end %>
-    </div> <br><br>
-    <% end %>
+    </div>
+    </div>
   </div>
+</div>
+</div>
+
+<div class="profile-links">
+  <div class="container profile-container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 ">
+        <div class="profile-stories">
+        <h3 class="profile-underline-blue"><span class="profile-title"> Latest stories with <%= @user.title %></span></h3>
+          <% if @user.shared_stories.length == 0 %>
+            This user doesn't have any stories yet.
+          <% else %>
+            <% @user.shared_stories.take(5).each do |story|%>
+            <%= link_to story.title, shared_stories_path(story) %> <br>
+            <% end %>
+          <% end %>
+    </div>
+      </div>
+      <div class=" col-xs-12 col-sm-6">
+         <div class="profile-posts">
+       <h3 class="profile-underline"><span class="profile-title"> Latest posts from <%= @user.title %></span></h3>
+       <% if @user.posts.length == 0 %>
+         This user hasn't written any posts yet.
+      <% else %>
+        <% @user.posts.take(5).each do |post|%>
+        <%= link_to post.subject, posts_path(post) %> <br>
+       <% end %>
+      <% end %>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
 </div>
 

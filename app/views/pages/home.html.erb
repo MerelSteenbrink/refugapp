@@ -17,7 +17,18 @@
       <p>Are you a Local? Get to now the newcomers in your city by exchanging skills! Discover how refugees can help you,m sen da request and.. connect! Or: a skill you want to share? Make a post and someone will find you!</p>
       <p>Are you a newcomer? Get to know the locals by offering your skills! Make a post and help a local with the things you are good at.
         Or: in need of some help? Look what the locals are offering and send a request!</p>
+      </div>
 
+      <div class="homepage-posts">
+        <div class="container-fluid">
+          <div class="row">
+            <% Post.all.each do |post|  %>
+            <div class="col-sm-12 col-md-6">
+              <%= post.subject  %>
+              <% end  %>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="home-about-top">

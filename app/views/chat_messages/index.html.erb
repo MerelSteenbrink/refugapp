@@ -2,7 +2,12 @@
   <div class="container">
     <div class="chatbox">
       <h1 class= "form-title">Your Chat with
-      <%= User.find(@chat_messages.select{ |x| x.user_id != current_user.id}.first.user_id).title  %>
+      <% if @request.messenger != current_user %>
+      <%= @request.messenger.title  %>
+      <% else %>
+      <%= @request.post.author.title %>
+      <% end %>
+
       </h1>
 
 <div class="chat">

@@ -10,7 +10,14 @@
     <div class="col-md-8 col-xs-12">
       <div class="profile-content">
       <h3 class="profile-underline"><span class="profile-title"><%= @user.title  %></span></h3>
-      <div class="profile-description"> <%= @user.description %> </div>
+      <div class="profile-description"> <% if @user.description.length > 0 %>
+            <%= @user.description %>
+          <% else %>
+            <br>
+            <div class="profile-please">
+              <%= @user.title %> doesn't have a description yet..
+            </div>
+        <% end %> </div>
       <user class="profile-city">I'm from <%= @user.city %></user> <br>
       <% if @user == current_user %>
       <%= link_to "EDIT", edit_profile_path, class: "hvr-underline-from-center btn-border-black ruimte"  %>
@@ -28,7 +35,7 @@
         <div class="profile-stories">
         <h3 class="profile-underline-blue"><span class="profile-title"> Latest stories with <%= @user.title %></span></h3>
           <% if @user.shared_stories.length == 0 %>
-            This user doesn't have any stories yet.
+            <%= @user.title %> doesn't have any stories yet.
           <% else %>
             <% @user.shared_stories.take(5).each do |story|%>
             <%= link_to story.title, shared_stories_path(story) %> <br>
@@ -40,7 +47,7 @@
          <div class="profile-posts">
        <h3 class="profile-underline"><span class="profile-title"> Latest posts from <%= @user.title %></span></h3>
        <% if @user.posts.length == 0 %>
-         This user hasn't written any posts yet.
+         <%= @user.title %> hasn't written any posts yet.
       <% else %>
         <% @user.posts.take(5).each do |post|%>
         <%= link_to post.subject, posts_path(post) %> <br>

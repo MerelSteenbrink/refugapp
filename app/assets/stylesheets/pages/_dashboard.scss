@@ -49,7 +49,7 @@
 .btn-accept {
   padding: 8px 15px;
   margin: 10px 20px;
-  background-color: rgba(0, 222, 60, 1);
+  background-color: $accepting-green;
   border-radius: 2px;
   &:hover {
     color: black;
@@ -59,7 +59,7 @@
 .btn-decline {
   padding: 8px 15px;
   margin: 10px 20px;
-  background-color: #ff0000;
+  background-color: $declining-red;
   border-radius: 2px;
   &:hover {
     color: black;
@@ -67,13 +67,13 @@
 }
 
 .label-accepted {
-  background-color: rgba(0, 222, 60, 1);
+  background-color: $accepting-green;
   padding: 8px 30px;
   margin: 0 20px;
 }
 
 .label-declined {
-  background-color: #ff0000;
+  background-color: $declining-red;
   padding: 8px 30px;
   margin: 0 20px;
 }

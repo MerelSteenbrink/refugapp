@@ -28,7 +28,7 @@ class User < ActiveRecord::Base
 
   #== Validations =========================================
 
-  validates :username, presence: true, uniqueness: true, if: :regular_signup_or_existing_user?
+  validates :username, presence: true, uniqueness: true, if: :regular_signup_or_existing_user?, length: {minimum: 3, maximum: 30}
   validates :first_name, presence: true, if: :regular_signup_or_existing_user?
   validates :last_name, presence: true, if: :regular_signup_or_existing_user?
   validates :kind, presence: true, inclusion: {in: ["dutchie", "refugee"]}, if: :regular_signup_or_existing_user?

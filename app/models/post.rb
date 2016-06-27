@@ -13,6 +13,8 @@ class Post < ActiveRecord::Base
   validates :subject, :content, :author_id, :postal_code, :city, :category, presence: true
 
   validates :subject, uniqueness: {scope: :author_id, message: "You've already made a post with this subject"}
+  validates :subject, length: {maximum: 30}
+  validates :content, length: {minimum: 80, maximum: 1000}
   validates_format_of :postal_code, with: /\A\d{4}\s?[a-zA-Z]{2}\z/i, :message => "Please fill in a right postal code"
 
   geocoded_by :address

@@ -6,6 +6,7 @@ Post.destroy_all
 Request.destroy_all
 ChatMessage.destroy_all
 
+
 # Users with kind = 'refugee'
 ru1 = User.create!(username: "Ricky", first_name: "Ricardo", last_name: "Del Mar", kind: "refugee", city: "Hoofddorp", email: "raindance@gmail.com", password: "password", password_confirmation: "password")
 ru2 = User.create!(username: "Zohra", first_name: "Zohra", last_name: "Tannous", kind: "refugee", city: "Roosendaal", email: "z.tannous@gmail.com", password: "password", password_confirmation: "password")
@@ -14,6 +15,7 @@ ru4 = User.create!(username: "Tuds", first_name: "Thomas", last_name: "Wilkinson
 ru5 = User.create!(username: "Amena01", first_name: "Amena", last_name: "Nour", kind: "refugee", city: "Den Haag", email: "amena01@gmail.com", password: "password", password_confirmation: "password")
 ru6 = User.create!(username: "batman", first_name: "Tarek", last_name: "Nour", kind: "refugee", city: "Den Haag", email: "t.nour@hotmail.com", password: "password", password_confirmation: "password")
 ru7= User.create!(username: "EssaKhattan", first_name: "Essa", last_name: "Khattan", kind: "refugee", city: "Utrecht", email: "essa_k@gmail.com", password: "password", password_confirmation: "password")
+
 
 # Users with kind = 'dutchie'
 du1 = User.create!(username: "Bastiaan22", first_name: "Bastiaan", last_name: "Overwater", kind: "dutchie", city: "Hoofddorp", email: "bas_de-beste@gmail.com", password: "password", password_confirmation: "password")
@@ -24,8 +26,8 @@ du5 = User.create!(username: "Noor", first_name: "Eleonore", last_name: "Van Den
 du6 = User.create!(username: "Stijn", first_name: "Stijn", last_name: "Janssen", kind: "dutchie", city: "Almere", email: "stijn_jj@gmail.com", password: "password", password_confirmation: "password")
 du7 = User.create!(username: "fleur_zozo", first_name: "Fleur", last_name: "Bieman", kind: "dutchie", city: "Amsterdam", email: "f.bieman@gmail.com", password: "password", password_confirmation: "password")
 
-# Posts
 
+# Posts
 p1 = Post.create!(subject: "Biking to Zaandam", content: "There are really nice windmills near Zaamdam. Let's take our bikes, explore the windmills and have lunch somewhere nearby during one of the upcoming weekends! Who is in?", author_id: du1.id, postal_code: "1505 CL", city: "Zaandam", category: "social")
 sleep 0.2
 p2 = Post.create!(subject: "Origami", content: "Is there anyone who knows a bit of origami? I started learning how to make some birds and really want to learn more! ", author_id: ru4.id, postal_code: "1066 VH", city: "Amsterdam", category: "skills")
@@ -53,6 +55,8 @@ r6 = Request.create!(message: "Building websites sounds awesome! I have been doi
 r7 = Request.create!(message: "Photography is one of my biggest hobbies! Let's meet and I can show you some tricks I have learned! Do you have time to meet next weekend?", status: "pending", messenger_id: du3.id, post_id: p7.id)
 r8 = Request.create!(message: "I have a recipe with soyasaus and tofy which is pretty nice. Do you want to meet sometime and cook together?", status: "pending", messenger_id: du6.id, post_id: p8.id)
 
+
 # Shared Stories
+s1 = SharedStory.create!(title: "Boat trip in Amsterdam", story: "I met Thomas for a drink at a local cafe in Amsterdam. Then he told me he had a friend who has a boat, so we decided to meet in the weekend for a trip around the canals. It was a beautiful day and we spent all afternoon on the boat. He seems to know Amsterdam better than I do and was a great tour guide! Highlight was that he even pointed out to me where I can fish bicycles out of the canal.", member_id: ru4.id, author_id: du7.id)
 
 

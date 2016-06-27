@@ -1,18 +1,19 @@
-<div class="dashboard-card left-card">
-  <div class="subject">For: <%=link_to request.post.subject, post_path(request.post) %></div>
+<div class="dashboard-card-left">
+  <div class="dashboard-subject">For: <%=link_to request.post.subject, post_path(request.post) %></div>
+   <div class="dashboard-small-card">
   <%= request.message %>
-  <div class="sender-request">- <%= link_to request.messenger.title, user_path(request.messenger) %> <i> (<%= time_ago_in_words(request.created_at) %> ago)</i></div> <br>
+  <div class="sender-request">- <%= link_to request.messenger.title, user_path(request.messenger) %> <i> (<%= time_ago_in_words(request.created_at) %> ago)</i></div></div> <br>
 
   <!-- Show status of request -->
   <% if request.status == "pending" %>
-  <div class="label label-warning"><%= request.post.author.title %> didn't respond yet!</div>
+  <div class="label label-pending"><%= request.post.author.title %> didn't respond yet!</div>
   <% elsif request.status == "accepted" %>
-  <div class="label label-success">Connected with <%= request.post.author.title %> </div>
-  <br>
-  <%= link_to "Chat with him/her!",
-  post_request_chat_messages_path(request.post, request) %>
+  <div class="label label-accepted">Connected with <%= request.post.author.title %> </div>
+  <br> <br>
+  <%= link_to "You can now chat with #{request.post.author.title}",
+  post_request_chat_messages_path(request.post, request), class: "hvr-underline-from-center btn-simple-black db-chat-button" %>
   <% elsif request.status == "declined" %>
-  <div class="label label-danger"><%= request.post.author.title %> declined your request</div>
+  <div class="label label-declined"><%= request.post.author.title %> declined your request</div>
   <% else %>
   <div class="wrong">Something went wrong</div>
   <% end %>

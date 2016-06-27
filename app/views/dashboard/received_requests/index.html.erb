@@ -1,6 +1,6 @@
 <div class="wrapper-dashboard">
 <div class="received_requests">
-  <% @received_requests.each do |request| %>
+  <% @received_requests.reverse.each do |request| %>
   <!-- render to show a received request -->
   <%= render "dashboard/received_request", request: request  %>
 

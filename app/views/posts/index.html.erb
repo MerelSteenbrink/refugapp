@@ -3,25 +3,25 @@
   <!-- FILTER THE RESULTS -->
   <span>
 
-  <div class="posts-selection">
-    <div class="posts-type-selection person-type">
-      <%= link_to "Refugee", posts_path(kind: 'refugee', category: @category), class: filter_kind_css_class('refugee') %>
+    <div class="posts-selection">
+      <div class="posts-type-selection person-type">
+        <%= link_to "Refugee", posts_path(kind: 'refugee', category: @category), class: filter_kind_css_class('refugee') %>
 
-      <%= link_to "Dutchie", posts_path(kind: 'dutchie', category: @category), class: filter_kind_css_class('dutchie') %>
+        <%= link_to "Dutchie", posts_path(kind: 'dutchie', category: @category), class: filter_kind_css_class('dutchie') %>
 
-      <%= link_to "All", posts_path(kind: 'all', category: @category), class: filter_kind_css_class('all') %>
+        <%= link_to "All", posts_path(kind: 'all', category: @category), class: filter_kind_css_class('all') %>
+      </div>
+
+      <div class="posts-type-selection category-type">
+        <%= link_to "Skills", posts_path(category: 'skills', kind: @kind), class: filter_category_css_class('skills') %>
+
+        <%= link_to "Social", posts_path(category: 'social', kind: @kind), class: filter_category_css_class('social') %>
+
+        <%= link_to "Languages", posts_path(category: 'languages', kind: @kind), class: filter_category_css_class('languages') %>
+
+        <%= link_to "All", posts_path(category: 'all', kind: @kind), class: filter_category_css_class('all') %>
+      </div>
     </div>
-
-    <div class="posts-type-selection category-type">
-      <%= link_to "Skills", posts_path(category: 'skills', kind: @kind), class: filter_category_css_class('skills') %>
-
-      <%= link_to "Social", posts_path(category: 'social', kind: @kind), class: filter_category_css_class('social') %>
-
-      <%= link_to "Languages", posts_path(category: 'languages', kind: @kind), class: filter_category_css_class('languages') %>
-
-      <%= link_to "All", posts_path(category: 'all', kind: @kind), class: filter_category_css_class('all') %>
-    </div>
-  </div>
   </span>
   <div class="container">
     <div class="row">
@@ -45,17 +45,17 @@
           </div>
           <div class="post-make">
             <% if post.button_valid?(current_user) %>
-            <p><%= link_to "Write a request to this Post", new_post_request_path(post), class: "hvr-sweep-to-right btn-black" %></p>
+            <p><%= link_to "Write a request to this Post", new_post_request_path(post), class: "hvr-underline-from-center btn-simple-black" %></p>
             <% end %>
           </div>
         </div>
       </div>
       <% end %>
     </div>
-  <% if current_user %>
-  <div class="posts-center">
-    <%= link_to 'Make a post!', new_post_path, class:"hvr-sweep-to-right btn-black" %>
-  </div>
+    <% if current_user %>
+    <div class="posts-center">
+      <%= link_to 'Make a post!', new_post_path, class:"hvr-sweep-to-right btn-black" %>
+    </div>
   </div>
   <% end %>
 </div>

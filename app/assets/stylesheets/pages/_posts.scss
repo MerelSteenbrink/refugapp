@@ -35,9 +35,8 @@
 .posts-selection {
   color: $orange;
   text-align: center;
-  font-size: 20px;
-  display: flex;
-  justify-content: space-between;
+  font-size: 16px;
+
 }
 
 .posts-underline-blue {
@@ -70,10 +69,8 @@
 
 .posts-type-selection {
   display: flex;
-  justify-content: center;
-  padding: 10px;
-
-}
+  padding-left: 18px;
+  }
 
 .post-ago {
   position: absolute;

@@ -53,7 +53,7 @@ r4 = Request.create!(message: "I am very interested! Can you also show me how yo
 r5 = Request.create!(message: "Let's meet! I am learning Dutch and can tell you some Arabic too.", status: "pending", messenger_id: ru5.id, post_id: p5.id)
 r6 = Request.create!(message: "Building websites sounds awesome! I have been doing some online courses and would really like to meet you. Are you organizing an event for many people or do you want to meet one on one?", status: "pending", messenger_id: du5.id, post_id: p6.id)
 r7 = Request.create!(message: "Photography is one of my biggest hobbies! Let's meet and I can show you some tricks I have learned! Do you have time to meet next weekend?", status: "pending", messenger_id: du3.id, post_id: p7.id)
-r8 = Request.create!(message: "I have a recipe with soyasaus and tofy which is pretty nice. Do you want to meet sometime and cook together?", status: "pending", messenger_id: du6.id, post_id: p8.id)
+r8 = Request.create!(message: "I have a recipe with soyasaus and tofu which is pretty nice. Do you want to meet sometime and cook together?", status: "pending", messenger_id: du6.id, post_id: p8.id)
 
 
 # Shared Stories

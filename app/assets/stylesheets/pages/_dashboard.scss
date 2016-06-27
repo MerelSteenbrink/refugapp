@@ -1,41 +1,39 @@
-body {
-  font-family: $base-font;
+
+.hallo {
+  height: 400px;
+  background-color: yellow;
 }
+
 
 .text-center {
   text-align: center;
 }
 
-.dashboard-wrapper {
-
-}
-
-.dashboard-banner {
-  padding: 120px;
-  height: 200px;
-  background-color: white;
-  color: $orange;
+.wrapper-dashboard {
+  padding: 80px 40px;
+  background-color: red;
 }
 
 .dashboard-container {
   display: flex;
   // justify-content: center;
-  h2 {
-    color: white;
-    text-align: center;
-  }
+  // h2 {
+  //   color: white;
+  //   text-align: center;
+  // }
 }
 
 .dashboard-left {
   padding: 40px;
   flex: 1 1 auto;
-  background-color: $gray-dark;
+  // background-color: $gray-dark;
 }
 
 .dashboard-right {
   padding: 40px;
   background-color: $gray-light;
 }
+
 
 .dashboard-card {
   padding: 10px;
@@ -73,3 +71,10 @@ body {
   .post-request-card {
     background-color: rgba(206, 206, 206, 1);
   }
+
+  // .dashboard-banner {
+//   padding: 120px;
+//   height: 200px;
+//   background-color: white;
+//   color: $orange;
+// }

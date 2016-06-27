@@ -38,7 +38,7 @@
             <%= @user.title %> doesn't have any stories yet.
           <% else %>
             <% @user.shared_stories.take(5).each do |story|%>
-            <%= link_to story.title, shared_stories_path(story) %> <br>
+            <%= link_to story.title, shared_story_path(story) %> <br>
             <% end %>
           <% end %>
     </div>
@@ -50,7 +50,7 @@
          <%= @user.title %> hasn't written any posts yet.
       <% else %>
         <% @user.posts.take(5).each do |post|%>
-        <%= link_to post.subject, posts_path(post) %> <br>
+        <%= link_to post.subject, post_path(post) %> <br>
        <% end %>
       <% end %>
     </div>

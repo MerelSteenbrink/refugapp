@@ -19,9 +19,9 @@ class User < ActiveRecord::Base
   has_many :received_requests, class_name: 'Request', through: :posts, dependent: :destroy
   has_many :sent_requests, class_name: 'Request', foreign_key: :messenger_id, dependent: :destroy
 
-  has_many :shared_stories
-  has_many :written_stories, class_name: 'SharedStory', foreign_key: :author_id, dependent: :destroy
-  has_many :joined_stories, class_name: 'SharedStory', foreign_key: :member_id, dependent: :destroy
+  has_many :shared_stories, dependent: :destroy
+  has_many :written_stories, class_name: 'SharedStory', foreign_key: :author_id
+  has_many :joined_stories, class_name: 'SharedStory', foreign_key: :member_id
 
   accepts_nested_attributes_for :posts, :received_requests, :sent_requests
 

@@ -1,7 +1,67 @@
-.posts {
-  background-image: url('https://images.unsplash.com/photo-1438183972690-6d4658e3290e?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=1317ea2f1e55d032e93afea068cb13ce');
-  background-size: 150%;
+.wrapper-posts {
+  background-color: white;
+  margin-top: 0;
+  font-family: $base-font;
+  padding: 80px 40px;
 }
+
+.posts-card {
+  background-color: white;
+  border: 4px solid $orange;
+  padding: 40px;
+  margin: 20px 0px;
+  min-height: 372px;
+  position: relative;
+
+}
+
+.posts-title {
+  color: black;
+  text-decoration: none;
+
+}
+
+.posts-underline {
+  color: $orange;
+  text-decoration: underline;
+  text-align: center;
+  font-size: 32px;
+}
+
+.posts-underline-blue {
+  color: $light-blue;
+  text-decoration: underline;
+  text-align: center;
+  font-size: 20px;
+}
+
+.posts-content {
+  min-height: 150px;
+}
+
+.posts-center {
+  text-align: center;
+  margin: auto;
+}
+
+.posts-images {
+  position: absolute;
+  bottom: 30px;
+}
+
+.posts-type-selection {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+
+}
+
+.post-ago {
+  position: absolute;
+  bottom: 24px;
+  right: 37px;
+}
+
 
 .single_map {
   box-shadow: 0px 4px 10px 2px rgba(0,0,0,0.75);
@@ -12,3 +72,18 @@
   box-shadow: 0px 4px 10px 2px rgba(0,0,0,0.75);
   margin-bottom: 50px;
 }
+
+
+.active-black{
+  background-color: rgba(0,0,0,0);
+    color: black;
+    transition: background-color 1s, color 1s ease;
+}
+
+
+.active-blue{
+  background-color: rgba(0,0,0,0);
+    color: $light-blue;
+    transition: background-color 1s, color 1s ease;
+}
+

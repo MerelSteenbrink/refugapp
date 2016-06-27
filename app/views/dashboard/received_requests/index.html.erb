@@ -1,5 +1,4 @@
-<%= render "dashboard/welcome", user: @user %>
-
+<div class="wrapper-dashboard">
 <div class="received_requests">
   <% @received_requests.each do |request| %>
   <!-- render to show a received request -->
@@ -8,4 +7,5 @@
   <% end %> <br>
 
  <%= link_to "Back to dashboard", dashboard_root_path %> <br>
+</div>
 </div>

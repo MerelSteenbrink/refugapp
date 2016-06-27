@@ -3,14 +3,13 @@
  <div class="dashboard-underline">
     <span class="dashboard-title"> <%= post.subject %></span>
   </div>
-  <br>
   <%= truncate(post.content, :length => 60) %>
         <% if post.content.length > 60 %>
-          <%= link_to "read more", post_path(post)   %>
+          <%= link_to "read more", dashboard_posts_path   %>
         <% end %>
 
 
-  <div class="sender-request"><i> (<%= time_ago_in_words(post.created_at) %> ago)</i></div>
+  <div class="created-at"><i> (<%= time_ago_in_words(post.created_at) %> ago)</i></div>
   <% requests = @received_requests.where(post: post) %>
   <br>
 
@@ -55,3 +54,5 @@
 
 
   </div>
+
+

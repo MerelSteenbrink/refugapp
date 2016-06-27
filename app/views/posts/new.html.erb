@@ -1,15 +1,16 @@
-<h1>New Post</h1>
-<p>
-  <%=  simple_form_for [@post] do |f| %>
+<div class="wrapper">
+  <div class="form">
+    <h3 class="form-title">New Post</h3>
+    <%=  simple_form_for [@post] do |f| %>
+    <%= f.input :subject, placeholder: "subject", label: false %>
+    <%= f.input :content, placeholder: "Write your post here", label: false%>
+    <%= f.input :city, input_html: {value: current_user.city || ""}, label: false %>
+    <%= f.input :postal_code, placeholder: "postalcode (1234AZ)", label: false %>
+    <%= f.input :category, placeholder: "choose a category", label:false %>
 
-<%= f.input :subject %>
-<%= f.input :content %>
-<%= f.input :city, input_html: {value: current_user.city || ""} %>
-<%= f.input :postal_code %>
-<%= f.input :category %>
+    <%= f.submit class: "form-button"  %>
 
-<%= f.submit %>
-
-<% end %>
-</p>
+    <% end %>
+  </div>
+</div>
 

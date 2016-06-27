@@ -35,7 +35,7 @@
 .posts-selection {
   color: $orange;
   text-align: center;
-  font-size: 16px;
+  font-size: 23px;
 
 }
 
@@ -103,3 +103,6 @@
     transition: background-color 1s, color 1s ease;
 }
 
+.make-post {
+  font-size: 30px;
+}

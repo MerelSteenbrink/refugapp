@@ -7,22 +7,22 @@ Request.destroy_all
 ChatMessage.destroy_all
 
 # Users with kind = 'refugee'
-ru1 = User.create(username: "Ricky", first_name: "Ricardo", last_name: "Del Mar", kind: "refugee", city: "Hoofddorp", email: "raindance@gmail.com", password: "password", password_confirmation: "password")
-ru2 = User.create(username: "Zohra", first_name: "Zohra", last_name: "Tannous", kind: "refugee", city: "Roosendaal", email: "z.tannous@gmail.com", password: "password", password_confirmation: "password")
-ru3 = User.create(username: "BennyM", first_name: "Ben", last_name: "Marsischky", kind: "refugee", city: "Amsterdam", email: "bbm@live.com", password: "password", password_confirmation: "password")
-ru4 = User.create(username: "Tuds", first_name: "Thomas", last_name: "Wilkinson", kind: "refugee", city: "Amsterdam", email: "tuds@gmail.com", password: "password", password_confirmation: "password")
-ru5 = User.create(username: "Amena01", first_name: "Amena", last_name: "Nour", kind: "refugee", city: "Den Haag", email: "amena01@gmail.com", password: "password", password_confirmation: "password")
-ru6 = User.create(username: "batman", first_name: "Tarek", last_name: "Nour", kind: "refugee", city: "Den Haag", email: "t.nour@hotmail.com", password: "password", password_confirmation: "password")
-ru7= User.create(username: "EssaKhattan", first_name: "Essa", last_name: "Khattan", kind: "refugee", city: "Utrecht", email: "essa_k@gmail.com", password: "password", password_confirmation: "password")
+ru1 = User.create!(username: "Ricky", first_name: "Ricardo", last_name: "Del Mar", kind: "refugee", city: "Hoofddorp", email: "raindance@gmail.com", password: "password", password_confirmation: "password")
+ru2 = User.create!(username: "Zohra", first_name: "Zohra", last_name: "Tannous", kind: "refugee", city: "Roosendaal", email: "z.tannous@gmail.com", password: "password", password_confirmation: "password")
+ru3 = User.create!(username: "BennyM", first_name: "Ben", last_name: "Marsischky", kind: "refugee", city: "Amsterdam", email: "bbm@live.com", password: "password", password_confirmation: "password")
+ru4 = User.create!(username: "Tuds", first_name: "Thomas", last_name: "Wilkinson", kind: "refugee", city: "Amsterdam", email: "tuds@gmail.com", password: "password", password_confirmation: "password")
+ru5 = User.create!(username: "Amena01", first_name: "Amena", last_name: "Nour", kind: "refugee", city: "Den Haag", email: "amena01@gmail.com", password: "password", password_confirmation: "password")
+ru6 = User.create!(username: "batman", first_name: "Tarek", last_name: "Nour", kind: "refugee", city: "Den Haag", email: "t.nour@hotmail.com", password: "password", password_confirmation: "password")
+ru7= User.create!(username: "EssaKhattan", first_name: "Essa", last_name: "Khattan", kind: "refugee", city: "Utrecht", email: "essa_k@gmail.com", password: "password", password_confirmation: "password")
 
 # Users with kind = 'dutchie'
 du1 = User.create!(username: "Bastiaan22", first_name: "Bastiaan", last_name: "Overwater", kind: "dutchie", city: "Hoofddorp", email: "bas_de-beste@gmail.com", password: "password", password_confirmation: "password")
-du2 = User.create(username: "Sooph", first_name: "Sophia", last_name: "De Jong", kind: "dutchie", city: "Utrecht", email: "sooph_87@gmail.com", password: "password", password_confirmation: "password")
-du3 = User.create(username: "Miri", first_name: "Miriam", last_name: "De Vries", kind: "dutchie", city: "Amsterdam", email: "mdevries@gmail.com", password: "password", password_confirmation: "password")
-du4 = User.create(username: "Luukie", first_name: "Luuk", last_name: "Bakker", kind: "dutchie", city: "Rotterdam", email: "luukie@gmail.com", password: "password", password_confirmation: "password")
-du5 = User.create(username: "Noor", first_name: "Eleonore", last_name: "Van Den Helder", kind: "dutchie", city: "Schiedam", email: "new_noor@gmail.com", password: "password", password_confirmation: "password")
-du6 = User.create(username: "Stijn", first_name: "Stijn", last_name: "Janssen", kind: "dutchie", city: "Almere", email: "stijn_jj@gmail.com", password: "password", password_confirmation: "password")
-du7 = User.create(username: "fleur_zozo", first_name: "Fleur", last_name: "Bieman", kind: "dutchie", city: "Amsterdam", email: "f.bieman@gmail.com", password: "password", password_confirmation: "password")
+du2 = User.create!(username: "Sooph", first_name: "Sophia", last_name: "De Jong", kind: "dutchie", city: "Utrecht", email: "sooph_87@gmail.com", password: "password", password_confirmation: "password")
+du3 = User.create!(username: "Miri", first_name: "Miriam", last_name: "De Vries", kind: "dutchie", city: "Amsterdam", email: "mdevries@gmail.com", password: "password", password_confirmation: "password")
+du4 = User.create!(username: "Luukie", first_name: "Luuk", last_name: "Bakker", kind: "dutchie", city: "Rotterdam", email: "luukie@gmail.com", password: "password", password_confirmation: "password")
+du5 = User.create!(username: "Noor", first_name: "Eleonore", last_name: "Van Den Helder", kind: "dutchie", city: "Schiedam", email: "new_noor@gmail.com", password: "password", password_confirmation: "password")
+du6 = User.create!(username: "Stijn", first_name: "Stijn", last_name: "Janssen", kind: "dutchie", city: "Almere", email: "stijn_jj@gmail.com", password: "password", password_confirmation: "password")
+du7 = User.create!(username: "fleur_zozo", first_name: "Fleur", last_name: "Bieman", kind: "dutchie", city: "Amsterdam", email: "f.bieman@gmail.com", password: "password", password_confirmation: "password")
 
 # Posts
 
@@ -44,7 +44,15 @@ p8 = Post.create!(subject: "Make a meal with tofu", content: "I am vegetarian an
 
 
 # Requests
-
+r1 = Request.create!(message: "I think that sounds like fun! Where are you biking from?", status: "pending", messenger_id: ru1.id, post_id: p1.id)
+r2 = Request.create!(message: "I took a course on making origami vegetables. Let's meet up and I can show you. When are you available?", status: "pending", messenger_id: du7.id, post_id: p2.id)
+r3 = Request.create!(message: "That sounds great! Where are you from? I live in Utrecht as well and I know a very nice cafe to go to. Can you meet sometime in the weekend?", status: "pending", messenger_id: du2.id, post_id: p3.id)
+r4 = Request.create!(message: "I am very interested! Can you also show me how you make these Dutch meals? I can cook with you and show you some of my homecooked recipes too.", status: "pending", messenger_id: ru2.id, post_id: p4.id)
+r5 = Request.create!(message: "Let's meet! I am learning Dutch and can tell you some Arabic too.", status: "pending", messenger_id: ru5.id, post_id: p5.id)
+r6 = Request.create!(message: "Building websites sounds awesome! I have been doing some online courses and would really like to meet you. Are you organizing an event for many people or do you want to meet one on one?", status: "pending", messenger_id: du5.id, post_id: p6.id)
+r7 = Request.create!(message: "Photography is one of my biggest hobbies! Let's meet and I can show you some tricks I have learned! Do you have time to meet next weekend?", status: "pending", messenger_id: du3.id, post_id: p7.id)
+r8 = Request.create!(message: "I have a recipe with soyasaus and tofy which is pretty nice. Do you want to meet sometime and cook together?", status: "pending", messenger_id: du6.id, post_id: p8.id)
 
 # Shared Stories
+
 

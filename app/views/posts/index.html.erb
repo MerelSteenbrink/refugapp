@@ -2,10 +2,12 @@
   <div class="form-title"><h1>Posts</h1></div>
   <!-- FILTER THE RESULTS -->
   <span>
-    <span class="btn-black active" data-target="#list-part">LIST</span>
-    <span class="btn-black" data-target="#map">MAP</span>
+    <span class="btn-black butti active" data-target="#list-part">LIST</span>
+    <span class="btn-black butti" data-target="#map">MAP</span>
 
 
+  </span>
+  <div class="container" id="list-part">
     <div class="posts-selection">
       <div class="posts-type-selection person-type">
         <%= link_to "Refugee", posts_path(kind: 'refugee', category: @category), class: filter_kind_css_class('refugee') %>
@@ -25,8 +27,6 @@
         <%= link_to "All", posts_path(category: 'all', kind: @kind), class: filter_category_css_class('all') %>
       </div>
     </div>
-  </span>
-  <div class="container" id="list-part">
     <div class="row">
       <% @posts.reverse.each do |post| %>
       <div class="col-xs-12 col-sm-6 col-md-4">
@@ -35,7 +35,7 @@
            <span class="posts-title"> <%= post.subject %></span></div> <br>
            <div class="posts-content">
             <%= truncate(post.content, :length => 120) %>
-            <% if post.content.length > 150 %>
+            <% if post.content.length > 120 %>
             <%= link_to "read more", post_path(post)   %>
             <% end %>
           </div>

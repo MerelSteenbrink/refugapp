@@ -13,4 +13,4 @@
 //= require menu_toggle
 //= require upload_button
 //= require chat
-
+//= require posttoggle

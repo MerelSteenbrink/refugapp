@@ -12,16 +12,23 @@
   margin-top: -2px;
   text-align: center;
   min-height: 300px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-bottom: 30px;
 }
 
 .diagonal-blue {
   position: absolute;
   top: 129px;
-  width: 100%;
+  width: 105%;
 }
 
 .home-logo {
   padding-top: 20px;
+  img {
+    width: 420px;
+  }
 }
 
 .home-tagline {
@@ -29,14 +36,29 @@
   font-size: 20px;
 }
 
+.home-about-top {
+  background-image: image-url("skew_grey.svg");
+  background-repeat: no-repeat;
+  background-position: left-top;
+  background-size: 100% auto;
+  height: 217px;
+  width: 101%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
 .home-about {
+  background-color: $dark-gray;
   text-align: center;
   font-family: $base-font;
-  padding: 20px 100px;
+  padding: 0 200px;
+  color: white;
+  padding-bottom: 100px;
 }
 
 .home-title {
-  color: black;
+  color: white;
   text-decoration: none;
 
 }
@@ -46,7 +68,7 @@
   text-decoration: underline;
   text-align: center;
   font-family: $base-font;
-  padding: 20px 100px;
+  padding: 20px 0;
   font-size: 32px;
 }
 

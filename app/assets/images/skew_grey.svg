@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="284px" height="48px" viewBox="0 0 284 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.6.1 (26313) - http://www.bohemiancoding.com/sketch -->
+    <title>skew_grey</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="skew" transform="translate(141.500000, 24.500000) rotate(180.000000) translate(-141.500000, -24.500000) translate(0.000000, 1.000000)" fill="#393939">
+            <path d="M0.417,46.673 C0.312,46.69 0.202,46.676 0.095,46.677 C0.095,31.291 0.096,15.905 0.086,0.52 C0.086,0.166 0.166,0.086 0.52,0.086 C94.535,0.095 188.551,0.094 282.567,0.1 C282.705,0.1 282.887,-0.009 282.992,0.189" id="Shape"></path>
+        </g>
+    </g>
+</svg>

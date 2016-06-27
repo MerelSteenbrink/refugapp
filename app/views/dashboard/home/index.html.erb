@@ -6,6 +6,9 @@
         <div class="dashboard-left">
           <div class="received_requests">
             <h2>Your received requests</h2>
+              <% if @received_requests.length == 0 %>
+                <br> You didn't receive any requests yet.
+              <% end %>
             <% @received_requests.reverse.take(3).each do |request| %>
             <!-- Render received request -->
             <%= render "dashboard/received_request", request: request  %>
@@ -19,6 +22,9 @@
           <!-- SHOW ALL SENT REQUESTS -->
           <div class="sent_requests">
             <h2>Your sent requests</h2>
+              <% if @sent_requests.length == 0 %>
+                <br> You didn't send any requests yet.
+              <% end %>
             <% @sent_requests.reverse.take(3).each do |request| %>
             <!-- Render sent request -->
             <%= render "dashboard/sent_request", request: request  %>
@@ -34,6 +40,10 @@
         <div class="dashboard-right">
           <div class="your_posts">
             <h2 class="text-center">Your posts</h2>
+              <% if @posts.length == 0 %>
+                <br> You didn't create any posts yet.
+                <br> <br> <%= link_to "submit a post", new_post_path, class: "hvr-sweep-to-right btn-orange"   %>
+              <% end %>
             <% @posts.reverse.take(3).each do |post| %>
             <!-- render post -->
             <%= render "dashboard/post", post: post %>

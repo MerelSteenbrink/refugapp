@@ -1,26 +1,42 @@
-<div class="wrapper">
-  <div class= "card text-center">
-    <div class="card-title">
-      <h1><%= @post.subject %></h1>
-    </div>
+<div class="wrapper-post">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6">
+       <div class="post-card">
+        <div class="one-post-ago">
+            <p><%= time_ago_in_words(@post.created_at) %> ago</p>
+          </div>
+          <div class="one-post-image">
+            <%= cl_image_tag @post.author.full_picture, class: "avatar" %>
+            <%= link_to @post.author.title, user_path(@post.author) %>
+          </div>
 
-    <h3><%= link_to @author.username, user_path(@author) %>
-      <i> <%= time_ago_in_words(@post.created_at) %> ago</i>
-    </h3>
+         <div class="posts-underline-orange">
+          <span class="posts-title"> <%= @post.subject %></span></div> <br>
 
+          <div class="posts-content">
+            <%= @post.content %>
+          </div>
 
-    <div class="card-description">
-      <p><%= @post.content %></p>
-      <% if @post.button_valid?(current_user) %>
-      <p><%= link_to "Write a request to this Post", new_post_request_path(@post), class: "make btn btn-success" %></p>
-      <% end %>
-      <p><%= link_to 'Back to overview', posts_path %></p>
-    </div>
+          <div class="post-make">
+            <% if @post.button_valid?(current_user) %>
+            <p><%= link_to "Write a request to this Post", new_post_request_path(@post), class: "hvr-underline-from-center btn-border-orange" %></p>
+            <% end %>
+            <%= link_to "Back to all posts", posts_path, class: "hvr-underline-from-center btn-simple-orange"  %>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <div id="post_map" class ="single_map text-center one-post-map";></div>
+            </div>
+      </div>
   </div>
-
-  <div id="post_map" class ="single_map text-center" style="width: 400px; height: 400px;";></div>
-
+  </div>
 </div>
+
+
+
 <!-- This is the code for the map -->
 <% content_for(:after_js) do %>
 <script type="text/javascript">

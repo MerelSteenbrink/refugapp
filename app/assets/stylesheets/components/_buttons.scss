@@ -207,3 +207,20 @@ btn btn-blue-black
     background: $light-blue;
   }
 }
+
+
+.btn-border-orange-select {
+  font-family: arial;
+  padding: 10px;
+  background-color: $orange;
+  color: white;
+  font-family: $base-font;
+  &:hover {
+    color: $orange;
+    background-color: rgba(0,0,0,0);
+    transition: background-color 1s ease;
+  }
+  &:before {
+    background: $orange;
+  }
+}

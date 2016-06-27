@@ -2,13 +2,16 @@
   background-color: white;
   margin-top: 0;
   font-family: $base-font;
-  padding: 80px 40px;
-}
+  padding: 180px 180px;
+
+  text-align: center;
+ }
+
 
 .posts-card {
   background-color: white;
-  border: 4px solid $orange;
-  padding: 40px;
+  border: 4px solid $light-blue;
+  padding: 74px 27px 11px 16px;
   margin: 20px 0px;
   min-height: 372px;
   position: relative;
@@ -18,6 +21,7 @@
 .posts-title {
   color: black;
   text-decoration: none;
+  padding-bottom: 20px;
 
 }
 
@@ -28,8 +32,23 @@
   font-size: 32px;
 }
 
+.posts-selection {
+  color: $orange;
+  text-align: center;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
 .posts-underline-blue {
   color: $light-blue;
+  text-decoration: underline;
+  text-align: center;
+  font-size: 20px;
+}
+
+.posts-underline-orange {
+  color: $orange;
   text-decoration: underline;
   text-align: center;
   font-size: 20px;
@@ -46,7 +65,7 @@
 
 .posts-images {
   position: absolute;
-  bottom: 30px;
+  top: 30px;
 }
 
 .posts-type-selection {
@@ -58,8 +77,8 @@
 
 .post-ago {
   position: absolute;
-  bottom: 24px;
-  right: 37px;
+  top: 32px;
+  right: 23px;
 }
 
 
@@ -81,9 +100,9 @@
 }
 
 
-.active-blue{
+.active-orange{
   background-color: rgba(0,0,0,0);
-    color: $light-blue;
+    color: $orange;
     transition: background-color 1s, color 1s ease;
 }
 

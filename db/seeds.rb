@@ -8,23 +8,23 @@ ChatMessage.destroy_all
 
 
 # Users with kind = 'refugee'
-ru1 = User.create!(username: "Ricky", first_name: "Ricardo", last_name: "Del Mar", kind: "refugee", city: "Hoofddorp", email: "raindance@gmail.com", password: "password", password_confirmation: "password")
-ru2 = User.create!(username: "Zohra", first_name: "Zohra", last_name: "Tannous", kind: "refugee", city: "Roosendaal", email: "z.tannous@gmail.com", password: "password", password_confirmation: "password")
-ru3 = User.create!(username: "BennyM", first_name: "Ben", last_name: "Marsischky", kind: "refugee", city: "Amsterdam", email: "bbm@live.com", password: "password", password_confirmation: "password")
-ru4 = User.create!(username: "Tuds", first_name: "Thomas", last_name: "Wilkinson", kind: "refugee", city: "Amsterdam", email: "tuds@gmail.com", password: "password", password_confirmation: "password")
-ru5 = User.create!(username: "Amena01", first_name: "Amena", last_name: "Nour", kind: "refugee", city: "Den Haag", email: "amena01@gmail.com", password: "password", password_confirmation: "password")
-ru6 = User.create!(username: "batman", first_name: "Tarek", last_name: "Nour", kind: "refugee", city: "Den Haag", email: "t.nour@hotmail.com", password: "password", password_confirmation: "password")
-ru7= User.create!(username: "EssaKhattan", first_name: "Essa", last_name: "Khattan", kind: "refugee", city: "Utrecht", email: "essa_k@gmail.com", password: "password", password_confirmation: "password")
+ru1 = User.create!(username: "Ricky", first_name: "Ricardo", last_name: "Del Mar", kind: "refugee", city: "Hoofddorp", email: "raindance@gmail.com", password: "password", password_confirmation: "password", picture: "http://res.cloudinary.com/gg/image/upload/v1467114164/male5_j6lwpc.jpg")
+ru2 = User.create!(username: "Zohra", first_name: "Zohra", last_name: "Tannous", kind: "refugee", city: "Roosendaal", email: "z.tannous@gmail.com", password: "password", password_confirmation: "password", picture: "http://res.cloudinary.com/gg/image/upload/v1467114165/woman3_v2mxuq.jpg")
+ru3 = User.create!(username: "BennyM", first_name: "Ben", last_name: "Marsischky", kind: "refugee", city: "Amsterdam", email: "bbm@live.com", password: "password", password_confirmation: "password", picture: "http://res.cloudinary.com/gg/image/upload/v1467111212/rm1_idtzyx.jpg")
+ru4 = User.create!(username: "Tuds", first_name: "Thomas", last_name: "Wilkinson", kind: "refugee", city: "Amsterdam", email: "tuds@gmail.com", password: "password", password_confirmation: "password", picture: "http://res.cloudinary.com/gg/image/upload/v1467114163/male8_whbakl.jpg")
+ru5 = User.create!(username: "Amena01", first_name: "Amena", last_name: "Nour", kind: "refugee", city: "Den Haag", email: "amena01@gmail.com", password: "password", password_confirmation: "password", picture: "http://res.cloudinary.com/gg/image/upload/v1467114164/woman6_oicbvm.jpg")
+ru6 = User.create!(username: "batman", first_name: "Tarek", last_name: "Nour", kind: "refugee", city: "Den Haag", email: "t.nour@hotmail.com", password: "password", password_confirmation: "password", picture: "http://res.cloudinary.com/gg/image/upload/v1467114165/male2_sbfcv6.png")
+ru7= User.create!(username: "EssaKhattan", first_name: "Essa", last_name: "Khattan", kind: "refugee", city: "Utrecht", email: "essa_k@gmail.com", password: "password", password_confirmation: "password", picture: "http://res.cloudinary.com/gg/image/upload/v1467114164/woman8_xtxxbs.jpg")
 
 
 # Users with kind = 'dutchie'
-du1 = User.create!(username: "Bastiaan22", first_name: "Bastiaan", last_name: "Overwater", kind: "dutchie", city: "Hoofddorp", email: "bas_de-beste@gmail.com", password: "password", password_confirmation: "password")
-du2 = User.create!(username: "Sooph", first_name: "Sophia", last_name: "De Jong", kind: "dutchie", city: "Utrecht", email: "sooph_87@gmail.com", password: "password", password_confirmation: "password")
-du3 = User.create!(username: "Miri", first_name: "Miriam", last_name: "De Vries", kind: "dutchie", city: "Amsterdam", email: "mdevries@gmail.com", password: "password", password_confirmation: "password")
-du4 = User.create!(username: "Luukie", first_name: "Luuk", last_name: "Bakker", kind: "dutchie", city: "Rotterdam", email: "luukie@gmail.com", password: "password", password_confirmation: "password")
-du5 = User.create!(username: "Noor", first_name: "Eleonore", last_name: "Van Den Helder", kind: "dutchie", city: "Schiedam", email: "new_noor@gmail.com", password: "password", password_confirmation: "password")
-du6 = User.create!(username: "Stijn", first_name: "Stijn", last_name: "Janssen", kind: "dutchie", city: "Almere", email: "stijn_jj@gmail.com", password: "password", password_confirmation: "password")
-du7 = User.create!(username: "fleur_zozo", first_name: "Fleur", last_name: "Bieman", kind: "dutchie", city: "Amsterdam", email: "f.bieman@gmail.com", password: "password", password_confirmation: "password")
+du1 = User.create!(username: "Bastiaan22", first_name: "Bastiaan", last_name: "Overwater", kind: "dutchie", city: "Hoofddorp", email: "bas_de-beste@gmail.com", password: "password", password_confirmation: "password", picture: "http://res.cloudinary.com/gg/image/upload/v1467115580/male10_zbtu97.jpg")
+du2 = User.create!(username: "Sooph", first_name: "Sophia", last_name: "De Jong", kind: "dutchie", city: "Utrecht", email: "sooph_87@gmail.com", password: "password", password_confirmation: "password", picture: "http://res.cloudinary.com/gg/image/upload/v1467114165/woman5_y5n9zj.jpg")
+du3 = User.create!(username: "Miri", first_name: "Miriam", last_name: "De Vries", kind: "dutchie", city: "Amsterdam", email: "mdevries@gmail.com", password: "password", password_confirmation: "password", picture: "http://res.cloudinary.com/gg/image/upload/v1467114165/woman4_c4germ.jpg")
+du4 = User.create!(username: "Luukie", first_name: "Luuk", last_name: "Bakker", kind: "dutchie", city: "Rotterdam", email: "luukie@gmail.com", password: "password", password_confirmation: "password", picture: "http://res.cloudinary.com/gg/image/upload/v1467115869/male11_quggfa.jpg")
+du5 = User.create!(username: "Noor", first_name: "Eleonore", last_name: "Van Den Helder", kind: "dutchie", city: "Schiedam", email: "new_noor@gmail.com", password: "password", password_confirmation: "password", picture: "http://res.cloudinary.com/gg/image/upload/v1467114164/woman7_ljino3.jpg")
+du6 = User.create!(username: "Stijn", first_name: "Stijn", last_name: "Janssen", kind: "dutchie", city: "Almere", email: "stijn_jj@gmail.com", password: "password", password_confirmation: "password", picture: "http://res.cloudinary.com/gg/image/upload/v1467116147/male12_rm2hkj.jpg")
+du7 = User.create!(username: "fleur_zozo", first_name: "Fleur", last_name: "Bieman", kind: "dutchie", city: "Amsterdam", email: "f.bieman@gmail.com", password: "password", password_confirmation: "password", picture: "http://res.cloudinary.com/gg/image/upload/v1467114166/woman1_vxqkrq.jpg")
 
 
 # Posts

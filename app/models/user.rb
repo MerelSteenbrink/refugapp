@@ -32,7 +32,7 @@ class User < ActiveRecord::Base
   validates :first_name, presence: true, if: :regular_signup_or_existing_user?
   validates :last_name, presence: true, if: :regular_signup_or_existing_user?
   validates :kind, presence: true, inclusion: {in: ["dutchie", "refugee"]}, if: :regular_signup_or_existing_user?
-  # validates :description, presence: true, if: :regular_signup_or_existing_user?
+  validates :description, presence: true, if: :regular_signup_or_existing_user?
   validates :city, presence: true, if: :regular_signup_or_existing_user?
   validates :email, presence: true, uniqueness: true, if: :regular_signup_or_existing_user?
 

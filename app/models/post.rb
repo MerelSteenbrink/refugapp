@@ -20,15 +20,15 @@ class Post < ActiveRecord::Base
   geocoded_by :address
   after_validation :geocode, if: :postal_code_changed?
 
-  def button_valid?(current_user)
+  def button_valid(current_user)
     if !current_user
       return "redirect"
     elsif current_user != self.author &&
      current_user.kind != self.author.kind &&
      self.received_requests.select{ |req| req.messenger_id == current_user.id} == []
-     return true
+     return "request"
    else
-    return false
+    return "no request"
   end
 end
 

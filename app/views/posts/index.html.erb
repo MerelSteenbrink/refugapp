@@ -20,9 +20,7 @@
       <div class="posts-type-selection category-type">
         <%= link_to "Skills", posts_path(category: 'skills', kind: @kind), class: filter_category_css_class('skills') %>
         <%= link_to "Social", posts_path(category: 'social', kind: @kind), class: filter_category_css_class('social') %>
-
-        <%= link_to "Languages", posts_path(category: 'language', kind: @kind), class: filter_category_css_class('language') %>
-
+        <%= link_to "Languages", posts_path(category: 'languages', kind: @kind), class: filter_category_css_class('languages') %>
         <%= link_to "All", posts_path(category: 'all', kind: @kind), class: filter_category_css_class('all') %>
       </div>
 

@@ -182,7 +182,7 @@ btn btn-blue-black
 .facebook-button {
   padding: 5px 0;
   background-color: #49639F;
-  color: white; 
+  color: white;
   a {
     text-decoration: none;
   }
@@ -190,4 +190,52 @@ btn btn-blue-black
 
 .facebook-button:hover {
   color: white;
+}
+
+
+
+.btn-border-orange-select {
+  font-family: arial;
+  padding: 10px;
+  background-color: $orange;
+  color: white;
+  font-family: $base-font;
+  &:hover {
+    color: $orange;
+    background-color: rgba(0,0,0,0);
+    transition: background-color 1s ease;
+  }
+  &:before {
+    background: $orange;
+  }
+}
+
+
+
+/* TOGGLE MAP LIST */
+
+.btn-blue-select {
+  font-family: arial;
+  padding: 3px;
+  padding-left: 40px;
+  padding-right: 40px;
+  background-color: $light-blue;
+  color: white;
+  font-family: $base-font;
+  &:hover {
+    background-color: rgba(0,0,0,0);
+    color: $light-blue;
+    transition: background-color 1s ease;
+  }
+  &:before {
+    background: $light-blue;
+  }
+}
+
+
+
+.active{
+  background-color: rgba(0,0,0,0);
+    color: $light-blue;
+    transition: background-color 1s, color 1s ease;
 }

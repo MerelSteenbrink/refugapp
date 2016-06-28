@@ -28,6 +28,8 @@
   font-family: "Open Sans";
   text-align: center;
   padding: 10px 0;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .profile-title {
@@ -50,6 +52,7 @@
   background-color: white;
   margin: 20px auto;
   width: 400px;
+  min-height: 200px;
 }
 
 .profile-city {
@@ -88,4 +91,13 @@
 
 .ruimte {
   margin: 30px;
+}
+
+.btn-delete:hover {
+  color: red;
+}
+
+.profile-please {
+  color: $dark-gray;
+  text-align: left;
 }

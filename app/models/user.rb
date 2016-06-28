@@ -28,11 +28,11 @@ class User < ActiveRecord::Base
 
   #== Validations =========================================
 
-  validates :username, presence: true, uniqueness: true, if: :regular_signup_or_existing_user?
+  validates :username, presence: true, uniqueness: true, if: :regular_signup_or_existing_user?, length: {minimum: 3, maximum: 30}
   validates :first_name, presence: true, if: :regular_signup_or_existing_user?
   validates :last_name, presence: true, if: :regular_signup_or_existing_user?
   validates :kind, presence: true, inclusion: {in: ["dutchie", "refugee"]}, if: :regular_signup_or_existing_user?
-  # validates :description, presence: true, if: :regular_signup_or_existing_user?
+  validates :description, presence: true, if: :regular_signup_or_existing_user?
   validates :city, presence: true, if: :regular_signup_or_existing_user?
   validates :email, presence: true, uniqueness: true, if: :regular_signup_or_existing_user?
 
@@ -63,7 +63,7 @@ class User < ActiveRecord::Base
     elsif self.picture
       self.picture
     else
-      ""
+      "http://res.cloudinary.com/geertkeularts/image/upload/v1467110899/defaultpicture_jj0nwa.jpg"
     end
   end
 

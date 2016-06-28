@@ -61,10 +61,8 @@
 }
 
 .home-title {
-  border-bottom: solid 3px $light-blue;
   color: $dark-gray;
   text-decoration: none;
-
 }
 
 .home-underline {
@@ -72,6 +70,8 @@
   font-family: $base-font;
   padding: 100px 0 30px;
   font-size: 32px;
+  text-decoration: underline;
+  color: $light-blue;
 }
 
 .center-div {

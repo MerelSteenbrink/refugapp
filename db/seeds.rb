@@ -6,6 +6,10 @@ Post.destroy_all
 Request.destroy_all
 ChatMessage.destroy_all
 
+# HERE!!!!!!!!!!!!!!!!!!!!
+# Users who are admin
+au1 = User.create!(username: "Merel", first_name: "Merel", last_name: "Steenbrink", kind: "dutchie", city: "Amsterdam", email: "merel@gmail.com", password: "password", password_confirmation: "password", picture: "http://res.cloudinary.com/gg/image/upload/v1467119218/merel_yht8jd.jpg", admin: "true")
+
 
 # Users with kind = 'refugee'
 ru1 = User.create!(username: "Ricky", first_name: "Ricardo", last_name: "Del Mar", kind: "refugee", city: "Hoofddorp", email: "raindance@gmail.com", password: "password", password_confirmation: "password", picture: "http://res.cloudinary.com/gg/image/upload/v1467114164/male5_j6lwpc.jpg")

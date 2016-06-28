@@ -4,10 +4,12 @@
   <span class="dashboard-title"> <%= post.subject %></span>
 </div>
 <br>
+<div class="posts-content">
 <%= truncate(post.content, :length => 60) %>
 <% if post.content.length > 60 %>
 <%= link_to "read more", post_path(post)   %>
 <% end %>
+</div>
 
 
 <div class="sender-request"><i> (<%= time_ago_in_words(post.created_at) %> ago)</i></div>

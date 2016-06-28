@@ -2,91 +2,72 @@
   <div class="form-title"><h1>Posts</h1></div>
   <!-- FILTER THE RESULTS -->
 
+
   <div class="container">
     <div class="posts-selection">
-  <div class="list-type">
-      <span style="cursor:pointer" class="toggle-map-list">
-        <a class="btn-blue-select butti active" data-target="#list-part">LIST</a>
-        <a class="btn-blue-select butti" data-target="#map">MAP</a>
-      </span>
-  </div>
+      <div class="list-type">
+        <span style="cursor:pointer" class="toggle-map-list">
+          <a class="btn-blue-select butti active" data-target="#list-part">LIST</a>
+          <a class="btn-blue-select butti" data-target="#map">MAP</a>
+        </span>
+      </div>
       <div class="posts-type-selection person-type">
         <%= link_to "Refugees", posts_path(kind: 'refugee', category: @category), class: filter_kind_css_class('refugee') %>
         <%= link_to "Dutchies", posts_path(kind: 'dutchie', category: @category), class: filter_kind_css_class('dutchie') %>
         <%= link_to "All", posts_path(kind: 'all', category: @category), class: filter_kind_css_class('all') %>
       </div>
 
-<<<<<<< HEAD
       <div class="posts-type-selection category-type">
         <%= link_to "Skills", posts_path(category: 'skills', kind: @kind), class: filter_category_css_class('skills') %>
         <%= link_to "Social", posts_path(category: 'social', kind: @kind), class: filter_category_css_class('social') %>
         <%= link_to "Languages", posts_path(category: 'languages', kind: @kind), class: filter_category_css_class('languages') %>
-=======
-  </span>
-  <div id="list-part">
-    <div class="container">
-      <div class="posts-selection">
-        <div class="posts-type-selection person-type">
-          <%= link_to "Refugee", posts_path(kind: 'refugee', category: @category), class: filter_kind_css_class('refugee') %>
-
-          <%= link_to "Dutchie", posts_path(kind: 'dutchie', category: @category), class: filter_kind_css_class('dutchie') %>
-
-          <%= link_to "All", posts_path(kind: 'all', category: @category), class: filter_kind_css_class('all') %>
-        </div>
-
-        <div class="posts-type-selection category-type">
-          <%= link_to "Skills", posts_path(category: 'skills', kind: @kind), class: filter_category_css_class('skills') %>
-
-          <%= link_to "Social", posts_path(category: 'social', kind: @kind), class: filter_category_css_class('social') %>
-
-          <%= link_to "Languages", posts_path(category: 'languages', kind: @kind), class: filter_category_css_class('languages') %>
->>>>>>> ac73040afaac362e84355bca6daf394834b3c6a1
-
         <%= link_to "All", posts_path(category: 'all', kind: @kind), class: filter_category_css_class('all') %>
       </div>
-    </div>
-    <div class= "post-content" id="list-part">
-      <div class="row">
-        <% @posts.reverse.each do |post| %>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <div class="posts-card">
-            <div class="posts-underline-orange">
-             <span class="posts-title"> <%= post.subject %></span></div> <br>
-             <div class="posts-content">
-              <%= truncate(post.content, :length => 120) %>
-              <% if post.content.length > 120 %>
-              <%= link_to "read more", post_path(post)   %>
-              <% end %>
-            </div>
-            <div class="post-ago">
-              <p><%= time_ago_in_words(post.created_at) %> ago</p>
-            </div>
-            <div class="posts-images">
-              <%= cl_image_tag post.author.full_picture, class: "avatar" %>
-              <%= link_to post.author.title, user_path(post.author) %>
-            </div>
-            <div class="post-make">
-              <% if post.button_valid?(current_user) %>
-              <p><%= link_to "Write a request to this Post", new_post_request_path(post), class: "hvr-underline-from-center btn-border-orange" %></p>
-              <% end %>
+
+
+      <div class= "post-content" id="list-part">
+        <div class="row">
+          <% @posts.reverse.each do |post| %>
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="posts-card">
+              <div class="posts-underline-orange">
+               <span class="posts-title"> <%= post.subject %></span></div> <br>
+               <div class="posts-content">
+                <%= truncate(post.content, :length => 120) %>
+                <% if post.content.length > 120 %>
+                <%= link_to "read more", post_path(post)   %>
+                <% end %>
+              </div>
+              <div class="post-ago">
+                <p><%= time_ago_in_words(post.created_at) %> ago</p>
+              </div>
+              <div class="posts-images">
+                <%= cl_image_tag post.author.full_picture, class: "avatar" %>
+                <%= link_to post.author.title, user_path(post.author) %>
+              </div>
+              <div class="post-make">
+                <% if post.button_valid?(current_user) %>
+                <p><%= link_to "Write a request to this Post", new_post_request_path(post), class: "hvr-underline-from-center btn-border-orange" %></p>
+                <% end %>
+              </div>
             </div>
           </div>
+          <% end %>
+        </div>
+        <% if current_user %>
+        <div class="posts-center">
+          <%= link_to 'Make a post!', new_post_path, class:"hvr-sweep-to-right btn-black  make-post" %>
         </div>
         <% end %>
       </div>
-      <% if current_user %>
-      <div class="posts-center">
-        <%= link_to 'Make a post!', new_post_path, class:"hvr-sweep-to-right btn-black  make-post" %>
-      </div>
-      <% end %>
-    </div>
 
-    <div class="map-wrap">
-    <div id="map" class="dynamic_map text-center post-content hidden" style="width: 100%; height: 70vh;"></div>
+      <div class="map-wrap">
+        <div id="map" class="dynamic_map text-center post-content hidden" style="width: 100%; height: 70vh;"></div>
+      </div>
     </div>
   </div>
 </div>
-
+</div>
 
 
 

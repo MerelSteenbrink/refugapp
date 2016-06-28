@@ -3,7 +3,6 @@
   margin-top: 0;
   font-family: $base-font;
   padding-top: 80px;
-
   text-align: center;
 }
 
@@ -19,8 +18,7 @@
 .posts-title {
   color: black;
   text-decoration: none;
-  text-align: center;
-  font-size: 32px;
+  padding-bottom: 20px;
 }
 
 .posts-underline {
@@ -30,12 +28,7 @@
   font-size: 32px;
 }
 
-.posts-selection {
-  color: $orange;
-  text-align: center;
-  font-size: 23px;
 
-}
 
 .posts-underline-blue {
   color: $light-blue;
@@ -55,7 +48,6 @@
   min-height: 150px;
   overflow-wrap: break-word;
   word-wrap: break-word;
-  padding-top: 15px;
 }
 
 .posts-center {
@@ -80,13 +72,13 @@
 }
 
 
-.single_map {
+/* .single_map {
   box-shadow: 0px 4px 10px 2px rgba(0,0,0,0.75);
 
-}
+} */
 
 .dynamic_map {
-  box-shadow: 0px 4px 10px 2px rgba(0,0,0,0.75);
+
   margin-bottom: 50px;
 }
 

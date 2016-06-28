@@ -192,21 +192,6 @@ btn btn-blue-black
   color: white;
 }
 
-.btn-border-blue-select {
-  font-family: arial;
-  padding: 10px;
-  background-color: $light-blue;
-  color: white;
-  font-family: $base-font;
-  &:hover {
-    background-color: rgba(0,0,0,0);
-    color: $light-blue;
-    transition: background-color 1s ease;
-  }
-  &:before {
-    background: $light-blue;
-  }
-}
 
 
 .btn-border-orange-select {
@@ -223,4 +208,34 @@ btn btn-blue-black
   &:before {
     background: $orange;
   }
+}
+
+
+
+/* TOGGLE MAP LIST */
+
+.btn-blue-select {
+  font-family: arial;
+  padding: 3px;
+  padding-left: 40px;
+  padding-right: 40px;
+  background-color: $light-blue;
+  color: white;
+  font-family: $base-font;
+  &:hover {
+    background-color: rgba(0,0,0,0);
+    color: $light-blue;
+    transition: background-color 1s ease;
+  }
+  &:before {
+    background: $light-blue;
+  }
+}
+
+
+
+.active{
+  background-color: rgba(0,0,0,0);
+    color: $light-blue;
+    transition: background-color 1s, color 1s ease;
 }

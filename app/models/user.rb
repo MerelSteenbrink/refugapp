@@ -63,7 +63,7 @@ class User < ActiveRecord::Base
     elsif self.picture
       self.picture
     else
-      ""
+      "http://res.cloudinary.com/geertkeularts/image/upload/v1467110899/defaultpicture_jj0nwa.jpg"
     end
   end
 

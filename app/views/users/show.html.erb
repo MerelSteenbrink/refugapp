@@ -10,7 +10,8 @@
     <div class="col-md-8 col-xs-12">
       <div class="profile-content">
       <h3 class="profile-underline"><span class="profile-title"><%= @user.title  %></span></h3>
-      <div class="profile-description"> <% if @user.description.length > 0 %>
+      <div class="profile-description">
+      <% if !@user.description.nil? && @user.description.length > 0  %>
             <%= @user.description %>
           <% else %>
             <br>

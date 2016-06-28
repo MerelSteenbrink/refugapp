@@ -15,9 +15,9 @@
 <div class="home-wrapper">
   <div class="home-underline"><span class="home-title">About</span></div>
   <div class="home-about">
-    <p> We all are blessed with a lot of skills. Why not connect with the people around us by exchanging them? With RefuGapp we are filling the gap between locals and newcomers by providing a platform where you can offer your offer and find skill and connect with new people! </p>
-    <p>Are you a Local? Get to now the newcomers in your city by exchanging skills! Discover how refugees can help you,m sen da request and.. connect! Or: a skill you want to share? Make a post and someone will find you!</p>
-    <p>Are you a newcomer? Get to know the locals by offering your skills! Make a post and help a local with the things you are good at.
+    <p> We all are blessed with a lot of <span class="home-highlight">skills</span>. Why not connect with the people around us by exchanging them? With RefuGapp we are filling the gap between locals and newcomers by providing a platform where you can offer your offer and find skill and <span class="home-highlight">connect</span> with new people! </p>
+    <p>Are you a <span class="home-highlight">local</span>? Get to now the newcomers in your city by exchanging skills! Discover how refugees can help you, send a request and.. connect! Or: a skill you want to share? Make a post and someone will find you!</p>
+    <p>Are you a <span class="home-highlight">newcomer</span>? Get to know the locals by offering your skills! Make a post and help a local with the things you are good at.
       Or: in need of some help? Look what the locals are offering and send a request!</p>
     </div>
 
@@ -45,10 +45,21 @@
                   <%= link_to post.author.title, user_path(post.author) %>
                 </div>
                 <div class="post-make">
+
                   <% if post.button_valid?(current_user) %>
                   <p><%= link_to "Write a request to this Post", new_post_request_path(post), class: "hvr-underline-from-center btn-border-orange" %></p>
                   <% end %>
                 </div>
+                <% if post.category == 'social'  %>
+                <div class="posts-icon"><i class="fa fa-coffee" aria-hidden="true"></i></div>
+                <% elsif post.category == 'skills'  %>
+                <div class="posts-icon"><i class="fa fa-wrench" aria-hidden="true"></i></div>
+                <% elsif post.category == "language"  %>
+                <div class="posts-icon"><i class="fa fa-comments" aria-hidden="true"></i>
+                </div>
+                <% end  %>
+                
+                
               </div>
             </div>
             <% end %>

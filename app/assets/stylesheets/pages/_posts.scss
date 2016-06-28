@@ -7,13 +7,12 @@
   text-align: center;
  }
 
-
 .posts-card {
   background-color: white;
   border: 4px solid $light-blue;
   padding: 74px 27px 11px 16px;
   margin: 20px 0px;
-  min-height: 372px;
+  min-height: 380px;
   position: relative;
 
 }
@@ -55,6 +54,8 @@
 
 .posts-content {
   min-height: 150px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .posts-center {
@@ -128,4 +129,38 @@
 .list-type{
   display: flex;
   justify-content: flex-end
+}
+
+// one post
+ .wrapper-post {
+  padding: 80px 40px;
+ }
+
+.post-card {
+  background-color: white;
+  border: 4px solid $light-blue;
+  padding: 74px 27px 11px 16px;
+  margin: 20px 0px;
+  min-height: 380px;
+  position: relative;
+  min-height: 400px;
+
+}
+
+.one-post-ago {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+}
+
+.one-post-image {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+
+.one-post-map {
+  min-height: 400px;
+  min-width: 300px;
+  margin: 20px 0px;
 }

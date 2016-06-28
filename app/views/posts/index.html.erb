@@ -16,10 +16,31 @@
         <%= link_to "All", posts_path(kind: 'all', category: @category), class: filter_kind_css_class('all') %>
       </div>
 
+<<<<<<< HEAD
       <div class="posts-type-selection category-type">
         <%= link_to "Skills", posts_path(category: 'skills', kind: @kind), class: filter_category_css_class('skills') %>
         <%= link_to "Social", posts_path(category: 'social', kind: @kind), class: filter_category_css_class('social') %>
         <%= link_to "Languages", posts_path(category: 'languages', kind: @kind), class: filter_category_css_class('languages') %>
+=======
+  </span>
+  <div id="list-part">
+    <div class="container">
+      <div class="posts-selection">
+        <div class="posts-type-selection person-type">
+          <%= link_to "Refugee", posts_path(kind: 'refugee', category: @category), class: filter_kind_css_class('refugee') %>
+
+          <%= link_to "Dutchie", posts_path(kind: 'dutchie', category: @category), class: filter_kind_css_class('dutchie') %>
+
+          <%= link_to "All", posts_path(kind: 'all', category: @category), class: filter_kind_css_class('all') %>
+        </div>
+
+        <div class="posts-type-selection category-type">
+          <%= link_to "Skills", posts_path(category: 'skills', kind: @kind), class: filter_category_css_class('skills') %>
+
+          <%= link_to "Social", posts_path(category: 'social', kind: @kind), class: filter_category_css_class('social') %>
+
+          <%= link_to "Languages", posts_path(category: 'languages', kind: @kind), class: filter_category_css_class('languages') %>
+>>>>>>> ac73040afaac362e84355bca6daf394834b3c6a1
 
         <%= link_to "All", posts_path(category: 'all', kind: @kind), class: filter_category_css_class('all') %>
       </div>

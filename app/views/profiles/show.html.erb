@@ -11,7 +11,15 @@
     <div class="col-md-8 col-xs-12">
       <div class="profile-content">
       <h3 class="profile-underline"><span class="profile-title"><%= @user.title  %></span></h3>
-      <div class="profile-description"> <%= @user.description %> </div>
+      <div class="profile-description">
+        <% if @user.description.length > 0 %>
+            <%= @user.description %>
+          <% else %>
+            <br>
+            <div class="profile-please">You didn't fill in your description yet, <br>
+            please edit your profile to keep up to date..</div>
+        <% end %>
+      </div>
       <user class="profile-city">I'm from <%= @user.city %></user> <br>
       <% if @user == current_user %>
       <%= link_to "EDIT", edit_profile_path, class: "hvr-underline-from-center btn-border-black ruimte"  %>
@@ -29,7 +37,7 @@
         <div class="profile-stories">
         <h3 class="profile-underline-blue"><span class="profile-title"> Latest stories with <%= @user.title %></span></h3>
           <% @user.shared_stories.take(5).each do |story|%>
-          <%= link_to story.title, shared_stories_path(story) %> <br>
+          <%= link_to story.title, shared_story_path(story) %> <br>
           <% end %>
     </div>
       </div>
@@ -37,7 +45,7 @@
          <div class="profile-posts">
        <h3 class="profile-underline"><span class="profile-title"> Latest posts from <%= @user.title %></span></h3>
       <% @user.posts.take(5).each do |post|%>
-      <%= link_to post.subject, posts_path(post) %> <br>
+      <%= link_to post.subject, post_path(post) %> <br>
       <% end %>
     </div>
       </div>

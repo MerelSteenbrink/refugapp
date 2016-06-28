@@ -3,29 +3,48 @@
     <div class="home-middle">
       <div class="home-logo"><%=image_tag "refuGapp.png", width: '300px'  %></div> <br>
       <div class="home-tagline">Fill the gap between locals and refugees.</div>
-      <div class="home-logo"><%= link_to "CONNECT", new_user_registration_path, class:"hvr-sweep-to-right btn-orange"%></div>
+      <div class="home-button">
+        <% if current_user  %>
+        <%= link_to "What's new?", posts_path, class:"hvr-sweep-to-right btn-orange"%>
+        <% else  %>
+        <%= link_to "CONNECT", new_user_session_path, class:"hvr-sweep-to-right btn-orange"%>
+        <% end %>
+      </div>
     </div>
-    <div class="home-about">
     <div class="home-underline"><span class="home-title">About</span></div>
-    <p> We all are blessed with a lot of skills. Why not connect with the people around us by exchanging them? With RefuGapp we are filling the gap between locals and newcomers by providing a platform where you can offer your offer and find skill and connect with new people! </p>
-    <p>Are you a Local? Get to now the newcomers in your city by exchanging skills! Discover how refugees can help you,m sen da request and.. connect! Or: a skill you want to share? Make a post and someone will find you!</p>
-    <p>Are you a newcomer? Get to know the locals by offering your skills! Make a post and help a local with the things you are good at.
-      Or: in need of some help? Look what the locals are offering and send a request!</p>
-
-    </div>
-
-
-    <div class="diagonal-blue">
-
-    <%#= image_tag "skew.svg", width: "100%"  %></div>
+    <div class="home-about">
+      <p> We all are blessed with a lot of skills. Why not connect with the people around us by exchanging them? With RefuGapp we are filling the gap between locals and newcomers by providing a platform where you can offer your offer and find skill and connect with new people! </p>
+      <p>Are you a Local? Get to now the newcomers in your city by exchanging skills! Discover how refugees can help you,m sen da request and.. connect! Or: a skill you want to share? Make a post and someone will find you!</p>
+      <p>Are you a newcomer? Get to know the locals by offering your skills! Make a post and help a local with the things you are good at.
+        Or: in need of some help? Look what the locals are offering and send a request!</p>
+      </div>
 
 
+      <div class="home-underline"><span class="home-title">What are people posting?</span></div>
+      <div class="homepage-posts">
+        <div class="container-fluid">
+          <div class="row">
+            <% @posts.sample(6).each do |post| %>
+            <div class="col-md-12 col-lg-6">
+              <div class= "home-card">
+                <div class="card-title"><h2><%= link_to post.subject, post_path(post) %></h2> </div>
+                <p><%= link_to post.author.title, user_path(post.author) %>
+                  <i> <%= time_ago_in_words(post.created_at) %> ago</i>
+                </p>
 
-    <div class="center-div">
-
-
-
-    </div>
-
-
+                <div class="card-description">
+                  <p><%= truncate(post.content, :length => 150) %></p>
+                  <% if post.content.length > 150 %>
+                  <p class="read_more_button"> <%= link_to "Read more", post_path(post) %></p>
+                  <% end  %>
+                  <% if post.button_valid?(current_user) %>
+                  <p><%= link_to "Write a request to this Post", new_post_request_path(post), class: "make btn btn-success" %></p>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
 

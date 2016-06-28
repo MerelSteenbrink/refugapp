@@ -5,7 +5,6 @@ class Dashboard::HomeController < ApplicationController
    before_action :find_sent_requests, only: [:index]
 
   def index
-
   end
 
   private

@@ -24,7 +24,7 @@
       <div class="homepage-posts">
         <div class="container-fluid">
           <div class="row">
-            <% @posties.each do |post| %>
+            <% @posts.sample(6).each do |post| %>
             <div class="col-md-12 col-lg-6">
               <div class= "home-card">
                 <div class="card-title"><h2><%= link_to post.subject, post_path(post) %></h2> </div>

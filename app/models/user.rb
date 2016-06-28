@@ -106,11 +106,17 @@ class User < ActiveRecord::Base
     connections
   end
 
+  def new_requests
+    self.received_requests.where(status: "pending").length;
+  end
+
   private
 
   def regular_signup_or_existing_user?
    (new_record? && provider.nil?) || persisted?
  end
+
+
 
 end
 

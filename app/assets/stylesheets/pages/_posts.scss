@@ -103,6 +103,29 @@
     transition: background-color 1s, color 1s ease;
 }
 
+
+
 .make-post {
   font-size: 30px;
+}
+
+.map-wrap{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* TOGGLE MAP LIST */
+
+.toggle-map-list{
+  font-size: 30px;
+  border-style: solid;
+  border-color: $light-blue;
+  font-color: white;
+  text-align: left;
+}
+
+
+.list-type{
+  display: flex;
+  justify-content: flex-end
 }

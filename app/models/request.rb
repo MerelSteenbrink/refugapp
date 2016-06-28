@@ -6,6 +6,7 @@ class Request < ActiveRecord::Base
 
   validates :message, :status, :messenger_id, :post_id, presence: true
   validates :status, :inclusion => {in: ["pending", "accepted", "declined"], allow_nil: false}
+  validates :message, length: {minimum: 30, maximum: 1000}
 
 
   validates :messenger, uniqueness: {scope: :post, message: "You've already sent a reaction to this post"}

@@ -50,6 +50,7 @@
   background-color: white;
   margin: 20px auto;
   width: 400px;
+  min-height: 200px;
 }
 
 .profile-city {
@@ -88,4 +89,13 @@
 
 .ruimte {
   margin: 30px;
+}
+
+.btn-delete:hover {
+  color: red;
+}
+
+.profile-please {
+  color: $dark-gray;
+  text-align: left;
 }

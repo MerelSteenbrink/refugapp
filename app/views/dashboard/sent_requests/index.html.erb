@@ -1,4 +1,4 @@
-<%= render "dashboard/welcome" %>
+<div class="wrapper-dashboard">
 <div class="sent_requests">
 
   <% @sent_requests.reverse.each do |request| %>
@@ -10,4 +10,5 @@
 
   <%= link_to "Back to dashboard", dashboard_root_path %> <br>
 
+</div>
 </div>

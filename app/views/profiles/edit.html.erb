@@ -23,7 +23,7 @@
           <img class="hidden photo-preview preview-image"/>
         </div>
 
-        <div class="input-file-container">         
+        <div class="input-file-container">
           <%= f.input :photo, input_html: {class: "file input-file hidden"}, name: "photo"  %>
           <label for="my-file" class="input-file-trigger btn form-button" tabindex="0">select picture</label>
         </div>
@@ -32,7 +32,7 @@
         <% end %>
 
         <div class="shared-links">
-          <%= link_to "delete profile", edit_user_registration_path, data: {confirm: "Are your sure you want to delete your profile?"}, method: :delete  %>
+          <%= link_to "delete profile", edit_user_registration_path, data: {confirm: "Are your sure you want to delete your profile?"}, method: :delete, class: "hvr-buzz btn-delete"  %>
         </div>
       </div>
     </div>

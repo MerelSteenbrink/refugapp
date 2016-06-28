@@ -1,19 +1,21 @@
- <div class="dashboard-card left-card">
-  <div class="subject"> For: <%= link_to request.post.subject, post_path(request.post)  %> </div>
+ <div class="dashboard-card-left">
+  <div class="dashboard-subject"> For: <%= link_to request.post.subject, post_path(request.post)  %> </div>
+  <div class="dashboard-small-card">
   <%= request.message %>
   <div class="sender-request">- <%= link_to request.messenger.title, user_path(request.messenger) %>
     <i> (<%= time_ago_in_words(request.created_at) %> ago)</i>
-  </div><br>
+  </div></div><br>
 
   <!-- Add accept or decline button -->
   <% if request.status == "pending" %>
-  <%= link_to "accept", accept_dashboard_received_request_path(request), method: :patch , class: "btn btn-success" %>
-  <%= link_to "decline", refuse_dashboard_received_request_path(request), method: :patch, class: "btn btn-danger" %>
+  <%= link_to "accept", accept_dashboard_received_request_path(request), method: :patch , class: "hvr-wobble-top btn-accept" %>
+  <%= link_to "decline", refuse_dashboard_received_request_path(request), method: :patch, class: "hvr-buzz btn-decline" %>
   <% elsif request.status == "accepted" %>
-  <div class="label label-success">Connected! <%= link_to "Chat with " + request.messenger.title,
-    post_request_chat_messages_path(request.post, request) %></div>
+  <div class="label label-accepted">Connected! </div> <br> <br>
+  <%= link_to "You can now chat with " + request.messenger.title,
+    post_request_chat_messages_path(request.post, request), class: "hvr-underline-from-center btn-simple-black db-chat-button" %>
     <% elsif request.status == "declined" %>
-    <div class="label label-danger">You declined this request</div>
+    <div class="label label-declined">You declined this request</div>
     <% else %>
     <div class="wrong">Something went wrong</div>
     <% end %>

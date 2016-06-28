@@ -19,19 +19,37 @@
         Or: in need of some help? Look what the locals are offering and send a request!</p>
       </div>
 
+
+      <div class="home-underline"><span class="home-title">What are people posting?</span></div>
       <div class="homepage-posts">
         <div class="container-fluid">
           <div class="row">
-            <% Post.all.each do |post|  %>
-            <div class="col-sm-12 col-md-6">
-              <%= post.subject  %>
-              <% end  %>
+            <% @posties.each do |post| %>
+            <div class="col-md-12 col-lg-6">
+              <div class= "home-card">
+                <div class="card-title"><h2><%= link_to post.subject, post_path(post) %></h2> </div>
+                <p><%= link_to post.author.title, user_path(post.author) %>
+                  <i> <%= time_ago_in_words(post.created_at) %> ago</i>
+                </p>
+
+                <div class="card-description">
+                  <p><%= truncate(post.content, :length => 150) %></p>
+                  <% if post.content.length > 150 %>
+                  <p class="read_more_button"> <%= link_to "Read more", post_path(post) %></p>
+                  <% end  %>
+                  <% if post.button_valid?(current_user) %>
+                  <p><%= link_to "Write a request to this Post", new_post_request_path(post), class: "make btn btn-success" %></p>
+                  <% end %>
+                </div>
+              </div>
             </div>
+            <% end %>
           </div>
         </div>
       </div>
 
-      <div class="home-about-top">
-      </div>
 
+      <footer class="grey-skew">
+
+      </footer>
 

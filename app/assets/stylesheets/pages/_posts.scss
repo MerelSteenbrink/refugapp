@@ -139,3 +139,32 @@
   min-width: 300px;
   margin: 20px 0px;
 }
+
+.delete-post {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  color: red;
+  border: 1px solid red;
+  padding: 2px;
+  &:hover {
+    background-color: red;
+    color: white;
+  }
+  &:visited {
+    color: red;
+    text-decoration: none;
+    &:hover {
+    background-color: red;
+    color: white;
+  }
+  }
+  &:active {
+    color: red;
+    text-decoration: none;
+    &:hover {
+    background-color: red;
+    color: white;
+  }
+  }
+}

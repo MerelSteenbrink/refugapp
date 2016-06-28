@@ -4,14 +4,14 @@
       <div class="col-xs-12 col-sm-6">
        <div class="post-card">
         <div class="one-post-ago">
-            <p><%= time_ago_in_words(@post.created_at) %> ago</p>
-          </div>
-          <div class="one-post-image">
-            <%= cl_image_tag @post.author.full_picture, class: "avatar" %>
-            <%= link_to @post.author.title, user_path(@post.author) %>
-          </div>
+          <p><%= time_ago_in_words(@post.created_at) %> ago</p>
+        </div>
+        <div class="one-post-image">
+          <%= cl_image_tag @post.author.full_picture, class: "avatar" %>
+          <%= link_to @post.author.title, user_path(@post.author) %>
+        </div>
 
-         <div class="posts-underline-orange">
+        <div class="posts-underline-orange">
           <span class="posts-title"> <%= @post.subject %></span></div> <br>
 
           <div class="posts-content">
@@ -30,43 +30,45 @@
       </div>
       <div class="col-xs-12 col-sm-6">
         <div id="post_map" class ="single_map text-center one-post-map";></div>
-            </div>
       </div>
+    </div>
+    <div class="goback">
+      <%= link_to "Back to all posts", posts_path(), class:"btn-black button-with-padding"%>
+    </div>
   </div>
-  </div>
-</div>
 
 
 
-<!-- This is the code for the map -->
-<% content_for(:after_js) do %>
-<script type="text/javascript">
-  $(document).on('ready', function() {
-    var myLatLng = {lat: <%= @post.latitude %>, lng: <%= @post.longitude %>};
 
-    var map = new google.maps.Map(document.getElementById('post_map'), {
-      zoom: 15,
-      center: myLatLng,
-      styles: window.mapStyle
-    });
+  <!-- This is the code for the map -->
+  <% content_for(:after_js) do %>
+  <script type="text/javascript">
+    $(document).on('ready', function() {
+      var myLatLng = {lat: <%= @post.latitude %>, lng: <%= @post.longitude %>};
 
-    var marker = new google.maps.Marker({
-      position: myLatLng,
-      map: map,
-      icon: {
-        path: google.maps.SymbolPath.CIRCLE,
-        fillOpacity: 0.7,
-        fillColor: '#00C7FD',
-        strokeOpacity: 1.0,
-        strokeColor: '#00C7FD',
-        strokeWeight: 3.0,
+      var map = new google.maps.Map(document.getElementById('post_map'), {
+        zoom: 15,
+        center: myLatLng,
+        styles: window.mapStyle
+      });
+
+      var marker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        icon: {
+          path: google.maps.SymbolPath.CIRCLE,
+          fillOpacity: 0.7,
+          fillColor: '#00C7FD',
+          strokeOpacity: 1.0,
+          strokeColor: '#00C7FD',
+          strokeWeight: 3.0,
         scale: 40 //pixels
       }
 
     });
-  })
-</script>
-<% end %>
+    })
+  </script>
+  <% end %>
 
 
 

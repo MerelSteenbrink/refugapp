@@ -5,14 +5,14 @@
   <div class="container">
     <div class="posts-selection">
   <div class="list-type">
-      <span style="cursor:default" class="toggle-map-list">
+      <span style="cursor:pointer" class="toggle-map-list">
         <a class="btn-blue-select butti active" data-target="#list-part">LIST</a>
         <a class="btn-blue-select butti" data-target="#map">MAP</a>
       </span>
   </div>
       <div class="posts-type-selection person-type">
-        <%= link_to "Refugee", posts_path(kind: 'refugee', category: @category), class: filter_kind_css_class('refugee') %>
-        <%= link_to "Dutchie", posts_path(kind: 'dutchie', category: @category), class: filter_kind_css_class('dutchie') %>
+        <%= link_to "Refugees", posts_path(kind: 'refugee', category: @category), class: filter_kind_css_class('refugee') %>
+        <%= link_to "Dutchies", posts_path(kind: 'dutchie', category: @category), class: filter_kind_css_class('dutchie') %>
         <%= link_to "All", posts_path(kind: 'all', category: @category), class: filter_kind_css_class('all') %>
       </div>
 

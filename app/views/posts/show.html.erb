@@ -19,11 +19,12 @@
           </div>
 
           <div class="post-make">
-            <% if @post.button_valid?(current_user) %>
-            <p><%= link_to "Write a request to this Post", new_post_request_path(@post), class: "hvr-underline-from-center btn-border-orange" %></p>
+            <% if @post.button_valid(current_user) == "redirect" %>
+            <p><%= link_to "Write a request to this Post", new_user_session_path(), class: "hvr-underline-from-center btn-border-orange" %></p>
+            <% elsif @post.button_valid(current_user) == "request" %>
+            <p><%= link_to "Write a request to this Post", new_post_request_path(post), class: "hvr-underline-from-center btn-border-orange" %></p>
+            <%else %>
             <% end %>
-            <%= link_to "Back to all posts", posts_path, class: "hvr-underline-from-center btn-simple-orange"  %>
-
           </div>
         </div>
       </div>

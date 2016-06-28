@@ -107,15 +107,15 @@ class User < ActiveRecord::Base
   end
 
   def new_requests
-    self.received_requests.where(status: "pending").length;
-    # self.sent_requests.each do |request|
-    #   # you sent a request and other person accepts/decline
-    #   # you received a request and you didn't accepted/declined it yet
-    #   if request.updated_at && self.last_sign_in_at && request.updated_at > self.last_sign_in_at
-    #     sum += 1
-    #   end
-    # end
-    # sum
+    sum = self.received_requests.where(status: "pending").length;
+    self.sent_requests.each do |request|
+      # you sent a request and other person accepts/decline
+      # you received a request and you didn't accepted/declined it yet
+      if request.updated_at && self.last_sign_in_at && request.updated_at > self.last_sign_in_at && request.updated_at != request.created_at
+        sum += 1
+      end
+    end
+    sum
   end
 
   private

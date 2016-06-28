@@ -1,8 +1,8 @@
 class Dashboard::HomeController < ApplicationController
   before_action :find_current_user, only: [:index]
-   before_action :find_posts, only: [:index]
-   before_action :find_received_requests, only: [:index]
-   before_action :find_sent_requests, only: [:index]
+  before_action :find_posts, only: [:index]
+  before_action :find_received_requests, only: [:index]
+  before_action :find_sent_requests, only: [:index]
 
   def index
   end
@@ -24,7 +24,4 @@ class Dashboard::HomeController < ApplicationController
   def find_sent_requests
     @sent_requests = current_user.sent_requests
   end
-
-
-
 end

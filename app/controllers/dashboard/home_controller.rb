@@ -5,7 +5,7 @@ class Dashboard::HomeController < ApplicationController
    before_action :find_sent_requests, only: [:index]
 
   def index
-
+    @samples = Post.all.sample(6)
   end
 
   private

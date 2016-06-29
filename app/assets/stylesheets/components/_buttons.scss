@@ -27,12 +27,6 @@ btn btn-blue-black
   &:before {
     background: $orange;
   }
-  &:active {
-    text-decoration: none;
-  }
-  &:visited {
-    text-decoration: none;
-  }
 }
 
 .btn-blue {
@@ -185,6 +179,22 @@ btn btn-blue-black
   color: white;
   &:hover {
     background-color: $dark-gray;
+    color: white;
+  }
+}
+
+.form-submit-button {
+  margin: 10px;
+  border: 2px $dark-gray;
+  background-color: white;
+  border: 1px solid $orange;
+  transition: background-color 0.4s, color 0.4s ease;
+  padding: 10px;
+  font-family: $base-font;
+  color: $orange;
+  font-weight: 700;
+  &:hover {
+    background-color: $orange;
     color: white;
   }
 }

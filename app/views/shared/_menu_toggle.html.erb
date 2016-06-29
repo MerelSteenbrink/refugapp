@@ -11,7 +11,15 @@
       <%= link_to "All posts", posts_path, class: "hvr-underline-from-center btn-simple-black" %> <br>
       <%= link_to "Shared stories", shared_stories_path, class: "hvr-underline-from-center btn-simple-black" %> <br>
       <% if current_user %>
-        <%= link_to "My dashboard", dashboard_root_path, class: "hvr-underline-from-center btn-simple-black" %> <br>
+
+        <span class="badge-container-dashboard">
+        <%= link_to "My dashboard", dashboard_root_path, class: "hvr-underline-from-center btn-simple-black" %>
+        <% if !current_user.new_requests.nil? && current_user.new_requests > 0 %>
+              <div class="badge-dashboard"><%= current_user.new_requests %></div>
+        <% end %>
+        </span>
+        <br>
+
       <%= link_to "My profile", profile_path, class: "hvr-underline-from-center btn-simple-black" %> <br> <br>
       <%= link_to "Log out",  destroy_user_session_path, method: :delete, class: "hvr-underline-from-center btn-simple-black small-font"  %>
       <% else %>
@@ -22,5 +30,3 @@
 
     </div>
   </div>
-
-

@@ -3,7 +3,7 @@
 </div>
 <div class="home-middle">
   <div class="home-logo"><%=image_tag "refuGapp.png", width: '300px'  %></div> <br>
-  <div class="home-tagline">Hallo - Hi - السلام عليكم </div>
+  <div class="home-tagline">Hallo - Hi - مرحبا </div>
   <div class="home-button">
     <% if current_user  %>
     <%= link_to "What's new?", posts_path, class:"hvr-sweep-to-right btn-orange"%>
@@ -30,40 +30,34 @@
           <div class="col-xs-12 col-sm-6 col-md-4">
             <div class="posts-card">
               <div class="posts-underline-orange">
-                <span class="posts-title"> <%= post.subject %></span> </div><br>
-                <div class="posts-content">
-                  <%= truncate(post.content, :length => 120) %>
-                  <% if post.content.length > 120 %>
-                  <%= link_to "read more", post_path(post)   %>
-                  <% end %>
-                </div>
-                <div class="post-ago">
-                  <p><%= time_ago_in_words(post.created_at) %> ago</p>
-                </div>
-                <div class="posts-images">
-                  <%= cl_image_tag post.author.full_picture, class: "avatar" %>
-                  <%= link_to post.author.title, user_path(post.author) %>
-                </div>
-                <div class="post-make">
-
-                  <% if post.button_valid?(current_user) %>
-                  <p><%= link_to "Write a request to this Post", new_post_request_path(post), class: "hvr-underline-from-center btn-border-orange" %></p>
-                  <% end %>
-                </div>
-                <% if post.category == 'social'  %>
-                <div class="posts-icon"><i class="fa fa-coffee" aria-hidden="true"></i></div>
-                <% elsif post.category == 'skills'  %>
-                <div class="posts-icon"><i class="fa fa-wrench" aria-hidden="true"></i></div>
-                <% elsif post.category == "language"  %>
-                <div class="posts-icon"><i class="fa fa-comments" aria-hidden="true"></i>
-                </div>
-                <% end  %>
-                
-                
+                <span class="posts-title"> <%= post.subject %></span> 
+              </div><br>
+              <div class="posts-content">
+                <%= truncate(post.content, :length => 120) %>
+                <% if post.content.length > 120 %>
+                <%= link_to "read more", post_path(post)   %>
+                <% end %>
+              </div>
+              <div class="post-ago">
+                <p><%= time_ago_in_words(post.created_at) %> ago</p>
+              </div>
+              <div class="posts-images">
+                <%= cl_image_tag post.author.full_picture, class: "avatar" %>
+                <%= link_to post.author.title, user_path(post.author) %>
+              </div>
+              <div class="post-make">
+                <% if post.button_valid(current_user) == "redirect" %>
+                <p><%= link_to "Write a request to this Post", new_user_session_path(), class: "hvr-underline-from-center btn-border-orange" %></p>
+                <% elsif post.button_valid(current_user) == "request" %>
+                <p><%= link_to "Write a request to this Post", new_post_request_path(post), class: "hvr-underline-from-center btn-border-orange" %></p>
+                <%else %>
+                <% end %>
               </div>
             </div>
-            <% end %>
           </div>
+          <% end %>
         </div>
       </div>
     </div>
+  </div>
+</div>

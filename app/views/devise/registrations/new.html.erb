@@ -11,7 +11,7 @@
         <%= f.input :last_name, required: true, placeholder: 'last name', label: false  %>
         <p>I am:
           <div class="radio-buttons">
-            <%= f.collection_radio_buttons :kind, [['a local', 'a local'] ,['new in the Netherlands', 'new in the Netherlands']],:first, :last, required: true %>
+            <%= f.collection_radio_buttons :kind, [['dutchie', 'a local'] ,['refugee', 'new in the Netherlands']],:first, :last, required: true %>
           </div>
         </p>
         <%= f.input :description, placeholder: 'write something about yourself', required: true, label: false  %>

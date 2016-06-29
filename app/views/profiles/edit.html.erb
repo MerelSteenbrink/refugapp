@@ -11,7 +11,7 @@
         <% if @user.kind == nil  %>
         <p>I am a:
           <div class="radio-buttons">
-            <%= f.collection_radio_buttons :kind, [['dutchie', 'dutchie'] ,['refugee', 'refugee']],:first, :last, required: true %>
+            <%= f.collection_radio_buttons :kind, [['dutchie', 'a local'] ,['refugee', 'new in the Netherlands']],:first, :last, required: true %>
           </div>
         </p>
         <% end  %>

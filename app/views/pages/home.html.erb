@@ -13,7 +13,7 @@
   </div>
 </div>
 <div class="home-wrapper">
-  <div class="home-underline"><span class="home-title">About</span></div>
+  <div class="home-title">About</div>
   <div class="home-about">
     <p> We all are blessed with a lot of <span class="home-highlight">skills</span>. Why not connect with the people around us by exchanging them? With RefuGapp we are filling the gap between locals and newcomers by providing a platform where you can offer your offer and find skill and <span class="home-highlight">connect</span> with new people! </p>
     <p>Are you a <span class="home-highlight">local</span>? Get to now the newcomers in your city by exchanging skills! Discover how refugees can help you, send a request and.. connect! Or: a skill you want to share? Make a post and someone will find you!</p>
@@ -22,7 +22,7 @@
     </div>
 
 
-    <div class="home-underline"><span class="home-title">What are people posting?</span></div>
+    <div class="home-title">What are people posting?</div>
     <div class="homepage-posts">
       <div class="container-fluid">
         <div class="row">
@@ -57,7 +57,10 @@
           </div>
           <% end %>
         </div>
-      </div>
+      </div>  <br>
+      <div class="posts-center">
+          <%= link_to 'All posts', posts_path, class:"hvr-sweep-to-right btn-orange  make-post" %>
+        </div>
     </div>
   </div>
 </div>

@@ -1,5 +1,5 @@
 .home-wrapper {
-  padding: 0 65px;
+  padding: 0 65px 140px;
   margin-bottom: 100px;
 }
 
@@ -39,7 +39,7 @@
 }
 
 .home-about {
-  text-align: center;
+  text-align: justify;
   font-family: $base-font;
   margin: 0 auto;
   color: $dark-gray;
@@ -51,15 +51,9 @@
 .home-title {
   color: $dark-gray;
   text-decoration: none;
-}
-
-.home-underline {
+  font-family: $header-font;
   text-align: center;
-  font-family: $base-font;
-  padding: 0 0 30px;
-  font-size: 32px;
-  text-decoration: underline;
-  color: $light-blue;
+  font-size: 41px;
 }
 
 .center-div {

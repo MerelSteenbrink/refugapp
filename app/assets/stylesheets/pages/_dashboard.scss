@@ -1,5 +1,13 @@
+.background-dashboard {
+width: 100%;
+height: 100%;
+background-image: image-url("background-blue-middle.png");
+background-size: cover;
+}
+
 .wrapper-dashboard {
   padding: 80px 90px;
+  min-height: 100vh;
 }
 
 .dashboard-left {
@@ -9,7 +17,6 @@
 
 .dashboard-right {
   padding: 20px;
-  background-color: $light-blue;
 }
 
 .dashboard-card-left {
@@ -68,19 +75,19 @@
 
 .label-accepted {
   background-color: $accepting-green;
-  padding: 8px 30px;
+  padding: 2px 5px;
   margin: 0 20px;
 }
 
 .label-declined {
   background-color: $declining-red;
-  padding: 8px 30px;
+  padding: 2px 5px;
   margin: 0 20px;
 }
 
 .label-pending {
   background-color: $dark-gray;
-  padding: 8px 30px;
+  padding: 2px 5px;
   margin: 0 20px;
 }
 

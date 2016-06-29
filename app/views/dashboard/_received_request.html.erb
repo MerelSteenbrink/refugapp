@@ -12,10 +12,10 @@
   <%= link_to "decline", refuse_dashboard_received_request_path(request), method: :patch, class: "hvr-buzz btn-decline" %>
   <% elsif request.status == "accepted" %>
   <div class="label label-accepted">Connected! </div> <br> <br>
-  <%= link_to "You can now chat with " + request.messenger.title,
+  <%= link_to "Chat with " + request.messenger.title,
     post_request_chat_messages_path(request.post, request), class: "hvr-underline-from-center btn-simple-black db-chat-button" %>
     <% elsif request.status == "declined" %>
-    <div class="label label-declined">You declined this request</div>
+    <div class="label label-declined">Declined!</div>
     <% else %>
     <div class="wrong">Something went wrong</div>
     <% end %>

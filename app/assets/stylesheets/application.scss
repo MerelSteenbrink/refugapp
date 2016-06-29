@@ -29,5 +29,7 @@ a:hover {
 }
 
 body {
-  color: $dark-gray;
+  background-color: white;
+  background-image: image-url("background-blue-gray.png");
+  background-size: cover;
 }

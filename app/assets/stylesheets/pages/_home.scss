@@ -1,5 +1,5 @@
 .home-wrapper {
-  padding: 0 65px 140px;
+  padding: 0 90px 140px;
   margin-bottom: 100px;
 }
 
@@ -90,3 +90,11 @@
   color: $orange;
 }
 
+@media screen and (max-width: 585px) {
+  .home-about {
+    font-size: 15px;
+  }
+  .home-wrapper {
+    padding: 0 20px 40px;
+  }
+}

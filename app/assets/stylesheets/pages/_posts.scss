@@ -2,7 +2,7 @@
   background-color: white;
   margin-top: 0;
   font-family: $base-font;
-  padding-top: 80px;
+  padding: 80px 90px 0 90px;
   text-align: center;
 }
 
@@ -137,6 +137,10 @@
   position: relative;
   min-height: 400px;
 
+}
+
+.posts-icon {
+  font-size: 30px;
 }
 
 .one-post-ago {

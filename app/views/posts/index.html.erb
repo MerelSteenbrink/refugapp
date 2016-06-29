@@ -33,7 +33,8 @@
           <div class="col-xs-12 col-sm-6 col-md-4">
             <div class="posts-card">
               <div class="posts-underline-orange">
-               <span class="posts-title"> <%= post.subject %></span></div> <br>
+               <span class="posts-title"> <%= post.subject %></span></div>
+               <%= link_to " ", post_path(post), class:"linktopost" %> <br>
                  <% if post.author.kind == "dutchie" %>
                <div class="kind-label dutchie"> local </div>
                <% else %>

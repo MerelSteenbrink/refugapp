@@ -34,6 +34,11 @@
             <div class="posts-card">
               <div class="posts-underline-orange">
                <span class="posts-title"> <%= post.subject %></span></div> <br>
+                 <% if post.author.kind == "dutchie" %>
+               <div class="kind-label dutchie"> local </div>
+               <% else %>
+               <div class="kind-label refugee"> newcomer </div>
+               <% end %>
                <div class="posts-content">
                 <%= truncate(post.content, :length => 120) %>
                 <% if post.content.length > 120 %>

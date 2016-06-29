@@ -55,6 +55,14 @@
                 <%else %>
                 <% end %>
               </div>
+              <% if post.category == 'social'  %>
+              <div class="posts-icon"><i class="fa fa-coffee" aria-hidden="true"></i></div>
+              <% elsif post.category == 'skills'  %>
+              <div class="posts-icon"><i class="fa fa-wrench" aria-hidden="true"></i></div>
+              <% elsif post.category == "language"  %>
+              <div class="posts-icon"><i class="fa fa-comments" aria-hidden="true"></i>
+              </div>
+              <% end  %>
             </div>
           </div>
           <% end %>

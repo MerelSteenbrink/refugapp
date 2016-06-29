@@ -27,6 +27,12 @@ btn btn-blue-black
   &:before {
     background: $orange;
   }
+  &:active {
+    text-decoration: none;
+  }
+  &:visited {
+    text-decoration: none;
+  }
 }
 
 .btn-blue {
@@ -162,6 +168,10 @@ btn btn-blue-black
  &:before {
   background-color: black;
   height: 1px;
+  &:visited {
+    color: black;
+    text-decoration:none;
+  }
 }
 }
 
@@ -186,11 +196,18 @@ btn btn-blue-black
   a {
     text-decoration: none;
   }
+  &:hover {
+    color: white;
+  }
+  &:active {
+    text-decoration: none;
+  }
+  &:visited {
+    text-decoration: none;
+  }
 }
 
-.facebook-button:hover {
-  color: white;
-}
+
 
 
 
@@ -236,8 +253,8 @@ btn btn-blue-black
 
 .active{
   background-color: rgba(0,0,0,0);
-    color: $light-blue;
-    transition: background-color 1s, color 1s ease;
+  color: $light-blue;
+  transition: background-color 1s, color 1s ease;
 }
 
 

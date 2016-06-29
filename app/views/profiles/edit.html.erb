@@ -9,7 +9,7 @@
         <%= f.input :first_name, required: true, placeholder: 'first name', label: false  %>
         <%= f.input :last_name, required: true, placeholder: 'last name', label: false  %>
         <% if @user.kind == nil  %>
-        <p>I am a:
+        <p>I am:
           <div class="radio-buttons">
             <%= f.collection_radio_buttons :kind, [['dutchie', 'a local'] ,['refugee', 'new in the Netherlands']],:first, :last, required: true %>
           </div>

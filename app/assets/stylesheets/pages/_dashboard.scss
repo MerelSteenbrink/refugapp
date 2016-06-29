@@ -129,3 +129,10 @@ background-size: cover;
 .your_posts {
   text-align: center;
 }
+
+@media screen and (max-width: 900px) {
+  .wrapper-dashboard {
+    padding: 80px 10px;
+  }
+}
+

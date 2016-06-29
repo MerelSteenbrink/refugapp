@@ -13,7 +13,7 @@
   <% elsif request.status == "accepted" %>
   <div class="label label-accepted">Connected! </div> <br> <br>
   <%= link_to "Chat with " + request.messenger.title,
-    post_request_chat_messages_path(request.post, request), class: "hvr-underline-from-center btn-simple-black db-chat-button" %>
+    post_request_chat_messages_path(request.post, request), class: "hvr-underline-from-center btn-simple-orange db-chat-button" %>
     <% elsif request.status == "declined" %>
     <div class="label label-declined">Declined!</div>
     <% else %>

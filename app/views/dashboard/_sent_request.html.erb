@@ -11,7 +11,7 @@
   <div class="label label-accepted">Connected with <%= request.post.author.title %> </div>
   <br> <br>
   <%= link_to "You can now chat with #{request.post.author.title}",
-  post_request_chat_messages_path(request.post, request), class: "hvr-underline-from-center btn-simple-black db-chat-button" %>
+  post_request_chat_messages_path(request.post, request), class: "hvr-underline-from-center btn-simple-orange db-chat-button" %>
   <% elsif request.status == "declined" %>
   <div class="label label-declined"><%= request.post.author.title %> declined your request</div>
   <% else %>

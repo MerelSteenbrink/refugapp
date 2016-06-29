@@ -6,7 +6,7 @@
         <div class="col-xs-12 col-sm-6">
           <div class="dashboard-left">
             <div class="received_requests">
-              <h2>Your received requests</h2>
+              <h2 class="text-center">Your received requests</h2>
               <% if @received_requests.length == 0 %>
               <br> You didn't receive any requests yet.
               <% end %>
@@ -22,7 +22,7 @@
 
             <!-- SHOW ALL SENT REQUESTS -->
             <div class="sent_requests">
-              <h2>Your sent requests</h2>
+              <h2 class="text-center">Your sent requests</h2>
               <% if @sent_requests.length == 0 %>
               <br> You didn't send any requests yet.
               <% end %>

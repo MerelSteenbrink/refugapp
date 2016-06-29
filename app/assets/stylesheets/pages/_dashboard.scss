@@ -43,6 +43,8 @@ background-size: cover;
   padding: 10px;
   border-left: 1px dotted $dark-gray;
   margin: 10px 0;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .dashboard-subject {

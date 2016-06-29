@@ -1,4 +1,35 @@
 <div class="wrapper">
+  <div class="form">
+    <h3 class="form-title">NEW REQUEST</h3>
+
+    <h3>Request to:</h3>
+    <div class="post-card">
+      <div class="one-post-ago">
+        <p><%= time_ago_in_words(@post.created_at) %> ago</p>
+      </div>
+      <div class="one-post-image">
+        <%= cl_image_tag @post.author.full_picture, class: "avatar" %>
+        <%= link_to @post.author.title, user_path(@post.author) %>
+      </div>
+
+      <div class="posts-underline-orange">
+        <span class="posts-title"> <%= @post.subject %></span></div> <br>
+
+        <div class="posts-content">
+          <%= @post.content %>
+        </div>
+      </div>
+      <%= form_for [@post, @request] do |f| %>
+      <% if @request.errors.any? %>
+      <div class="alert alert-warning alert-request"> <%= @request.errors.messages.first[1].join %> </div>
+      <% end %>
+      <p><%= f.text_area :message ,:class => 'message', placeholder: " Write your request here", required: true, label: false  %></p>
+      <p><%= f.submit :class => 'btn btn-blue-black request-button' %></p>
+      <% end %>
+    </div>
+  </div>
+
+<!-- <div class="wrapper">
   <h2>Request to:</h2>
   <div class= "card">
     <div class="card-title">
@@ -13,12 +44,6 @@
   </div>
   <div class="text-center">
   <h1 class="text-center">New request:</h1>
-    <%= form_for [@post, @request] do |f| %>
-      <% if @request.errors.any? %>
-        <div class="alert alert-warning alert-request"> <%= @request.errors.messages.first[1].join %> </div>
-      <% end %>
-    <p><%= f.text_area :message ,:class => 'message' %></p>
-    <p><%= f.submit :class => 'btn btn-success' %></p>
-    <% end %>
   </div>
 </div>
+ -->

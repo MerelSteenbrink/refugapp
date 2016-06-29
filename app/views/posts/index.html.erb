@@ -12,8 +12,8 @@
         </span>
       </div>
       <div class="posts-type-selection person-type">
-        <%= link_to "Refugees", posts_path(kind: 'refugee', category: @category), class: filter_kind_css_class('refugee') %>
-        <%= link_to "Dutchies", posts_path(kind: 'dutchie', category: @category), class: filter_kind_css_class('dutchie') %>
+        <%= link_to "Newcomers", posts_path(kind: 'refugee', category: @category), class: filter_kind_css_class('refugee') %>
+        <%= link_to "Locals", posts_path(kind: 'dutchie', category: @category), class: filter_kind_css_class('dutchie') %>
         <%= link_to "All", posts_path(kind: 'all', category: @category), class: filter_kind_css_class('all') %>
       </div>
 

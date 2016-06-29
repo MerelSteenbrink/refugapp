@@ -1,8 +1,15 @@
+.background-stories {
+  width: 100%;
+  height: 100%;
+  background-image: image-url("background-blue-middle.png");
+  background-size: cover;
+}
+
 .wrapper-stories {
-  background-color: white;
   margin-top: 0;
   font-family: $base-font;
   padding: 80px 90px;
+  min-height: 100vh;
 }
 
 .stories-card {

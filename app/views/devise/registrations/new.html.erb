@@ -9,9 +9,9 @@
         <%= f.input :username, required: true, autofocus: true, placeholder: 'username', label: false %>
         <%= f.input :first_name, required: true, placeholder: 'first name', label: false  %>
         <%= f.input :last_name, required: true, placeholder: 'last name', label: false  %>
-        <p>I am a:
+        <p>I am:
           <div class="radio-buttons">
-            <%= f.collection_radio_buttons :kind, [['dutchie', 'dutchie'] ,['refugee', 'refugee']],:first, :last, required: true %>
+            <%= f.collection_radio_buttons :kind, [['a local', 'a local'] ,['new in the Netherlands', 'new in the Netherlands']],:first, :last, required: true %>
           </div>
         </p>
         <%= f.input :description, placeholder: 'write something about yourself', required: true, label: false  %>
@@ -28,8 +28,8 @@
           <label for="my-file" class="input-file-trigger btn form-button" tabindex="0">select picture</label>
         </div>
         <%= f.input :photo_cache, as: :hidden  %>
-        <%= f.submit class: "form-button", value: "SIGN UP" %>
+        <%= f.submit class: "form-submit-button", value: "SIGN UP" %>
         <% end %>
       </div>
+    </div>
   </div>
-</div>

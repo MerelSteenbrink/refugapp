@@ -162,6 +162,10 @@ btn btn-blue-black
  &:before {
   background-color: black;
   height: 1px;
+  &:visited {
+    color: black;
+    text-decoration:none;
+  }
 }
 }
 
@@ -179,6 +183,22 @@ btn btn-blue-black
   }
 }
 
+.form-submit-button {
+  margin: 10px;
+  border: 2px $dark-gray;
+  background-color: white;
+  border: 1px solid $orange;
+  transition: background-color 0.4s, color 0.4s ease;
+  padding: 10px;
+  font-family: $base-font;
+  color: $orange;
+  font-weight: 700;
+  &:hover {
+    background-color: $orange;
+    color: white;
+  }
+}
+
 .facebook-button {
   padding: 5px 0;
   background-color: #49639F;
@@ -186,11 +206,18 @@ btn btn-blue-black
   a {
     text-decoration: none;
   }
+  &:hover {
+    color: white;
+  }
+  &:active {
+    text-decoration: none;
+  }
+  &:visited {
+    text-decoration: none;
+  }
 }
 
-.facebook-button:hover {
-  color: white;
-}
+
 
 
 
@@ -236,8 +263,8 @@ btn btn-blue-black
 
 .active{
   background-color: rgba(0,0,0,0);
-    color: $light-blue;
-    transition: background-color 1s, color 1s ease;
+  color: $light-blue;
+  transition: background-color 1s, color 1s ease;
 }
 
 

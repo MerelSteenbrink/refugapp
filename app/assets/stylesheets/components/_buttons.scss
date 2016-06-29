@@ -243,16 +243,15 @@ btn btn-blue-black
 
 .btn-blue-select {
   font-family: arial;
-  padding: 3px;
+  padding-bottom: 1px;
   padding-left: 40px;
   padding-right: 40px;
-  background-color: $light-blue;
-  color: white;
+  background-color: white;
+  color: $light-blue;
   font-family: $base-font;
   &:hover {
-    background-color: rgba(0,0,0,0);
+    opacity: 0.8 ;
     color: $light-blue;
-    transition: background-color 1s ease;
   }
   &:before {
     background: $light-blue;
@@ -262,9 +261,9 @@ btn btn-blue-black
 
 
 .active{
-  background-color: rgba(0,0,0,0);
-  color: $light-blue;
-  transition: background-color 1s, color 1s ease;
-}
+  background-color: $light-blue;
+  color: white;
+  transition: background-color 1s, color 1s linear;
 
+}
 

@@ -1,5 +1,5 @@
 .home-wrapper {
-  padding: 0 65px;
+  padding: 0 90px;
 }
 
 .home-top {
@@ -114,11 +114,8 @@
 }
 
 @media screen and (max-width: 585px) {
-  .home-logo{
-    padding-top: 2px;
-    img {
-      width: 70%;
-    }
+  .home-about {
+    font-size: 15px;
   }
 }
 

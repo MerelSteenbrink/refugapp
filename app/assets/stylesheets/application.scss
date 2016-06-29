@@ -20,12 +20,14 @@
 // Linkjes zwart nu even hier, maar vergeet het niet zo weg te halen :)
 a {
   color: $dark-gray;
-}
-
-
-a:hover {
-  color: $orange;
-  text-decoration: none;
+  &:hover {
+    color: $orange;
+    text-decoration: none;
+  }
+  &:visited {
+    text-decoration: none;
+    color: $dark-gray;
+  }
 }
 
 body {

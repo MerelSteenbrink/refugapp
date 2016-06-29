@@ -8,7 +8,7 @@
       <div class="list-type">
         <span style="cursor:pointer" class="toggle-map-list">
           <a class="btn-blue-select butti active" data-target="#list-part">LIST</a>
-          <a class="btn-blue-select butti" data-target="#map">MAP</a>
+          <a class="btn-blue-select butti" data-target="#map" onClick="loadMap()">MAP</a>
         </span>
       </div>
       <div class="posts-type-selection person-type">
@@ -90,24 +90,24 @@
 
 <!-- This is the code for the map -->
 <% content_for(:after_js) do %>
-<%= javascript_tag do %>
-$(document).on('ready', function() {
-handler = Gmaps.build('Google');
-handler.buildMap({
-internal: { id: 'map' },
-provider: {
-zoom: 8,
-center:   new google.maps.LatLng(52.3702, 4.8952),
-styles: window.mapStyle
-}
-},
-function(){
-markers = handler.addMarkers(<%= raw @markers.to_json %>);
-handler.bounds.extendWith(markers);
-<!-- handler.fitMapToBounds(); -->
-});
-})
-<% end %>
+  <%= javascript_tag do %>
+    function loadMap() {
+      handler = Gmaps.build('Google');
+      handler.buildMap({
+        internal: { id: 'map' },
+        provider: {
+          zoom: 8,
+          center:   new google.maps.LatLng(52.3702, 4.8952),
+          styles: window.mapStyle
+        }
+      },
+      function(){
+        markers = handler.addMarkers(<%= raw @markers.to_json %>);
+        handler.bounds.extendWith(markers);
+        <!-- handler.fitMapToBounds(); -->
+      });
+    }
+  <% end %>
 <% end %>
 
 

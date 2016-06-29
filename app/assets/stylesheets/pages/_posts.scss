@@ -1,14 +1,15 @@
 .wrapper-posts {
-  background-color: white;
-  margin-top: 0;
-  font-family: $base-font;
+  width: 100%;
+  height: 100%;
+  background-image: image-url("background-gray-middle.png");
+  background-size: cover;
   padding: 80px 90px 0 90px;
   text-align: center;
 }
 
 .posts-card {
   background-color: white;
-  border: 4px solid $light-blue;
+  border: 3px solid $orange;
   padding: 74px 27px 11px 16px;
   margin: 20px 0px;
   min-height: 380px;

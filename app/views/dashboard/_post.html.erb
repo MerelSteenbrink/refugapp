@@ -1,59 +1,60 @@
 <div class="dashboard-card-right">
 
- <div class="dashboard-underline">
-  <span class="dashboard-title"> <%= post.subject %></span>
-</div>
-<br>
-<div class="posts-content">
-<%= truncate(post.content, :length => 60) %>
-<% if post.content.length > 60 %>
-<%= link_to "read more", post_path(post)   %>
-<% end %>
-</div>
 
+<div class="dashboard-subject"> <%= link_to post.subject, post_path(post) %></div>
 
-<div class="sender-request"><i> (<%= time_ago_in_words(post.created_at) %> ago)</i></div>
-<% requests = @received_requests.where(post: post) %>
-<br>
-
-<div class="hvr-underline-from-center btn-simple-orange" type="button" data-toggle="collapse" data-target="#collapserequests<%= post.id %> " aria-expanded="false" aria-controls="collapse">
-  See requests (<%= requests.length %>)
-</div>
-
-<div class="collapse" id="collapserequests<%= post.id %>">
-  <br>
-  <% if requests != [] %>
-  <% requests.reverse.take(3).each do |request| %>
-  <div class="dashboard-small-card">
-    <%= request.message %> <br>
-    <div class="sender-request">- <%= link_to request.messenger.title, user_path(request.messenger) %>
-      <i> (<%= time_ago_in_words(request.created_at) %> ago)</i>
-    </div> <br>
-
-    <!-- Add accept or decline button -->
-    <% if request.status == "pending" %>
-    <%= link_to "accept", accept_dashboard_received_request_path(request), method: :patch , class: "hvr-wobble-top btn-accept" %>
-    <%= link_to "decline", refuse_dashboard_received_request_path(request), method: :patch, class: "hvr-buzz btn-decline" %>
-
-    <% elsif request.status == "accepted" %>
-    <div class="label label-accepted"> Connected! </div> <br><br>
-    <%= link_to "You can now chat with " + request.messenger.title,
-    post_request_chat_messages_path(request.post, request), class: "hvr-underline-from-center btn-simple-black db-chat-button" %>
-
-    <% elsif request.status == "declined" %>
-    <div class="label label-declined">You declined this request</div>
-
-    <% else %>
-    <div class="wrong">Something went wrong</div>
+  <i>(<%= time_ago_in_words(post.created_at) %> ago)</i>
+  <br><br>
+  <div class="posts-content">
+    <%= truncate(post.content, :length => 60) %>
+    <% if post.content.length > 60 %>
+    <%= link_to "read more", post_path(post)   %>
     <% end %>
   </div>
-  <% end %> <br><br>
 
-  <% else %>
-  <p>There are no reactions yet</p>
-  <% end  %>
 
-</div>
 
-<%= link_to "delete", dashboard_post_path(post), method: :delete, data: {confirm: "Are you sure to delete this post?"}, class: "delete-post"  %>
+  <% requests = @received_requests.where(post: post) %>
+  <br>
+
+  <div class="hvr-underline-from-center btn-simple-orange" type="button" data-toggle="collapse" data-target="#collapserequests<%= post.id %> " aria-expanded="false" aria-controls="collapse">
+    See requests (<%= requests.length %>)
+  </div>
+
+  <div class="collapse" id="collapserequests<%= post.id %>">
+    <br>
+    <% if requests != [] %>
+    <% requests.reverse.take(3).each do |request| %>
+    <div class="dashboard-small-card">
+      <%= request.message %> <br>
+      <div class="sender-request">- <%= link_to request.messenger.title, user_path(request.messenger) %>
+        <i> (<%= time_ago_in_words(request.created_at) %> ago)</i>
+      </div> <br>
+
+      <!-- Add accept or decline button -->
+      <% if request.status == "pending" %>
+      <%= link_to "accept", accept_dashboard_received_request_path(request), method: :patch , class: "hvr-wobble-top btn-accept" %>
+      <%= link_to "decline", refuse_dashboard_received_request_path(request), method: :patch, class: "hvr-buzz btn-decline" %>
+
+      <% elsif request.status == "accepted" %>
+      <div class="label label-accepted"> Connected! </div> <br><br>
+      <%= link_to "You can now chat with " + request.messenger.title,
+      post_request_chat_messages_path(request.post, request), class: "hvr-underline-from-center btn-simple-black db-chat-button" %>
+
+      <% elsif request.status == "declined" %>
+      <div class="label label-declined">You declined this request</div>
+
+      <% else %>
+      <div class="wrong">Something went wrong</div>
+      <% end %>
+    </div>
+    <% end %> <br><br>
+
+    <% else %>
+    <p>There are no reactions yet</p>
+    <% end  %>
+
+  </div>
+
+  <%= link_to "delete", dashboard_post_path(post), method: :delete, data: {confirm: "Are you sure to delete this post?"}, class: "hvr-buzz delete-post"  %>
 </div>

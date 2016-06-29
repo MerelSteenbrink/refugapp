@@ -1,57 +1,61 @@
-<div class="wrapper-dashboard">
-  <h1 class="text-center">Dashboard</h1>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-xs-12 col-sm-6">
-        <div class="dashboard-left">
-          <div class="received_requests">
-            <h2>Your received requests</h2>
-            <% if @received_requests.length == 0 %>
-            <br> You didn't receive any requests yet.
-            <% end %>
-            <% @received_requests.reverse.take(3).each do |request| %>
-            <!-- Render received request -->
-            <%= render "dashboard/received_request", request: request  %>
-            <% end %> <br>
-            <% if @received_requests.length > 3 %>
-            <%= link_to "See more received requests", dashboard_received_requests_path, class: "hvr-underline-from-center btn-border-black"  %>
-            <% end %>
-            <br>
-          </div>
+<div class="background-dashboard">
+  <div class="wrapper-dashboard">
+    <h1 class="text-center">Dashboard</h1>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6">
+          <div class="dashboard-left">
+            <div class="received_requests">
+              <h2 class="text-center">Your received requests</h2>
+              <% if @received_requests.length == 0 %>
+              <br>
+              <p class="text-center">You didn't receive any requests yet.</p>
+              <% end %>
+              <% @received_requests.reverse.take(3).each do |request| %>
+              <!-- Render received request -->
+              <%= render "dashboard/received_request", request: request  %>
+              <% end %> <br>
+              <% if @received_requests.length > 3 %>
+              <%= link_to "See more received requests", dashboard_received_requests_path, class: "hvr-underline-from-center btn-border-black"  %>
+              <% end %>
+              <br>
+            </div>
 
-          <!-- SHOW ALL SENT REQUESTS -->
-          <div class="sent_requests">
-            <h2>Your sent requests</h2>
-            <% if @sent_requests.length == 0 %>
-            <br> You didn't send any requests yet.
-            <% end %>
-            <% @sent_requests.reverse.take(3).each do |request| %>
-            <!-- Render sent request -->
-            <%= render "dashboard/sent_request", request: request  %>
-            <% end %> <br>
-            <% if @sent_requests.length > 3 %>
-            <%= link_to "See more sent requests", dashboard_sent_requests_path, class: "hvr-underline-from-center btn-border-black"  %>
-            <% end %>
-            <br>
+            <!-- SHOW ALL SENT REQUESTS -->
+            <div class="sent_requests">
+              <h2 class="text-center">Your sent requests</h2>
+              <% if @sent_requests.length == 0 %>
+              <br>
+              <p class="text-center">You didn't send any requests yet.</p>
+              <% end %>
+              <% @sent_requests.reverse.take(3).each do |request| %>
+              <!-- Render sent request -->
+              <%= render "dashboard/sent_request", request: request  %>
+              <% end %> <br>
+              <% if @sent_requests.length > 3 %>
+              <%= link_to "See more sent requests", dashboard_sent_requests_path, class: "hvr-underline-from-center btn-border-black"  %>
+              <% end %>
+              <br>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-xs-12 col-sm-6">
-        <div class="dashboard-right">
-          <div class="your_posts">
-            <h2 class="text-center">Your posts</h2>
-            <% if @posts.length == 0 %>
-            <br> You didn't create any posts yet.
-            <br> <br> <%= link_to "submit a post", new_post_path, class: "hvr-sweep-to-right btn-orange"   %>
-            <% end %>
-            <% @posts.reverse.take(3).each do |post| %>
-            <!-- render post -->
-            <%= render "dashboard/post", post: post %>
-            <% end %> <br>
-            <% if @posts.length > 3 %>
-            <%= link_to "See all your posts", dashboard_posts_path, class: "hvr-underline-from-center btn-border-black"  %>
-            <% end %>
-            <br>
+        <div class="col-xs-12 col-sm-6">
+          <div class="dashboard-right">
+            <div class="your_posts">
+              <h2 class="text-center">Your posts</h2>
+              <% if @posts.length == 0 %>
+              <br> You didn't create any posts yet.
+              <br> <br> <%= link_to "submit a post", new_post_path, class: "hvr-sweep-to-right btn-orange"   %>
+              <% end %>
+              <% @posts.reverse.take(3).each do |post| %>
+              <!-- render post -->
+              <%= render "dashboard/post", post: post %>
+              <% end %> <br>
+              <% if @posts.length > 3 %>
+              <%= link_to "See all your posts", dashboard_posts_path, class: "hvr-underline-from-center btn-border-black"  %>
+              <% end %>
+              <br>
+            </div>
           </div>
         </div>
       </div>

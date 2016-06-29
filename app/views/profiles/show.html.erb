@@ -45,7 +45,7 @@
            <div class="profile-posts">
              <h3 class="profile-underline"><span class="profile-title"> Latest posts from <%= @user.title %></span></h3>
              <% @user.posts.take(5).each do |post|%>
-             <%= link_to post.subject, post_path(post) %> <br>
+             <%= link_to post.subject, post_path(@post) %> <br>
              <% end %>
            </div>
          </div>

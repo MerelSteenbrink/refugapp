@@ -14,11 +14,13 @@
 .home-middle {
   margin-top: 120px;
   padding-top: 60px;
+  padding-bottom: 60px;
   text-align: center;
   min-height: 300px;
   display: flex;
   justify-content: center;
   flex-direction: column;
+  height: 100vh;
 }
 
 .home-logo {
@@ -88,6 +90,19 @@
 
 .home-highlight {
   color: $orange;
+}
+
+.indent-home {
+  padding-left: 20px;
+}
+
+.padding-top {
+  padding-top: 60px;
+}
+
+.no-border {
+  outline: none;
+  border: 0;
 }
 
 @media screen and (max-width: 585px) {

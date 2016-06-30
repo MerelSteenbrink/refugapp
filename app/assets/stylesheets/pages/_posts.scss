@@ -24,15 +24,15 @@
 
 .linktopost{
   position: absolute;
-    top: 61px;
-    left: 54px;
-    bottom: 0;
-    width: 69%;
-    height: 15%;
-    z-index: 2;
-    opacity: 1;
-    padding-top: 30px;
-    padding-left: 100px;
+  top: 61px;
+  left: 54px;
+  bottom: 0;
+  width: 69%;
+  height: 15%;
+  z-index: 2;
+  opacity: 1;
+  padding-top: 30px;
+  padding-left: 100px;
 
 }
 
@@ -141,6 +141,22 @@
   font-size: 30px;
 }
 
+.type-hidden {
+  display: none;
+}
+
+.category-hidden {
+  display: none;
+}
+
+.post-make {
+  position: absolute;
+  bottom: 45px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
 .map-wrap{
   padding-top: 20px;
   padding-bottom: 20px;
@@ -215,25 +231,25 @@
     color: red;
     text-decoration: none;
     &:hover {
-    background-color: red;
-    color: white;
-  }
+      background-color: red;
+      color: white;
+    }
   }
   &:active {
     color: red;
     text-decoration: none;
     &:hover {
-    background-color: red;
-    color: white;
-  }
+      background-color: red;
+      color: white;
+    }
   }
   &:focus {
     color: red;
     text-decoration: none;
     &:hover {
-    background-color: red;
-    color: white;
-  }
+      background-color: red;
+      color: white;
+    }
   }
 }
 

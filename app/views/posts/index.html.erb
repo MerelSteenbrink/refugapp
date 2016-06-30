@@ -12,18 +12,18 @@
         </span>
       </div>
       <div class="posts-type-selection person-type">
-        <%= link_to "Newcomers", posts_path(kind: 'refugee', category: @category), class: filter_kind_css_class('refugee') %>
-        <%= link_to "Locals", posts_path(kind: 'dutchie', category: @category), class: filter_kind_css_class('dutchie') %>
-        <%= link_to "All", posts_path(kind: 'all', category: @category), class: filter_kind_css_class('all') %>
+      <%= link_to "Newcomers", '', class: "btn-border-black", id: 'kind_refugee' %>
+        <%= link_to "Locals", '', class: "btn-border-black", id: 'kind_dutchie' %>
+        <%= link_to "All", '', class: "btn-border-black", id: 'kind_all' %>
       </div>
 
       <div class="posts-type-selection category-type">
-        <%= link_to "Skills", posts_path(category: 'skills', kind: @kind), class: filter_category_css_class('skills') %>
-        <%= link_to "Social", posts_path(category: 'social', kind: @kind), class: filter_category_css_class('social') %>
+        <%= link_to "Skills", '', class: filter_category_css_class('skills'), id: 'category_skills' %>
+        <%= link_to "Social", '', class: filter_category_css_class('social'), id: 'category_social' %>
 
-        <%= link_to "Languages", posts_path(category: 'language', kind: @kind), class: filter_category_css_class('language') %>
+        <%= link_to "Languages", '', class: filter_category_css_class('language'), id: 'category_languages' %>
 
-        <%= link_to "All", posts_path(category: 'all', kind: @kind), class: filter_category_css_class('all') %>
+        <%= link_to "All", '', class: filter_category_css_class('all'), id: 'category_all' %>
       </div>
 
 
@@ -31,14 +31,14 @@
         <div class="row">
           <% @posts.reverse.each do |post| %>
           <div class="col-xs-12 col-sm-6 col-md-4">
-            <div class="posts-card">
+            <div class= "posts-card" >
               <div class="posts-underline-orange">
                <span class="posts-title"> <%= post.subject %></span></div>
                <%= link_to " ", post_path(post), class:"linktopost" %> <br>
-                 <% if post.author.kind == "dutchie" %>
-               <div class="kind-label dutchie"> local </div>
+               <% if post.author.kind == "dutchie" %>
+               <div class="kind-label dutchie <%= post.category %>"> local </div>
                <% else %>
-               <div class="kind-label refugee"> newcomer </div>
+               <div class="kind-label refugee <%= post.category %>"> newcomer </div>
                <% end %>
                <div class="posts-content">
                 <%= truncate(post.content, :length => 120) %>
@@ -88,24 +88,24 @@
 
 <!-- This is the code for the map -->
 <% content_for(:after_js) do %>
-  <%= javascript_tag do %>
-    function loadMap() {
-      handler = Gmaps.build('Google');
-      handler.buildMap({
-        internal: { id: 'map' },
-        provider: {
-          zoom: 8,
-          center:   new google.maps.LatLng(52.3702, 4.8952),
-          styles: window.mapStyle
-        }
-      },
-      function(){
-        markers = handler.addMarkers(<%= raw @markers.to_json %>);
-        handler.bounds.extendWith(markers);
-        <!-- handler.fitMapToBounds(); -->
-      });
-    }
-  <% end %>
+<%= javascript_tag do %>
+function loadMap() {
+handler = Gmaps.build('Google');
+handler.buildMap({
+internal: { id: 'map' },
+provider: {
+zoom: 8,
+center:   new google.maps.LatLng(52.3702, 4.8952),
+styles: window.mapStyle
+}
+},
+function(){
+markers = handler.addMarkers(<%= raw @markers.to_json %>);
+handler.bounds.extendWith(markers);
+<!-- handler.fitMapToBounds(); -->
+});
+}
+<% end %>
 <% end %>
 
 

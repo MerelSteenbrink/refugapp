@@ -2,8 +2,9 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
   def index
-    @kind = params[:kind]
-    @category = params[:category]
+   @posts = Post.all
+   @kind = params[:kind]
+   @category = params[:category]
 
     #If a user has not searched/clicked on a specific kind of post, we decide what to show him based on the user.kind (refugee/dutchie) and show the posts of the opposite kind.
 

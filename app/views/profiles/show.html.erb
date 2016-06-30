@@ -51,7 +51,7 @@
              <h3 class="profile-underline"><span class="profile-title"> Latest posts from <%= @user.title %></span></h3> <br>
              <% if @user.posts.length == 0 %>
                 You didn't submit any post yet. <br>
-                 <%= link_to "Submit a post", new_shared_story_path, class: "hvr-underline-from-center btn-simple-black btn-always-black"  %>
+                 <%= link_to "Submit a post", new_post_path, class: "hvr-underline-from-center btn-simple-black btn-always-black"  %>
              <% else %>
              <% @user.posts.take(5).each do |post|%>
              <%= link_to post.subject, post_path(post) %> <br>

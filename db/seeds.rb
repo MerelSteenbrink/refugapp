@@ -38,7 +38,7 @@ sleep 0.4
 p1 = Post.create!(subject: "Biking to Zaandam", content: "There are really nice windmills near Zaamdam. Let's take our bikes, explore the windmills and have lunch somewhere nearby during one of the upcoming weekends! Who is in?", author_id: du1.id, postal_code: "1505 CL", city: "Zaandam", category: "social")
 sleep 0.4
 p2 = Post.create!(subject: "Origami",created_at: "25-6-2016",  content: "Is there anyone who knows a bit of origami? I started learning how to make some birds and really want to learn more! ", author_id: ru4.id, postal_code: "1066 VH", city: "Amsterdam", category: "skills")
-sleep 0.4
+sleep 0.4os
 p9 = Post.create!(subject: "Jquery",created_at: "23-6-2016",  content: "The last three months I learned how to code in Ruby and Ruby on rails. Right now, I would love to pimp my portofolio with some nice jquery functions. Is there someone who would like to help me with that?" , author_id: au1.id, postal_code: "1075WS", city: "Amsterdam", category: "skills")
 sleep 0.4it dd
 p10 = Post.create!(subject: "Fixing bikes", created_at: "28-6-2016", content: "I am crazy about bikes, and love fixing them. I would like to teach other people how to fix bikes.", author_id: au1.id, postal_code: "1075WS", city: "Amsterdam", category: "skills")

@@ -1,73 +1,87 @@
 <div class="home-background">
-<div class="home-top">
-</div>
-<div class="home-middle">
-  <div class="home-logo"><%=image_tag "refuGapp.png", width: '300px'  %></div> <br>
-  <div class="home-tagline">Hallo - Hi - مرحبا </div>
-  <div class="home-button">
-    <% if current_user  %>
-    <%= link_to "What's new?", posts_path, class:"hvr-sweep-to-right btn-orange"%>
-    <% else  %>
-    <%= link_to "CONNECT", new_user_session_path, class:"hvr-sweep-to-right btn-orange"%>
-    <% end %>
+  <div class="home-top">
   </div>
-</div>
-<div class="home-wrapper">
-  <div class="home-title">About</div>
-  <div class="home-about">
-    <p> We all are blessed with a lot of <span class="home-highlight">skills</span>. Why not connect with the people around us by exchanging them? With RefuGapp we are filling the gap between locals and newcomers by providing a platform where you can offer your offer and find skill and <span class="home-highlight">connect</span> with new people! </p>
-    <p>Are you a <span class="home-highlight">local</span>? Get to now the newcomers in your city by exchanging skills! Discover how refugees can help you, send a request and.. connect! Or: a skill you want to share? Make a post and someone will find you!</p>
-    <p>Are you a <span class="home-highlight">newcomer</span>? Get to know the locals by offering your skills! Make a post and help a local with the things you are good at.
-      Or: in need of some help? Look what the locals are offering and send a request!</p>
+  <div class="home-middle">
+    <div class="home-logo"><%=image_tag "refuGapp.png", width: '300px'  %></div> <br>
+    <div class="home-tagline">Hallo - Hi - مرحبا </div>
+    <div class="home-button">
+      <% if current_user  %>
+      <%= link_to "What's new?", posts_path, class:"hvr-sweep-to-right btn-orange"%>
+      <% else  %>
+      <%= link_to "CONNECT", new_user_session_path, class:"hvr-sweep-to-right btn-orange"%>
+      <% end %>
     </div>
+  </div>
+  <div class="home-wrapper">
+    <div class="home-title">What is RefuGapp?</div>
+    <div class="home-about">
+      <br>
+      <p>Whether we are <span class="home-highlight">newcomers</span> or <span class="home-highlight">locals</span> in the Netherlands, we all like to feel welcome and connected. With Refugapp we are making it possible to discover people nearby who want to <span class="home-highlight">get connected</span> in order to share skills, learn from each other or just have a coffee. </p>
+      <p>How to start? It's simple! Send a request to an existing post or create your own post.
+        To make it easier there are three categories for posts:
+        <ul>
+          <li>
+            <span class="home-highlight">Social</span> to meet people <!-- through fun activities --> and broaden your social network.
+          </li>
+          <li>
+            <span class="home-highlight">Language</span> to practice and improve a language you speak (or want to speak!).
+          </li>
+          <li>
+            <span class="home-highlight">Skills</span> to share your passions and talents and maybe develop some new ones.
+          </li>
+        </ul>
+        <p>Scroll down to see some of the posts, and read about the experiences of people who have met through RefuGapp in the Shared stories!</p>
+      </div>
 
 
-    <div class="home-title">What are people posting?</div>
-    <div class="homepage-posts">
-      <div class="container-fluid">
-        <div class="row">
-          <% @posts.sample(3).each do |post| %>
-          <div class="col-xs-12 col-sm-6 col-md-4">
-            <div class="posts-card">
-              <div class="posts-underline-orange">
-                <span class="posts-title"> <%= post.subject %></span>
-              </div><br>
-              <%= link_to " ", post_path(post), class:"linktopost" %> <br>
-                 <% if post.author.kind == "dutchie" %>
-               <div class="kind-label dutchie"> local </div>
-               <% else %>
-               <div class="kind-label refugee"> newcomer </div>
-               <% end %>
-              <div class="posts-content">
-                <%= truncate(post.content, :length => 120) %>
-                <% if post.content.length > 120 %>
-                <%= link_to "read more", post_path(post)   %>
+
+
+      <div class="home-title">What are people posting?</div>
+      <div class="homepage-posts">
+        <div class="container-fluid">
+          <div class="row">
+            <% @posts.sample(3).each do |post| %>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+              <div class="posts-card">
+                <div class="posts-underline-orange">
+                  <span class="posts-title"> <%= post.subject %></span>
+                </div><br>
+                <%= link_to " ", post_path(post), class:"linktopost" %> <br>
+                <% if post.author.kind == "dutchie" %>
+                <div class="kind-label dutchie"> local </div>
+                <% else %>
+                <div class="kind-label refugee"> newcomer </div>
                 <% end %>
-              </div>
-              <div class="post-ago">
-                <p><%= time_ago_in_words(post.created_at) %> ago</p>
-              </div>
-              <div class="posts-images">
-                <%= cl_image_tag post.author.full_picture, class: "avatar" %>
-                <%= link_to post.author.title, user_path(post.author) %>
-              </div>
-              <div class="post-make">
-                <% if post.button_valid(current_user) == "redirect" %>
-                <p><%= link_to "Write a request to this Post", new_user_session_path(), class: "hvr-underline-from-center btn-border-orange" %></p>
-                <% elsif post.button_valid(current_user) == "request" %>
-                <p><%= link_to "Write a request to this Post", new_post_request_path(post), class: "hvr-underline-from-center btn-border-orange" %></p>
-                <%else %>
-                <% end %>
+                <div class="posts-content">
+                  <%= truncate(post.content, :length => 120) %>
+                  <% if post.content.length > 120 %>
+                  <%= link_to "read more", post_path(post)   %>
+                  <% end %>
+                </div>
+                <div class="post-ago">
+                  <p><%= time_ago_in_words(post.created_at) %> ago</p>
+                </div>
+                <div class="posts-images">
+                  <%= cl_image_tag post.author.full_picture, class: "avatar" %>
+                  <%= link_to post.author.title, user_path(post.author) %>
+                </div>
+                <div class="post-make">
+                  <% if post.button_valid(current_user) == "redirect" %>
+                  <p><%= link_to "Write a request to this Post", new_user_session_path(), class: "hvr-underline-from-center btn-border-orange" %></p>
+                  <% elsif post.button_valid(current_user) == "request" %>
+                  <p><%= link_to "Write a request to this Post", new_post_request_path(post), class: "hvr-underline-from-center btn-border-orange" %></p>
+                  <%else %>
+                  <% end %>
+                </div>
               </div>
             </div>
+            <% end %>
           </div>
-          <% end %>
-        </div>
-      </div>  <br>
-      <div class="posts-center">
+        </div>  <br>
+        <div class="posts-center">
           <%= link_to 'All posts', posts_path, class:"hvr-sweep-to-right btn-orange  make-post" %>
         </div>
+      </div>
     </div>
   </div>
-</div>
 </div>

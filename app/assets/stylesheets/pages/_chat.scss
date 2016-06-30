@@ -4,18 +4,22 @@
 }
 
 .chatbox {
-  text-align: center;
-  max-width: 800px;
-  margin: 100px auto;
-  background-color: $light-blue;
-  padding: 80px;
-  font-family: "Open Sans";
+      text-align: center;
+    max-width: 800px;
+    margin: 40px auto;
+    background-color: #00C7FD;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-top: 20px;
+    padding-bottom: 80px;
+    font-family: "Open Sans";
 }
 
 
 ul{
   list-style: none;
   width: 700px;
+
 }
 
 .chat {
@@ -83,4 +87,13 @@ ul{
 
 ::-webkit-scrollbar {
     display: none;
+}
+
+.chat-wrapper{
+  margin-top: 0px;
+}
+
+.chat-container {
+  padding-bottom: 20px;
+  text-align: center;
 }

@@ -88,7 +88,7 @@ btn btn-blue-black
   font-family: $base-font;
   color: white;
   &:hover {
-    background-color: rgba(0,0,0,0);
+    background-color: rgba(255,255,255,0.8);
     color: black;
     transition: background-color 1s, color 1s ease;
   }
@@ -259,11 +259,14 @@ btn btn-blue-black
 }
 
 
-
+// Menutoggle button
 .active{
   background-color: $light-blue;
   color: white;
   transition: background-color 1s, color 1s linear;
-
+    &:hover {
+      text-decoration: none;
+      color: white;
+  }
 }
 

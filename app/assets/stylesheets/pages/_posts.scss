@@ -121,7 +121,7 @@
 
 
 .active-black{
-  background-color: rgba(0,0,0,0);
+  background-color: rgba(255,255,255,1);
   color: black;
   transition: background-color 1s, color 1s ease;
 }
@@ -237,6 +237,10 @@
   }
 }
 
+.butti-map {
+  margin-left: -5px;
+}
+
 .goback{
   padding-top: 30px;
 }
@@ -246,4 +250,11 @@
     padding: 80px 20px 0 20px;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .list-type {
+    justify-content: flex-start;
+  }
+}
+
 

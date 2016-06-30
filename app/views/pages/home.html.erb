@@ -10,13 +10,14 @@
       <% else  %>
       <%= link_to "CONNECT", new_user_session_path, class:"hvr-sweep-to-right btn-orange"%>
       <% end %>
-    </div>
-    <div class="text-center">
-      <a href="#" class="no-border">
-        <%= image_tag "arrow_down.png", width: '120px', onclick:"homeScroll()"%>
-      </a>
+      <div class="arrow text-center">
+        <a href="#">
+          <%= image_tag "arrow_down.png", width: '120px', onclick:"homeScroll()"%>
+        </a>
+      </div>
     </div>
   </div>
+
   <div class="home-wrapper padding-top" id="home-content">
     <div class="home-title">What is RefuGapp?</div>
     <div class="home-about">

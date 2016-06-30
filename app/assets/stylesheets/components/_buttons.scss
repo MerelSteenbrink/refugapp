@@ -169,6 +169,23 @@ btn btn-blue-black
 }
 }
 
+.btn-simple-white {
+  padding: 10px;
+  color: white;
+  font-family: $base-font;
+  &:hover {
+   color: white !important;
+ }
+ &:before {
+  background-color: white;
+  height: 1px;
+  &:visited {
+    color: white;
+    text-decoration:none;
+  }
+}
+}
+
 .form-button {
   margin: 10px;
   border: 2px $dark-gray;
@@ -234,6 +251,13 @@ btn btn-blue-black
   }
   &:before {
     background: $orange;
+  }
+}
+
+// keep the color black on hover
+.btn-always-black {
+  &:hover {
+    color: black !important;
   }
 }
 

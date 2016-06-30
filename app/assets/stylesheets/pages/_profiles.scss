@@ -53,6 +53,7 @@
   margin: 20px auto;
   width: 400px;
   min-height: 200px;
+  text-align: justify
 }
 
 .profile-city {
@@ -100,4 +101,13 @@
 .profile-please {
   color: $dark-gray;
   text-align: left;
+}
+
+@media screen and (max-width: 600px) {
+  .wrapper-profile {
+    padding: 80px 20px;
+  }
+  .profile-description {
+  width: 300px;
+}
 }

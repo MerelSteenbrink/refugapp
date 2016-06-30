@@ -3,16 +3,22 @@
     <div class="row">
       <div class="col-xs-12 col-sm-6">
        <div class="post-card">
-        <div class="one-post-ago">
+        <div class="post-ago">
           <p><%= time_ago_in_words(@post.created_at) %> ago</p>
         </div>
-        <div class="one-post-image">
+        <div class="posts-images">
           <%= cl_image_tag @post.author.full_picture, class: "avatar" %>
           <%= link_to @post.author.title, user_path(@post.author) %>
         </div>
 
-        <div class="posts-underline-orange">
-          <span class="posts-title"> <%= @post.subject %></span></div> <br>
+          <!-- Show label for local or newcomer -->
+          <% if @post.author.kind == "dutchie" %>
+               <div class="kind-label dutchie"> local </div>
+               <% else %>
+               <div class="kind-label refugee"> newcomer </div>
+          <% end %>
+
+          <div class="post-subject"> <%= @post.subject %></div> <br>
 
           <div class="posts-content">
             <%= @post.content %>
@@ -22,7 +28,7 @@
             <% if @post.button_valid(current_user) == "redirect" %>
             <p><%= link_to "Write a request to this Post", new_user_session_path(), class: "hvr-underline-from-center btn-border-orange" %></p>
             <% elsif @post.button_valid(current_user) == "request" %>
-            <p><%= link_to "Write a request to this Post", new_post_request_path(@post), class: "hvr-underline-from-center btn-border-orange" %></p>
+            <p><%= link_to "Write a request", new_post_request_path(@post), class: "hvr-underline-from-center btn-border-orange" %></p>
             <%else %>
             <% end %>
           </div>
@@ -33,7 +39,7 @@
       </div>
     </div>
     <div class="goback">
-      <%= link_to "Back to all posts", posts_path(), class:"btn-black button-with-padding"%>
+      <%= link_to "Back to all posts", posts_path(), class:"hvr-sweep-to-right btn-black"%>
     </div>
   </div>
 
@@ -62,7 +68,7 @@
           strokeOpacity: 1.0,
           strokeColor: '#00C7FD',
           strokeWeight: 3.0,
-        scale: 40 //pixels
+          scale: 40 //pixels
       }
 
     });

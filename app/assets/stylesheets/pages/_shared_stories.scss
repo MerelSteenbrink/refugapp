@@ -8,6 +8,13 @@
 .wrapper-stories {
   margin-top: 0;
   font-family: $base-font;
+  padding: 80px 20px;
+  min-height: 100vh;
+}
+
+.wrapper-story {
+  margin-top: 0;
+  font-family: $base-font;
   padding: 80px 90px;
   min-height: 100vh;
 }
@@ -19,13 +26,11 @@
   margin: 20px 0px;
   min-height: 372px;
   position: relative;
-
 }
 
 .stories-title {
   color: black;
   text-decoration: none;
-
 }
 
 .stories-underline {
@@ -40,6 +45,12 @@
   text-decoration: underline;
   text-align: center;
   font-size: 20px;
+}
+
+.story-subject {
+  font-family: $header-font;
+  font-size: 20px;
+  text-align: center;
 }
 
 .stories-story {
@@ -61,6 +72,9 @@
 .stories-whole-story {
   text-align: left;
   padding: 30px 60px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  text-align: justify;
 }
 
 .stories-pictures {
@@ -72,4 +86,22 @@
   margin-left: -10px;
 }
 
+.linktostory{
+    position: absolute;
+    top: 35px;
+    left: 43px;
+    bottom: 0;
+    width: 83%;
+    height: 15%;
+    z-index: 2;
+    opacity: 1;
+    padding-top: 30px;
+    padding-left: 100px;
+}
+
+@media screen and (max-width: 500px) {
+  .wrapper-story {
+    padding: 80px 20px;
+  }
+}
 

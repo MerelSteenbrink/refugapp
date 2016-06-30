@@ -1,13 +1,15 @@
 <div style="width: 200px">
-
-  <h4><%= link_to post.subject, post_path(post) %></h4>
-  <h5>-<%= post.author.username %> </h5>
-  <h6><%= truncate(post.content, :length => 120) %></h6>
+  <br>
+  <p class="posts-underline-orange"><%= link_to post.subject, post_path(post) %></p>
+  <p>-<%= post.author.username %>
+    <i> (<%= time_ago_in_words(post.created_at) %> ago)</i>
+  </p>
+  <p><%= truncate(post.content, :length => 120) %></p>
 
   <% if post.content.length > 120 %>
-  <h6 class="read_more_button"> <%= link_to "Read more", post_path(post) %></h6>
+  <p class="read_more_button"> <%= link_to "Read more", post_path(post) %></p>
   <% end  %>
-  <i> <%= time_ago_in_words(post.created_at) %> ago</i>
+
 
 
 </div>

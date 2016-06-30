@@ -27,27 +27,27 @@ du1 = User.create!(username: "Bastiaan22", description: "so I would love to meet
 du2 = User.create!(username: "Sooph", description: "I would love to share my skills", first_name: "Sophia", last_name: "De Jong", kind: "dutchie", city: "Utrecht", email: "sooph_87@gmail.com", password: "password", password_confirmation: "password", picture: "http://res.cloudinary.com/gg/image/upload/v1467114165/woman5_y5n9zj.jpg")
 du3 = User.create!(username: "Miriam", description: "so I would love to meet people", first_name: "Miriam", last_name: "De Vries", kind: "dutchie", city: "Amsterdam", email: "mdevries@gmail.com", password: "password", password_confirmation: "password", picture: "http://res.cloudinary.com/gg/image/upload/v1467114165/woman4_c4germ.jpg")
 du4 = User.create!(username: "Luukie", description: "so I would love to meet people", first_name: "Luuk", last_name: "Bakker", kind: "dutchie", city: "Rotterdam", email: "luukie@gmail.com", password: "password", password_confirmation: "password", picture: "http://res.cloudinary.com/gg/image/upload/v1467115869/male11_quggfa.jpg")
-du5 = User.create!(username: "Noor", description: "I love fixing bikes an dwould love to teach other epole how to do it.", first_name: "Eleonore", last_name: "Van Den Helder", kind: "dutchie", city: "Schiedam", email: "new_noor@gmail.com", password: "password", password_confirmation: "password", picture: "http://res.cloudinary.com/gg/image/upload/v1467114164/woman7_ljino3.jpg")
-du6 = User.create!(username: "Stijn", description: "always looking fo new adventures.", first_name: "Stijn", last_name: "Janssen", kind: "dutchie", city: "Almere", email: "stijn_jj@gmail.com", password: "password", password_confirmation: "password", picture: "http://res.cloudinary.com/gg/image/upload/v1467116147/male12_rm2hkj.jpg")
-du7 = User.create!(username: "fleur_zozo", description: "so I would love to meet people", first_name: "Fleur", last_name: "Bieman", kind: "dutchie", city: "Amsterdam", email: "f.bieman@gmail.com", password: "password", password_confirmation: "password", picture: "http://res.cloudinary.com/gg/image/upload/v1467114166/woman1_vxqkrq.jpg")
+du5 = User.create!(username: "Noor", description: "I love fixing bikes and would love to teach other people how to do it.", first_name: "Eleonore", last_name: "Van Den Helder", kind: "dutchie", city: "Schiedam", email: "new_noor@gmail.com", password: "password", password_confirmation: "password", picture: "http://res.cloudinary.com/gg/image/upload/v1467114164/woman7_ljino3.jpg")
+du6 = User.create!(username: "Stijn", description: "always looking for new adventures.", first_name: "Stijn", last_name: "Janssen", kind: "dutchie", city: "Almere", email: "stijn_jj@gmail.com", password: "password", password_confirmation: "password", picture: "http://res.cloudinary.com/gg/image/upload/v1467116147/male12_rm2hkj.jpg")
+du7 = User.create!(username: "fleur_zozo", description: "I would love to meet people", first_name: "Fleur", last_name: "Bieman", kind: "dutchie", city: "Amsterdam", email: "f.bieman@gmail.com", password: "password", password_confirmation: "password", picture: "http://res.cloudinary.com/gg/image/upload/v1467114166/woman1_vxqkrq.jpg")
 
 
 # Posts
-p7 = Post.create!(subject: "Photography", created_at: "29-6-2016", content: "I am a professional photographer speciallized in taking pictures on events. So if you're looking for a photographer at your event, contact me!", author_id: ru3.id, postal_code: "1071 GK", city: "Amsterdam", category: "skills")
+p7 = Post.create!(subject: "Photography", created_at: "29-6-2016", content: "I am a professional photographer specialized in taking pictures on events. So if you're looking for a photographer at your event, contact me!", author_id: ru3.id, postal_code: "1071 GK", city: "Amsterdam", category: "skills")
 sleep 0.4
 p1 = Post.create!(subject: "Biking to Zaandam", content: "There are really nice windmills near Zaamdam. Let's take our bikes, explore the windmills and have lunch somewhere nearby during one of the upcoming weekends! Who is in?", author_id: du1.id, postal_code: "1505 CL", city: "Zaandam", category: "social")
 sleep 0.4
 p2 = Post.create!(subject: "Origami",created_at: "25-6-2016",  content: "Is there anyone who knows a bit of origami? I started learning how to make some birds and really want to learn more! ", author_id: ru4.id, postal_code: "1066 VH", city: "Amsterdam", category: "skills")
-sleep 0.4os
-p9 = Post.create!(subject: "Jquery",created_at: "23-6-2016",  content: "The last three months I learned how to code in Ruby and Ruby on rails. Right now, I would love to pimp my portofolio with some nice jquery functions. Is there someone who would like to help me with that?" , author_id: au1.id, postal_code: "1075WS", city: "Amsterdam", category: "skills")
-sleep 0.4it dd
+sleep 0.4
+p9 = Post.create!(subject: "React",created_at: "23-6-2016",  content: "The last three months I learned how to code in Ruby and Ruby on rails. Right now, I would love to pimp my portofolio with some nice react functions. Is there someone who would like to help me with that?" , author_id: au1.id, postal_code: "1075WS", city: "Amsterdam", category: "skills")
+sleep 0.4
 p10 = Post.create!(subject: "Fixing bikes", created_at: "28-6-2016", content: "I am crazy about bikes, and love fixing them. I would like to teach other people how to fix bikes.", author_id: au1.id, postal_code: "1075WS", city: "Amsterdam", category: "skills")
 sleep 0.4
 p3 = Post.create!(subject: "Learn Dutch", created_at: "28-6-2016", content: "I have been taking Dutch classes and would love to practice with a native speaker. Zullen we koffie drinken?", author_id: ru5.id, postal_code: "2518 BK", city: "Den Haag", category: "language")
 sleep 0.4
 p4 = Post.create!(subject: "Gezellig samen eten", content: "I would like to meet for dinner and hear your stories! I will make a typical Dutch meal ('hutspot' or something similar) and would really like to try some traditional meals from other places as well. Let me know if you are interested!", author_id: du3.id, postal_code: "1075WS", city: "Amsterdam", category: "skills")
 sleep 0.4
-p5 = Post.create!(subject: "Speak Dutch", created_at: "25-6-2016", content: "If anyone would like to practice some Dutch with me in exchange for learning some Arabic, let's meet!", author_id: du3.id, postal_code: "1018 DM", city: "Amsterdam", category: "language")
+p5 = Post.create!(subject: "Speak Dutch", created_at: "25-6-2016", content: "If anyone would like to practice some Dutch with me in exchange for learning some Arabic, let's meet! الى اللقاء, بسرعة", author_id: du3.id, postal_code: "1018 DM", city: "Amsterdam", category: "language")
 sleep 0.4
 p6 = Post.create!(subject: "Code with me!", created_at: "29-6-2016", content: "I am learning how to code websites in Ruby on Rails, and to practice a bit more I would be happy to do a little workshop to teach a bit of code and build something nice together. Any ideas for websites are welcome, and you don't need to know much about code to join.", author_id: ru2.id, postal_code: "2518 AX", city: "Den Haag", category: "skills")
 sleep 0.4

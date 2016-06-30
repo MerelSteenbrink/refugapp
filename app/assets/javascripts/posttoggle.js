@@ -13,6 +13,10 @@ $(document).ready(function(){
 });
   });
 
+    //add onclick mapload to every function
+    //put all markers in an array
+    //load the map with the array
+
     $('#kind_refugee').on('click', function(event){
         event.preventDefault();
         $(".btn-border-black").removeClass('active-black');

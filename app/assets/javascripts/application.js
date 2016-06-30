@@ -14,3 +14,4 @@
 //= require upload_button
 //= require chat
 //= require posttoggle
+//= require home

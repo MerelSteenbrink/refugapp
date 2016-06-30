@@ -14,12 +14,15 @@
 .home-middle {
   margin-top: 120px;
   padding-top: 60px;
+  padding-bottom: 30px;
   text-align: center;
   min-height: 300px;
-  display: flex;
+  // display: flex;
   justify-content: center;
   flex-direction: column;
+  height: 120vh;
 }
+
 
 .home-logo {
   padding-top: 100px;
@@ -90,11 +93,30 @@
   color: $orange;
 }
 
+.indent-home {
+  padding-left: 20px;
+}
+
+.padding-top {
+  padding-top: 60px;
+}
+
+.arrow {
+  padding-bottom: 60px;
+}
+
+
+@media screen and (max-width: 1175px) {
+  .home-wrapper {
+    padding: 0 10px 40px;
+  }
+}
+
 @media screen and (max-width: 585px) {
   .home-about {
     font-size: 15px;
   }
   .home-wrapper {
-    padding: 0 20px 40px;
+    padding: 0 5px 20px;
   }
 }

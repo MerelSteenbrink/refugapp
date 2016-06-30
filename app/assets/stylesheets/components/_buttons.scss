@@ -88,7 +88,7 @@ btn btn-blue-black
   font-family: $base-font;
   color: white;
   &:hover {
-    background-color: rgba(0,0,0,0);
+    background-color: rgba(255,255,255,0.8);
     color: black;
     transition: background-color 1s, color 1s ease;
   }
@@ -169,6 +169,23 @@ btn btn-blue-black
 }
 }
 
+.btn-simple-white {
+  padding: 10px;
+  color: white;
+  font-family: $base-font;
+  &:hover {
+   color: white !important;
+ }
+ &:before {
+  background-color: white;
+  height: 1px;
+  &:visited {
+    color: white;
+    text-decoration:none;
+  }
+}
+}
+
 .form-button {
   margin: 10px;
   border: 2px $dark-gray;
@@ -237,6 +254,13 @@ btn btn-blue-black
   }
 }
 
+// keep the color black on hover
+.btn-always-black {
+  &:hover {
+    color: black !important;
+  }
+}
+
 
 
 /* TOGGLE MAP LIST */
@@ -259,11 +283,14 @@ btn btn-blue-black
 }
 
 
-
+// Menutoggle button
 .active{
   background-color: $light-blue;
   color: white;
   transition: background-color 1s, color 1s linear;
-
+    &:hover {
+      text-decoration: none;
+      color: white;
+  }
 }
 

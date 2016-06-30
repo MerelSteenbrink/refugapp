@@ -1,8 +1,6 @@
-<div class="wrapper-stories">
+<div class="wrapper-story">
   <div class="stories-card">
-   <div class="stories-underline-blue">
-    <span class="stories-title"><%= @story.title %></span>
-  </div>
+    <div class="story-subject"><%= @story.title %></div>
   <p class="stories-whole-story"><%= @story.story %> </p>
   <p class="stories-pictures">
     <%= cl_image_tag @story.author.full_picture, class: "avatar" %>

@@ -1,13 +1,14 @@
 <div class="background-stories">
 <div class="wrapper-stories">
-    <h1 class="text-center">Shared Stories</h1>
+    <h1 class="text-center">Shared Stories</h1> <br>
   <div class="container">
     <div class="row">
     <% @shared_stories.reverse.each do |story| %>
-      <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="col-xs-12 col-md-6">
         <div class="stories-card">
         <div class="stories-underline-blue">
-         <span class="stories-title"> <%= story.title %></span></div> <br>
+         <span class="stories-title"> <%= story.title %></span></div>
+         <%= link_to " ", shared_story_path(story), class:"linktostory" %> <br>
         <div class="stories-story">
         <%= truncate(story.story, :length => 120) %>
         <% if story.story.length > 120 %>

@@ -70,6 +70,7 @@ btn btn-blue-black
   padding: 10px;
   background-color: $orange;
   font-family: $base-font;
+  color: white;
   &:hover {
     color: $orange;
     background-color: rgba(0,0,0,0);
@@ -88,7 +89,7 @@ btn btn-blue-black
   font-family: $base-font;
   color: white;
   &:hover {
-    background-color: rgba(255,255,255,0.8);
+    background-color: rgba(0,0,0,0);
     color: black;
     transition: background-color 1s, color 1s ease;
   }

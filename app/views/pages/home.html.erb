@@ -1,6 +1,4 @@
 <div class="home-background">
-  <div class="home-top">
-  </div>
   <div class="home-middle">
     <div class="home-logo"><%=image_tag "refuGapp.png", width: '300px'  %></div> <br>
     <div class="home-tagline">Hallo - Hi - مرحبا </div>
@@ -11,27 +9,27 @@
       <%= link_to "CONNECT", new_user_session_path, class:"hvr-sweep-to-right btn-orange"%>
       <% end %>
     </div>
-  </div>
-  <div class="home-wrapper">
-    <div class="home-title">What is RefuGapp?</div>
-    <div class="home-about">
-      <br>
-      <p>Whether we are <span class="home-highlight">newcomers</span> or <span class="home-highlight">locals</span> in the Netherlands, we all like to feel welcome and connected. With Refugapp we are making it possible to discover people nearby who want to <span class="home-highlight">get connected</span> in order to share skills, learn from each other or just have a coffee. </p>
-      <p>How to start? It's simple! Send a request to an existing post or create your own post.
-        To make it easier there are three categories for posts:
-        <ul>
-          <li>
-            <span class="home-highlight">Social</span> to meet people <!-- through fun activities --> and broaden your social network.
-          </li>
-          <li>
-            <span class="home-highlight">Language</span> to practice and improve a language you speak (or want to speak!).
-          </li>
-          <li>
-            <span class="home-highlight">Skills</span> to share your passions and talents and maybe develop some new ones.
-          </li>
-        </ul>
+    <div class="arrow text-center">
+          <%= link_to "#", onclick:"homeScroll()" do  %>
+          <i class="fa fa-angle-double-down fa-4x"></i>
+          <% end %>
+        </div>
+    </div>
+
+    <div class="home-wrapper padding-top" id="home-content">
+      <div class="home-title">What is RefuGapp?</div>
+      <div class="home-about">
+        <br>
+        <p>Whether we are <span class="home-highlight">newcomers</span> or <span class="home-highlight">locals</span> in the Netherlands, we all like to feel welcome and connected. With Refugapp we are making it possible to discover people nearby who want to <span class="home-highlight">get connected</span> in order to share skills, learn from each other or just have a coffee. </p>
+        <p>How to start? It's simple! Send a request to an existing post or create your own post. To make it easier there are three categories for posts:</p>
+        <p>
+          <div><span class="home-highlight indent-home">Social</span> to meet people and broaden your social network.</div>
+          <div><span class="home-highlight indent-home">Language</span> to practice and improve a language you speak (or want to speak!).</div>
+          <div><span class="home-highlight indent-home">Skills</span> to share your passions and talents and maybe develop some new ones.</div>
+        </p>
         <p>Scroll down to see some of the posts, and read about the experiences of people who have met through RefuGapp in the Shared stories!</p>
       </div>
+
 
 
 

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>We're sorry, but something went wrong (500)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+  body {
+      position: relative;
+      background-color: #00C7FD;
+      /*background-image: url("giphy.gif");*/
+      /*background-size: cover;*/
+    }
+
+    .error {
+      font-family: "Open Sans", "Helvetica", "sans-serif";
+      color: orange;
+      position: absolute;
+      z-index: -1;
+    }
+
+    .error-content {
+      display: flex;
+      justify-content: center;
+    }
+
+    .error-image {
+      border-radius: 50%;
+      margin: auto;
+      width: 160px;
+      height: 160px;
+    }
+
+    .oops {
+      font-family: "Open Sans", "Helvetica", "sans-serif";
+      color: #393939;
+      font-size: 50px;
+      text-align: center;
+      margin-top: 40px;
+      /*background-color: rgba(256,256,256, 0.5);*/
+    }
+
+    .oops a {
+      text-decoration: none;
+      color: white;
+      border: 4px solid #393939;
+      background-color: #393939;
+      padding: 10px;
+      font-size: 30px;
+      transition: background-color 0.4s, border 0,4s ease;
+    }
+
+    .oops a:hover {
+      border: 4px solid #FF5600;
+      background-color: #FF5600;
+      color: black;
+    }
+
+    .image-bakje {
+      display: flex;
+      justify-content: center;
+      margin: 120px auto 20px;
+    }
+
+    .e1 {
+      font-size: 40px;
+      top: 20px;
+      left: 40px;
+      -webkit-animation: moveerrors 40s linear infinite;
+      -moz-animation: moveerrors 40s linear infinite;
+      -o-animation: moveerrors 40s linear infinite;
+    }
+
+    .e2 {
+      font-size: 60px;
+      top: 50px;
+      left: 140px;
+      -webkit-animation: moveerrors 80s linear infinite;
+      -moz-animation: moveerrors 80s linear infinite;
+      -o-animation: moveerrors 80s linear infinite;
+  }
+
+  .e3 {
+    font-size: 20px;
+    top: 90px;
+    left: 120px;
+    -webkit-animation: moveerrors 30s linear infinite;
+    -moz-animation: moveerrors 30s linear infinite;
+    -o-animation: moveerrors 30s linear infinite;
+  }
+
+  .e4 {
+    font-size: 40px;
+    top: 210px;
+    left: 140px;
+    -webkit-animation: moveerrors 25s linear infinite;
+    -moz-animation: moveerrors 25s linear infinite;
+    -o-animation: moveerrors 25s linear infinite;
+  }
+
+  .e5 {
+    font-size: 70px;
+    top: 140px;
+    left: 340px;
+    -webkit-animation: moveerrors 40s linear infinite;
+    -moz-animation: moveerrors 40s linear infinite;
+    -o-animation: moveerrors 40s linear infinite;
+  }
+
+  .e11 {
+    top: 540px;
+    left: 300px;
+  }
+
+   .e12 {
+    top: 280px;
+    left: 20px;
+  }
+
+   .e13 {
+    top: 340px;
+    left: 440px;
+  }
+
+   .e14 {
+    top: 550px;
+    left: 130px;
+  }
+
+   .e15 {
+    top: 410px;
+    left: 540px;
+  }
+
+  .unicorn {
+    position: absolute;
+    z-index: -1;
+    opacity: 0.4;
+  }
+
+  .u1 {
+    top: 410px;
+    left: 140px;
+    width: 400px;
+    height: 400px;
+    -webkit-animation: moveerrors 10s linear infinite;
+    -moz-animation: moveerrors  10s linear infinite;
+    -o-animation: moveerrors 10s linear infinite;
+  }
+
+  .u1 img{
+    height: 300px;
+    width: 300px;
+  }
+
+  .u2 {
+    top: 610px;
+    left: 540px;
+    width: 400px;
+    height: 400px;
+    -webkit-animation: moveerrors 40s linear infinite;
+    -moz-animation: moveerrors 40s linear infinite;
+    -o-animation: moveerrors 40s linear infinite;
+  }
+
+  .u2 img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .u3 {
+    top: 20px;
+    left: 30px;
+    -webkit-animation: moveerrors 50s linear infinite;
+    -moz-animation: moveerrors 50s linear infinite;
+    -o-animation: moveerrors 50s linear infinite;
+  }
+
+  .u3 img {
+    width: 400px;
+    height: 400px;
+  }
+
+  .u4 {
+    top: 500px;
+    left: 300px;
+    -webkit-animation: moveerrors 30s linear infinite;
+    -moz-animation: moveerrors 30s linear infinite;
+    -o-animation: moveerrors 30s linear infinite;
+  }
+
+  .u4 img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .u5 {
+    top: 180px;
+    left: 300px;
+    -webkit-animation: moveerrors 20s linear infinite;
+    -moz-animation: moveerrors 20s linear infinite;
+    -o-animation: moveerrors 20s linear infinite;
+  }
+
+  .u5 img {
+    width: 160px;
+    height: 160px;
+  }
+
+  .u6 {
+    top: 250px;
+    left: 140px;
+    -webkit-animation: moveerrors 90s linear infinite;
+    -moz-animation: moveerrors 90s linear infinite;
+    -o-animation: moveerrors 90s linear infinite;
+  }
+
+
+
+  @-webkit-keyframes moveerrors {
+    0% {margin-left: 1000px;}
+    100% {margin-left: -1000px;}
+  }
+  @-moz-keyframes moveerrors {
+    0% {margin-left: 1000px;}
+    100% {margin-left: -1000px;}
+  }
+  @-o-keyframes moveerrors {
+    0% {margin-left: 1000px;}
+    100% {margin-left: -1000px;}
+  }
+</style>
+</head>
+
+<body>
+  <div class="error e1">300</div>
+<div class="error e2">300</div>
+<div class="error e3">300</div>
+<div class="error e4">300</div>
+<div class="error e5">300</div>
+ <div class="error e4 e11">300</div>
+<div class="error e3 e12">300</div>
+<div class="error e2 e13">300</div>
+<div class="error e5 e14">300</div>
+<div class="error e1 e15">300</div>
+<div class="unicorn u1"> <img src="29749-200.png" alt="errorunicorn">  </div>
+<div class="unicorn u2"> <img src="29749-200.png" alt="errorunicorn">  </div>
+<div class="unicorn u3"> <img src="29749-200.png" alt="errorunicorn">  </div>
+<div class="unicorn u4"> <img src="29749-200.png" alt="errorunicorn">  </div>
+<div class="unicorn u5"> <img src="29749-200.png" alt="errorunicorn">  </div>
+<div class="unicorn u6"> <img src="29749-200.png" alt="errorunicorn">  </div>
+<div class="error-content">
+<div>
+<div class="image-bakje">
+  <img src="sad_face.png" class="error-image">
+</div>
+<div class="oops">Oops, something went wrong! <br> <br>
+<a href="/" class="error-button">Go back to the homepage</a></div>
+</div>
+</div
+
+</body>
+</html>
+
